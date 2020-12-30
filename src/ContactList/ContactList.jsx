@@ -24,10 +24,11 @@ export default class ContactList extends Component {
     this.setState({ clientHeight, scrollHeight, thumbHeight })
   }
 
-  selectContactHandle = (id) => {
+  selectContactHandle = (contact) => {
     this.setState({
-      selectedContact: id,
+      selectedContact: contact.id,
     })
+    this.props.onSelect && this.props.onSelect(contact)
   }
 
   scrollHandle = (e) => {
@@ -50,7 +51,7 @@ export default class ContactList extends Component {
               key={contact.id}
               border={index + 1 !== Length}
               selected={this.state.selectedContact === contact.id}
-              onClick={this.selectContactHandle.bind(this, contact.id)}
+              onClick={this.selectContactHandle.bind(this, contact)}
             />
           ))}
         </div>
