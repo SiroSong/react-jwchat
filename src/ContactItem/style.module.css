@@ -6,7 +6,7 @@
   align-items: center;
   border-radius: 5px;
   box-sizing: border-box;
-  padding-left: 10px;
+  padding: 0px 10px;
   position: relative;
   transition: all 0.3s;
 }
@@ -17,7 +17,6 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: aquamarine;
   overflow: hidden;
 }
 .info_area {
@@ -39,7 +38,7 @@
   white-space: nowrap;
 }
 .selected {
-  box-shadow: 0px 0px 5px rgb(94, 94, 94);
+  box-shadow: 0px 0px 10px rgb(180, 180, 180);
   transform: scale(1.02);
   z-index: 1000;
 }
@@ -50,9 +49,13 @@
   content: '';
   width: 90%;
   height: 1px;
-  background-color: #999;
+  background-color: rgb(230, 230, 230);
   position: absolute;
   bottom: 0px;
   left: 50%;
   margin-left: -45%;
+}
+.date_area {
+  font-size: 12px;
+  color: #666;
 }

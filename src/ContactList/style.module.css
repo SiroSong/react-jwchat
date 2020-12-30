@@ -1,8 +1,28 @@
 .content {
-  max-width: 200px;
+  max-width: 230px;
+  height: 550px;
   border-radius: 5px;
   overflow: hidden;
+  background-color: azure;
+  display: flex;
 }
 .list_area {
   background-color: white;
+  flex: 1;
+  overflow: auto;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+.list_area::-webkit-scrollbar {
+  width: 0 !important;
+}
+.scroll_bar_track {
+  width: 3px;
+  position: relative;
+}
+.scroll_bar_thumb {
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.4);
+  width: 100%;
+  border-radius: 1px;
 }

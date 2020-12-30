@@ -36,6 +36,7 @@ export default class ContactItem extends Component {
             {this.props.contact.desc}
           </span>
         </div>
+        <span className={style.date_area}>{this.props.contact.date}</span>
       </div>
     )
   }
