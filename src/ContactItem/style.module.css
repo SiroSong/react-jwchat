@@ -1,0 +1,58 @@
+.content {
+  background-color: white;
+  min-height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  position: relative;
+  transition: all 0.3s;
+}
+.content:hover {
+  cursor: pointer;
+}
+.icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: aquamarine;
+  overflow: hidden;
+}
+.info_area {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  flex: 1;
+}
+.nickname {
+  font-size: 14px;
+}
+.desc {
+  font-size: 12px;
+}
+.ellipsis {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.selected {
+  box-shadow: 0px 0px 5px rgb(94, 94, 94);
+  transform: scale(1.02);
+  z-index: 1000;
+}
+.selected:after {
+  display: none;
+}
+.bottom_border:after {
+  content: '';
+  width: 90%;
+  height: 1px;
+  background-color: #999;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -45%;
+}

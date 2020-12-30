@@ -1,0 +1,8 @@
+.content {
+  max-width: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.list_area {
+  background-color: white;
+}
