@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
+import md5 from 'md5'
+import dayjs from 'dayjs'
 
 export default class ChatInput extends Component {
   static propTypes = {}
@@ -12,12 +14,28 @@ export default class ChatInput extends Component {
 
   textArea = React.createRef()
 
+  componentDidMount() {
+    console.log(md5('123'))
+  }
+
   textChangeHandle = (e) => {
     this.setState({ text: e.target.value })
   }
 
   sendHandle = () => {
-    this.props.onSend(this.state.text)
+    const randomNum = Math.floor(Math.random() * 1000)
+    const date = dayjs().unix()
+
+    const msgData = {
+      _id: md5(`${this.state.text}${date}${randomNum}`),
+      date: date,
+      user: this.props.me,
+      message: {
+        type: 'text',
+        content: this.state.text,
+      },
+    }
+    this.props.onSend(msgData)
   }
 
   resetText = () => this.setState({ text: '' })
@@ -42,7 +60,7 @@ export default class ChatInput extends Component {
 
   render() {
     return (
-      <div className={style.content}>
+      <div className={style.content} style={{ height: this.props.height }}>
         <textarea
           type="text"
           className={style.input_area}
@@ -50,10 +68,9 @@ export default class ChatInput extends Component {
           onKeyDown={this.keyDownHandle}
           onChange={this.textChangeHandle}
           value={this.state.text}
-          placeholder="请输入..."
-        ></textarea>
+          placeholder="请输入..."></textarea>
         <div className={style.but_area}>
-          <button className={style.but} onClick={this.enterHandle}>
+          <button className={style.but} onClick={this.sendHandle}>
             发送
           </button>
         </div>

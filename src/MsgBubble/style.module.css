@@ -1,0 +1,29 @@
+.text_content {
+  background-color: cadetblue;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  max-width: 60%;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.arrow {
+  position: relative;
+}
+.arrow::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: cadetblue;
+  transform: rotate(45deg);
+  top: 8px;
+  /* left: -4px; */
+  z-index: 998;
+}
+.arrow_left::after {
+  left: -4px;
+}
+.arrow_right::after {
+  right: -4px;
+}
