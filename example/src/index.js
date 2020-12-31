@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { ContactItem, ContactList } from '../../src'
+import { Chat, ContactItem, ContactList } from '../../src'
 
 const contact = {
   id: 1,
@@ -128,7 +128,8 @@ const App = () => (
       onClick={(contact) => console.log(contact)}
       border
     /> */}
-    <ContactList contactList={contactList} />
+    {/* <ContactList contactList={contactList} /> */}
+    <Chat />
   </div>
 )
 render(<App />, document.getElementById('root'))
