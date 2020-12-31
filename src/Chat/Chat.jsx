@@ -7,6 +7,7 @@ export default class Chat extends Component {
   static defaultProps = {
     width: 500,
     height: 500,
+    onSend: () => console.warn('传入onSend属性，用于接收输入框内容'),
   }
 
   render() {
@@ -15,7 +16,7 @@ export default class Chat extends Component {
         className={style.content}
         style={{ width: this.props.width, height: this.props.height }}
       >
-        <ChatInput />
+        <ChatInput onSend={this.props.onSend} />
       </div>
     )
   }
