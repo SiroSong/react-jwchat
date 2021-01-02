@@ -10,6 +10,7 @@ export default class ChatInput extends Component {
   state = {
     text: '',
     isShift: false,
+    isAllowSend: false,
   }
 
   textArea = React.createRef()
@@ -19,10 +20,17 @@ export default class ChatInput extends Component {
   }
 
   textChangeHandle = (e) => {
-    this.setState({ text: e.target.value })
+    const isAllowSend = !!e.target.value.trim()
+    const text = e.target.value
+
+    this.setState({ text, isAllowSend })
   }
 
   sendHandle = () => {
+    if (!this.state.isAllowSend) {
+      return
+    }
+
     const randomNum = Math.floor(Math.random() * 1000)
     const date = dayjs().unix()
 
@@ -36,9 +44,10 @@ export default class ChatInput extends Component {
       },
     }
     this.props.onSend(msgData)
+    this.resetText()
   }
 
-  resetText = () => this.setState({ text: '' })
+  resetText = () => this.setState({ text: '', isAllowSend: false })
 
   keyDownHandle = (e) => {
     if (e.keyCode === 16) {
@@ -48,7 +57,6 @@ export default class ChatInput extends Component {
     if (e.keyCode === 13 && !this.state.isShift) {
       e.preventDefault()
       this.sendHandle()
-      this.resetText()
     }
   }
 
@@ -70,7 +78,10 @@ export default class ChatInput extends Component {
           value={this.state.text}
           placeholder="请输入..."></textarea>
         <div className={style.but_area}>
-          <button className={style.but} onClick={this.sendHandle}>
+          <button
+            className={style.but}
+            onClick={this.sendHandle}
+            disabled={!this.state.isAllowSend}>
             发送
           </button>
         </div>

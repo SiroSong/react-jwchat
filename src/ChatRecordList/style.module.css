@@ -8,12 +8,12 @@
   overflow: auto;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
+  padding: 10px;
 }
 .list_area::-webkit-scrollbar {
   width: 0 !important;
 }
 .load_more_area {
-  padding: 10px 0px;
 }
 .load_more {
   display: flex;

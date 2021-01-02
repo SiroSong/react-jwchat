@@ -18,6 +18,10 @@ export default class ChatRecordList extends Component {
   c_s = 0
 
   componentDidMount() {
+    this.computeHeight()
+  }
+
+  computeHeight = () => {
     const clientHeight = this.listArea.current.clientHeight
     const scrollHeight = this.listArea.current.scrollHeight
     const isBarHide = clientHeight === scrollHeight

@@ -21,19 +21,27 @@ export default class Chat extends Component {
     onSend: (msg) => console.warn('传入onSend属性，用于接收输入框内容', msg),
   }
 
+  chatRecordList = React.createRef()
+
+  sendHandle = (msgData) => {
+    this.props.onSend(msgData)
+    this.chatRecordList.current.computeHeight()
+  }
+
   render() {
     return (
       <div className={style.content} style={this.props.style}>
         <ChatHeader data={this.props.contact} />
         <ChatRecordList
           {...this.props}
+          ref={this.chatRecordList}
           data={this.props.chatList}
           height={this.props.height - textHeight - 60}
         />
         <ChatInput
           {...this.props}
           height={textHeight}
-          onSend={this.props.onSend}
+          onSend={this.sendHandle}
         />
       </div>
     )

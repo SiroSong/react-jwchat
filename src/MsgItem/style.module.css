@@ -1,19 +1,23 @@
 .content {
   display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
+  padding-top: 20px;
 }
 .avator {
-  height: 25px;
+  min-width: 25px;
   width: 25px;
+  padding-top: 14px;
+}
+.avator > img {
+  width: 100%;
+  height: auto;
   border-radius: 50%;
   overflow: hidden;
 }
 .text_area {
+  flex: 1;
   padding: 0px 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
 .comment_area {
   font-size: 12px;
