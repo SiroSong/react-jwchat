@@ -1,6 +1,7 @@
 .text_content {
-  background-color: cadetblue;
-  color: white;
+  background-color: #1aad19;
+  color: #333;
+  font-size: 12px;
   padding: 5px;
   border-radius: 3px;
   max-width: 60%;
@@ -15,7 +16,7 @@
   position: absolute;
   width: 8px;
   height: 8px;
-  background-color: cadetblue;
+  background-color: #1aad19;
   transform: rotate(45deg);
   top: 8px;
   /* left: -4px; */

@@ -37,9 +37,30 @@ export default class ChatRecordList extends Component {
     this.setState({ scrollTop: e.target.scrollTop * this.state.c_s })
   }
 
+  renderShadow = () => {
+    const { isBarHide, scrollTop, thumbHeight, clientHeight } = this.state
+    if (isBarHide) {
+      return ''
+    }
+
+    if (scrollTop !== 0 && scrollTop + thumbHeight !== clientHeight) {
+      return style.shadow_vertical
+    }
+
+    if (scrollTop === 0) {
+      return style.shadow_bottom
+    }
+
+    if (scrollTop + thumbHeight === clientHeight) {
+      return style.shadow_top
+    }
+  }
+
   render() {
     return (
-      <div className={style.content} style={{ height: this.props.height }}>
+      <div
+        className={`${style.content} ${this.renderShadow()}`}
+        style={{ height: this.props.height }}>
         <div
           className={style.list_area}
           ref={this.listArea}

@@ -20,10 +20,10 @@ module.exports = merge(webpackBase, {
       //   test: /\.min\.css$/,
       //   loader: ['style-loader', 'css-loader'],
       // },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
+      // {
+      //   test: /\.css$/i,
+      //   use: ['style-loader', 'css-loader'],
+      // },
     ],
   },
   devServer: {

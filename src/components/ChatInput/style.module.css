@@ -4,6 +4,7 @@
   min-height: 100px;
   display: flex;
   flex-direction: column;
+  /* box-shadow: 0px -5px 10px -5px rgba(0, 0, 0, 0.2); */
 }
 .input_area {
   border: none;
@@ -14,12 +15,11 @@
   font-size: 12px;
 }
 .input_area::placeholder {
-  color: #666;
+  color: #999;
 }
 .but_area {
   align-self: flex-end;
-  padding-right: 10px;
-  padding-top: 3px;
+  padding: 3px 10px 10px 0px;
 }
 .but {
   padding: 3px 20px;

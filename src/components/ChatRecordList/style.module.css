@@ -1,7 +1,16 @@
 .content {
   /* flex: 1; */
-  background-color: antiquewhite;
   display: flex;
+}
+.shadow_top {
+  box-shadow: inset 0px 5px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.shadow_bottom {
+  box-shadow: inset 0px -5px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.shadow_vertical {
+  box-shadow: inset 0px 5px 10px -5px rgba(0, 0, 0, 0.2),
+    inset 0px -5px 10px -5px rgba(0, 0, 0, 0.2);
 }
 .list_area {
   flex: 1;
@@ -23,6 +32,7 @@
   width: 100px;
   text-align: center;
   color: #999;
+  background-color: #f1f1f1;
   font-size: 12px;
   margin: 0 auto;
   border: none;
@@ -39,13 +49,13 @@
   border-bottom: solid 1px;
 }
 .scroll_bar_track {
-  width: 3px;
+  width: 5px;
   position: relative;
   overflow: hidden;
 }
 .scroll_bar_thumb {
   position: absolute;
-  background-color: rgb(0, 0, 0, 0.4);
+  background-color: #aaaaaa;
   width: 100%;
-  border-radius: 1px;
+  border-radius: 2.5px;
 }
