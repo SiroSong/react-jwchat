@@ -1,0 +1,11 @@
+.content {
+  height: 30px;
+  background-color: green;
+  display: flex;
+  align-items: center;
+}
+.tool_icon {
+  height: 20px;
+  width: 20px;
+  background-color: aqua;
+}

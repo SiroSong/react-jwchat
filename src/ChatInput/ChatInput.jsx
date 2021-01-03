@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import style from './style.module.css'
 import md5 from 'md5'
 import dayjs from 'dayjs'
+import ChatToolBar from '../ChatToolsBar/ChatToolBar'
 
 export default class ChatInput extends Component {
   static propTypes = {}
@@ -69,6 +70,7 @@ export default class ChatInput extends Component {
   render() {
     return (
       <div className={style.content} style={{ height: this.props.height }}>
+        <ChatToolBar />
         <textarea
           type="text"
           className={style.input_area}
