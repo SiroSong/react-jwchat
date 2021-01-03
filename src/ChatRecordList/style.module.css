@@ -41,6 +41,7 @@
 .scroll_bar_track {
   width: 3px;
   position: relative;
+  overflow: hidden;
 }
 .scroll_bar_thumb {
   position: absolute;

@@ -16,21 +16,21 @@ export default class ChatRecordList extends Component {
   }
 
   listArea = React.createRef()
-  c_s = 0
 
   componentDidMount() {
     this.computeHeight()
   }
 
   computeHeight = () => {
-    const clientHeight = this.listArea.current.clientHeight
-    const scrollHeight = this.listArea.current.scrollHeight
-    const isBarHide = clientHeight === scrollHeight
-    const c_s = clientHeight / scrollHeight
-    const thumbHeight = this.state.c_s * clientHeight
-    console.log(clientHeight, scrollHeight, c_s, thumbHeight)
+    setTimeout(() => {
+      const clientHeight = this.listArea.current.clientHeight
+      const scrollHeight = this.listArea.current.scrollHeight
+      const isBarHide = clientHeight === scrollHeight
+      const c_s = clientHeight / scrollHeight
+      const thumbHeight = c_s * clientHeight
 
-    this.setState({ clientHeight, scrollHeight, thumbHeight, c_s, isBarHide })
+      this.setState({ clientHeight, scrollHeight, thumbHeight, c_s, isBarHide })
+    }, 0)
   }
 
   scrollHandle = (e) => {

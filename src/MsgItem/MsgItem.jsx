@@ -22,8 +22,12 @@ export default class MsgItem extends Component {
           className={style.text_area}
           style={{ alignItems: isMe ? 'flex-end' : 'flex-start' }}>
           <div className={style.comment_area}>
-            <span>{this.props.data.user.nickname}</span>
-            <span>{dayjs.unix(this.props.data.date).format('YYYY-MM-DD')}</span>
+            <span className={style.nickname_text}>
+              {this.props.data.user.nickname}
+            </span>
+            <span className={style.date_text}>
+              {dayjs.unix(this.props.data.date).format('YYYY-MM-DD')}
+            </span>
           </div>
           <MsgBubble isMe={isMe} data={this.props.data.message} />
         </div>
