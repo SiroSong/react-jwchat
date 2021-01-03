@@ -12,6 +12,7 @@ export default class ChatRecordList extends Component {
     thumbHeight: 0,
     scrollTop: 0,
     isBarHide: true,
+    c_s: 0,
   }
 
   listArea = React.createRef()
@@ -25,14 +26,15 @@ export default class ChatRecordList extends Component {
     const clientHeight = this.listArea.current.clientHeight
     const scrollHeight = this.listArea.current.scrollHeight
     const isBarHide = clientHeight === scrollHeight
-    this.c_s = clientHeight / scrollHeight
-    const thumbHeight = this.c_s * clientHeight
+    const c_s = clientHeight / scrollHeight
+    const thumbHeight = this.state.c_s * clientHeight
+    console.log(clientHeight, scrollHeight, c_s, thumbHeight)
 
-    this.setState({ clientHeight, scrollHeight, thumbHeight, isBarHide })
+    this.setState({ clientHeight, scrollHeight, thumbHeight, c_s, isBarHide })
   }
 
   scrollHandle = (e) => {
-    this.setState({ scrollTop: e.target.scrollTop * this.c_s })
+    this.setState({ scrollTop: e.target.scrollTop * this.state.c_s })
   }
 
   render() {
