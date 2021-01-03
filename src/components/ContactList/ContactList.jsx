@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { ContactItem } from '..'
+import { ContactItem } from '../..'
 import style from './style.module.css'
 
 export default class ContactList extends Component {
@@ -43,8 +43,7 @@ export default class ContactList extends Component {
         <div
           className={style.list_area}
           ref={(ref) => (this.listArea = ref)}
-          onScroll={this.scrollHandle}
-        >
+          onScroll={this.scrollHandle}>
           {this.props.contactList.map((contact, index) => (
             <ContactItem
               contact={contact}
@@ -61,8 +60,7 @@ export default class ContactList extends Component {
             style={{
               height: this.state.thumbHeight,
               top: this.state.scrollTop,
-            }}
-          ></span>
+            }}></span>
         </div>
       </div>
     )

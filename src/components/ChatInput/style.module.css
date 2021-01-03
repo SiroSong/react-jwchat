@@ -25,11 +25,10 @@
   padding: 3px 20px;
   border: none;
   outline: none;
-  background-color: cadetblue;
+  background-color: #2ba245;
   color: white;
   border-radius: 3px;
 }
 .but:active {
-  background-color: aquamarine;
-  color: #333;
+  background-color: #1aad19;
 }

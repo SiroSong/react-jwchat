@@ -3,6 +3,7 @@
   background-color: green;
   display: flex;
   align-items: center;
+  padding: 0px 5px;
 }
 .tool_icon {
   height: 20px;
