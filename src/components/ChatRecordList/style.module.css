@@ -24,8 +24,6 @@
 .list_area::-webkit-scrollbar {
   width: 0 !important;
 }
-.load_more_area {
-}
 .load_more {
   display: flex;
   justify-content: center;
