@@ -1,5 +1,5 @@
 .text_content {
-  background-color: #1aad19;
+  background-color: #91ED61;
   color: #333;
   font-size: 12px;
   padding: 5px;
@@ -16,10 +16,9 @@
   position: absolute;
   width: 8px;
   height: 8px;
-  background-color: #1aad19;
+  background-color: #91ED61;
   transform: rotate(45deg);
   top: 8px;
-  /* left: -4px; */
   z-index: 998;
 }
 .arrow_left::after {

@@ -67,10 +67,17 @@ export default class ChatInput extends Component {
     }
   }
 
+  emojiSelectHandle = (emoji) => {
+    this.setState({
+      text: this.state.text + emoji,
+      isAllowSend: true,
+    })
+  }
+
   render() {
     return (
       <div className={style.content} style={{ height: this.props.height }}>
-        <ChatToolBar />
+        <ChatToolBar onEmojiSelect={this.emojiSelectHandle} />
         <textarea
           type="text"
           className={style.input_area}

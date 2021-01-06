@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "dayjs": "^1.9.8",
+    "emoji-mart": "^3.0.0",
     "md5": "^2.3.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

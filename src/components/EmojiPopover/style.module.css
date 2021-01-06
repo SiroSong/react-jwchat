@@ -1,0 +1,22 @@
+.content {
+  position: relative;
+}
+.emoji_wrapper {
+  position: absolute;
+  bottom: -100px;
+  left: 25px;
+}
+.tool_icon {
+  height: 20px;
+  width: 20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+}
+.emoji {
+  background-image: url('../../image/emoji_black.png');
+}
+.emoji:hover {
+  background-image: url('../../image/emoji_light.png');
+}

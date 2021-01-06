@@ -9,7 +9,7 @@ export default class MsgItem extends Component {
 
   render() {
     // const isMe = this.props.data.user.id === this.props.me.id
-    const isMe = false
+    const isMe = true
 
     return (
       <div

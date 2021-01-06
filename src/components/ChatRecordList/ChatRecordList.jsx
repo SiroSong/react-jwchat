@@ -29,8 +29,20 @@ export default class ChatRecordList extends Component {
       const c_s = clientHeight / scrollHeight
       const thumbHeight = c_s * clientHeight
 
-      this.setState({ clientHeight, scrollHeight, thumbHeight, c_s, isBarHide })
+      this.setState(
+        { clientHeight, scrollHeight, thumbHeight, c_s, isBarHide },
+        () => {
+          if (true) {
+            this.scrollToBottom()
+          }
+        }
+      )
     }, 0)
+  }
+
+  scrollToBottom = () => {
+    this.listArea.current.scrollTop =
+      this.listArea.current.scrollHeight - this.listArea.current.clientHeight
   }
 
   scrollHandle = (e) => {
