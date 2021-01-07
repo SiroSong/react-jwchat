@@ -21,8 +21,7 @@ export default class ContactItem extends Component {
         className={`${style.content} ${
           this.props.border && style.bottom_border
         } ${this.props.selected && style.selected}`}
-        onClick={this.clickHandle}
-      >
+        onClick={this.clickHandle}>
         <img
           className={style.icon}
           src={this.props.contact.avator}
@@ -33,7 +32,7 @@ export default class ContactItem extends Component {
             {this.props.contact.nickname}
           </span>
           <span className={`${style.desc} ${style.ellipsis}`}>
-            {this.props.contact.desc}
+            {this.props.contact.message}
           </span>
         </div>
         <span className={style.date_area}>{this.props.contact.date}</span>

@@ -26,10 +26,12 @@
   flex: 1;
 }
 .nickname {
-  font-size: 14px;
+  font-size: 13px;
+  color: #333;
 }
 .desc {
-  font-size: 12px;
+  font-size: 11px;
+  color: #666;
 }
 .ellipsis {
   max-width: 100px;

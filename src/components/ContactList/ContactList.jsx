@@ -67,7 +67,9 @@ export default class ContactList extends Component {
             />
           ))}
         </div>
-        <div className={style.scroll_bar_track}>
+        <div
+          className={style.scroll_bar_track}
+          style={{ display: this.state.isBarHide && 'none' }}>
           <span
             className={style.scroll_bar_thumb}
             style={{
