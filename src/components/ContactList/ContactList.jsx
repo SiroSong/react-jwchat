@@ -10,18 +10,31 @@ export default class ContactList extends Component {
     clientHeight: 0,
     thumbHeight: 0,
     scrollTop: 0,
+    c_s: 0,
   }
 
-  listArea = null
-  c_s = 0
+  listArea = React.createRef()
 
   componentDidMount() {
-    const clientHeight = this.listArea.clientHeight
-    const scrollHeight = this.listArea.scrollHeight
-    this.c_s = clientHeight / scrollHeight
-    const thumbHeight = this.c_s * clientHeight
+    this.computeHeight()
+  }
 
-    this.setState({ clientHeight, scrollHeight, thumbHeight })
+  componentDidUpdate(preProps, preState) {
+    if (preProps.contactList.length !== this.props.contactList.length) {
+      this.computeHeight()
+    }
+  }
+
+  computeHeight = () => {
+    setTimeout(() => {
+      const clientHeight = this.listArea.current.clientHeight
+      const scrollHeight = this.listArea.current.scrollHeight
+      const isBarHide = clientHeight === scrollHeight
+      const c_s = clientHeight / scrollHeight
+      const thumbHeight = c_s * clientHeight
+
+      this.setState({ clientHeight, scrollHeight, thumbHeight, c_s, isBarHide })
+    }, 0)
   }
 
   selectContactHandle = (contact) => {
@@ -32,7 +45,7 @@ export default class ContactList extends Component {
   }
 
   scrollHandle = (e) => {
-    this.setState({ scrollTop: e.target.scrollTop * this.c_s })
+    this.setState({ scrollTop: e.target.scrollTop * this.state.c_s })
   }
 
   render() {
@@ -42,7 +55,7 @@ export default class ContactList extends Component {
       <div className={style.content} style={this.props.style}>
         <div
           className={style.list_area}
-          ref={(ref) => (this.listArea = ref)}
+          ref={this.listArea}
           onScroll={this.scrollHandle}>
           {this.props.contactList.map((contact, index) => (
             <ContactItem
