@@ -39,7 +39,7 @@ export default class ContactList extends Component {
     const Length = this.props.contactList.length
 
     return (
-      <div className={style.content}>
+      <div className={style.content} style={this.props.style}>
         <div
           className={style.list_area}
           ref={(ref) => (this.listArea = ref)}

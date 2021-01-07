@@ -9,8 +9,10 @@ const textHeight = 150
 
 export default class Chat extends Component {
   static defaultProps = {
-    width: 600,
-    height: 500,
+    style: {
+      width: 600,
+      height: 500,
+    },
     contact: {},
     me: {},
     chatList: [],
@@ -26,13 +28,13 @@ export default class Chat extends Component {
 
   render() {
     return (
-      <div className={style.content} style={{ width: this.props.width }}>
+      <div className={style.content} style={this.props.style}>
         <ChatHeader data={this.props.contact} />
         <ChatRecordList
           {...this.props}
           ref={this.chatRecordList}
           data={this.props.chatList}
-          height={this.props.height - textHeight - 60}
+          height={this.props.style.height - textHeight - 60}
         />
         <ChatInput
           {...this.props}
