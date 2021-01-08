@@ -1,9 +1,8 @@
 .content {
   max-width: 280px;
   min-width: 230px;
-  border-radius: 5px;
   overflow: hidden;
-  background-color: azure;
+  background-color: white;
   display: flex;
 }
 .list_area {

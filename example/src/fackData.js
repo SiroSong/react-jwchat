@@ -1,18 +1,3 @@
-export const messageList = [
-  {
-    id: '',
-    date: '2020-12-31',
-    user: {
-      id: 9527,
-      avator: '',
-      nickname: '123123',
-    },
-    message: {
-      type: 'text',
-      content: '88880000----888',
-    },
-  },
-]
 export const contactList = [
   {
     id: 1,
@@ -120,15 +105,64 @@ export const contactList = [
     date: '02-11',
   },
 ]
+
 export const contact = {
   id: 9527,
   avator: '//game.gtimg.cn/images/lol/act/img/champion/Khazix.png',
   nickname: '卡兹克',
   desc: '看我点水就完了',
 }
+
 export const my = {
   id: 1234,
   avator: '//game.gtimg.cn/images/lol/act/a20201103lmpwjl/icon-ht.png',
   nickname: 'sirosong',
   desc: '您已被该玩家禁言',
 }
+
+export const messageList = [
+  {
+    _id: 'ecbb310507ce9c7d3bd57eca046a80f3',
+    date: 1610016423,
+    user: {
+      id: 1234,
+      avator: '//game.gtimg.cn/images/lol/act/a20201103lmpwjl/icon-ht.png',
+      nickname: 'sirosong',
+      desc: '这是我的第一条信息',
+    },
+    message: { type: 'text', content: '打野你会玩吗？' },
+  },
+  {
+    _id: 'f3386f6dcf4e69a8bd51a0d688d05580',
+    date: 1610016470,
+    user: {
+      id: 9527,
+      avator: '//game.gtimg.cn/images/lol/act/img/champion/Khazix.png',
+      nickname: '卡兹克',
+      desc: '这是我的第一条信息',
+    },
+    message: { type: 'text', content: '❓ ' },
+  },
+  {
+    _id: 'f3386f6dcf4e69a8bd51a0d688d0e980',
+    date: 1610016470,
+    user: {
+      id: 1234,
+      avator: '//game.gtimg.cn/images/lol/act/a20201103lmpwjl/icon-ht.png',
+      nickname: 'sirosong',
+      desc: '这是我的第一条信息',
+    },
+    message: { type: 'text', content: '对面下路压线那么深你不来？' },
+  },
+  {
+    _id: '75b5bde8f3b9ef7aa9b704492cb28baf',
+    date: 1610016580,
+    user: {
+      id: 1234,
+      avator: '//game.gtimg.cn/images/lol/act/a20201103lmpwjl/icon-ht.png',
+      nickname: 'sirosong',
+      desc: '这是我的第一条信息',
+    },
+    message: { type: 'text', content: '敌我打野差距👎 ' },
+  },
+]
