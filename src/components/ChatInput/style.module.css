@@ -12,7 +12,8 @@
   flex: 1;
   resize: none;
   padding: 10px;
-  font-size: 12px;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 .input_area::placeholder {
   color: #999;

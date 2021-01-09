@@ -100,45 +100,32 @@ export default class EmojiPopover extends Component {
     visible: false,
   }
 
-  inter = false
-
   componentDidMount() {
     addEventListener('click', (e) => {
-      if (this.inter) {
-        this.inter = false
-        return
-      }
-      if (e.target.getAttribute('datatype') === 'emoji') {
+      if (this.state.visible || e.target.getAttribute('datatype') === 'emoji') {
         this.clickHandle()
-      } else {
-        this.setState({
-          visible: false,
-        })
       }
     })
   }
 
-  clickHandle = () => {
-    this.setState({
-      visible: !this.state.visible,
-    })
-  }
+  clickHandle = () => this.setState({ visible: !this.state.visible })
 
-  iconClickHandle = () => {
-    this.inter = true
-  }
-
-  selectHandle = ({ native }) => {
-    this.props.onSelect(`${native} `)
-    this.clickHandle()
+  iconClickHandle = (event) => {
+    const emoji = event.target.getAttribute('datatype')
+    this.props.onSelect(emoji)
   }
 
   render() {
     return (
       <div className={style.content}>
-        <div className={style.emoji_wrapper} onClick={this.iconClickHandle}>
+        <div
+          className={style.emoji_wrapper}
+          onClick={this.iconClickHandle}
+          style={{ display: !this.state.visible && 'none' }}>
           {emojiList.map((emoji) => (
-            <span className={style.emoji_item}>{emoji}</span>
+            <span className={style.emoji_item} datatype={emoji} key={emoji}>
+              {emoji}
+            </span>
           ))}
         </div>
         <div
