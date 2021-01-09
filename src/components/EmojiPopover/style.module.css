@@ -9,14 +9,14 @@
   flex-wrap: wrap;
   width: 288px;
   background-color: white;
-  border: solid 1px #AAAAAA;
+  border: solid 1px #aaaaaa;
   border-radius: 5px;
   padding: 3px;
 }
 .emoji_wrapper::before {
   content: '';
   border: solid 8px transparent;
-  border-right: solid 8px #AAAAAA;
+  border-right: solid 8px #aaaaaa;
   position: absolute;
   top: 50%;
   left: -16px;
@@ -34,7 +34,7 @@
   padding: 0px 7px 0px 3px;
 }
 .emoji_item:hover {
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -50,5 +50,6 @@
   background-image: url('../../image/emoji_black.png');
 }
 .emoji:hover {
+  cursor: pointer;
   background-image: url('../../image/emoji_light.png');
 }

@@ -26,7 +26,7 @@ export default class MsgItem extends Component {
               {this.props.data.user.nickname}
             </span>
             <span className={style.date_text}>
-              {dayjs.unix(this.props.data.date).format('YYYY-MM-DD')}
+              {dayjs.unix(this.props.data.date).format('MM-DD HH:mm:ss')}
             </span>
           </div>
           <MsgBubble isMe={isMe} data={this.props.data.message} />
