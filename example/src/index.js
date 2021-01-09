@@ -21,18 +21,18 @@ const App = () => {
         height: '100vh',
       }}>
       {/* <ContactItem
-    contact={contact}
-    onClick={(contact) => console.log(contact)}
-    border
-  /> */}
-      <ContactList
+        contact={contact}
+        onClick={(contact) => console.log(contact)}
+        border
+      /> */}
+      {/* <ContactList
         contactList={contactList}
         style={{
           marginRight: 10,
           height: 500,
           borderRadius: 5,
         }}
-      />
+      /> */}
       <Chat
         contact={contact}
         me={my}

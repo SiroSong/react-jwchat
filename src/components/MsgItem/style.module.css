@@ -2,12 +2,12 @@
   display: flex;
   padding-top: 20px;
 }
-.avator {
+.avatar {
   min-width: 35px;
   width: 35px;
   padding-top: 14px;
 }
-.avator > img {
+.avatar > img {
   width: 100%;
   height: auto;
   border-radius: 50%;

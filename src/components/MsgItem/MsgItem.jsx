@@ -15,8 +15,8 @@ export default class MsgItem extends Component {
       <div
         className={style.content}
         style={{ flexDirection: isMe && 'row-reverse' }}>
-        <div className={style.avator}>
-          <img src={this.props.data.user.avator} />
+        <div className={style.avatar}>
+          <img src={this.props.data.user.avatar} />
         </div>
         <div
           className={style.text_area}
