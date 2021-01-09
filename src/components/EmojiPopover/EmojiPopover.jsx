@@ -1,8 +1,97 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import 'emoji-mart/css/emoji-mart.css'
-import { Picker } from 'emoji-mart'
 import style from './style.module.css'
+
+const emojiList = [
+  '😀',
+  '😃',
+  '😄',
+  '😁',
+  '😆',
+  '😅',
+  '😂',
+  '🤣',
+  '🥲',
+  '😊',
+  '😇',
+  '🙂',
+  '🙃',
+  '😉',
+  '😌',
+  '😍',
+  '🥰',
+  '😘',
+  '😗',
+  '😙',
+  '😚',
+  '😋',
+  '😛',
+  '😝',
+  '😜',
+  '🤪',
+  '🤨',
+  '🧐',
+  '🤓',
+  '😎',
+  '🥸',
+  '🤩',
+  '🥳',
+  '😏',
+  '😒',
+  '😞',
+  '😔',
+  '😟',
+  '😕',
+  '🙁',
+  '😣',
+  '😖',
+  '😫',
+  '😩',
+  '🥺',
+  '😢',
+  '😭',
+  '😤',
+  '😠',
+  '😡',
+  '🤬',
+  '🤯',
+  '😳',
+  '🥵',
+  '🥶',
+  '😱',
+  '😨',
+  '😰',
+  '😥',
+  '😓',
+  '🤗',
+  '🤔',
+  '🤭',
+  '🤫',
+  '🤥',
+  '😶',
+  '😐',
+  '😑',
+  '😬',
+  '🙄',
+  '😯',
+  '😦',
+  '😧',
+  '😮',
+  '😲',
+  '🥱',
+  '😴',
+  '🤤',
+  '😪',
+  '😵',
+  '🤐',
+  '🥴',
+  '🤢',
+  '🤮',
+  '🤧',
+  '😷',
+  '🤒',
+  '🤕',
+]
 
 export default class EmojiPopover extends Component {
   static propTypes = {}
@@ -48,14 +137,9 @@ export default class EmojiPopover extends Component {
     return (
       <div className={style.content}>
         <div className={style.emoji_wrapper} onClick={this.iconClickHandle}>
-          <Picker
-            color="#2ba245"
-            showPreview={false}
-            showSkinTones={false}
-            style={{ display: !this.state.visible && 'none' }}
-            onSelect={this.selectHandle}
-            useButton={false}
-          />
+          {emojiList.map((emoji) => (
+            <span className={style.emoji_item}>{emoji}</span>
+          ))}
         </div>
         <div
           className={`${style.tool_icon} ${style.emoji}`}

@@ -3,8 +3,40 @@
 }
 .emoji_wrapper {
   position: absolute;
-  bottom: -100px;
-  left: 25px;
+  bottom: -90px;
+  left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 288px;
+  background-color: white;
+  border: solid 1px #AAAAAA;
+  border-radius: 5px;
+  padding: 3px;
+}
+.emoji_wrapper::before {
+  content: '';
+  border: solid 8px transparent;
+  border-right: solid 8px #AAAAAA;
+  position: absolute;
+  top: 50%;
+  left: -16px;
+}
+.emoji_wrapper::after {
+  content: '';
+  border: solid 8px transparent;
+  border-right: solid 8px white;
+  position: absolute;
+  top: 50%;
+  left: -14.5px;
+}
+.emoji_item {
+  box-sizing: border-box;
+  padding: 0px 7px 0px 3px;
+}
+.emoji_item:hover {
+  background-color: #F1F1F1;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .tool_icon {
   height: 20px;
