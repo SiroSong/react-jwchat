@@ -5,20 +5,27 @@ import style from './style.module.css'
 export default class MsgBubble extends Component {
   static propTypes = {}
 
-  render() {
-    switch (this.props.data.type) {
+  renderContent = (message) => {
+    switch (message.type) {
       case 'text':
-        return (
-          <div
-            className={`${style.text_content} ${style.arrow} ${
-              this.props.isMe ? style.arrow_right : style.arrow_left
-            }`}>
-            {this.props.data.content}
-          </div>
-        )
-
+        return message.content
+      case 'image':
+        return <img src={message.content} />
       default:
         break
     }
+  }
+
+  render() {
+    const { data, isMe } = this.props
+
+    return (
+      <div
+        className={`${style.text_content} ${style.arrow} ${
+          isMe ? style.arrow_right : style.arrow_left
+        }`}>
+        {this.renderContent(data)}
+      </div>
+    )
   }
 }

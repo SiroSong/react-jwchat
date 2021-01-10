@@ -8,7 +8,7 @@ export default class ChatHeader extends Component {
   render() {
     return (
       <div className={style.content}>
-        <img className={style.avator} src={this.props.data.avator} alt="" />
+        <img className={style.avatar} src={this.props.data.avatar} alt="" />
         <div className={style.desc_area}>
           <span className={style.nickname}>{this.props.data.nickname}</span>
           <span className={style.sologan}>{this.props.data.desc}</span>

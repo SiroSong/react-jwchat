@@ -74,10 +74,17 @@ export default class ChatInput extends Component {
     })
   }
 
+  fileHandle = (files) => {
+    this.props.onImage(files)
+  }
+
   render() {
     return (
       <div className={style.content} style={{ height: this.props.height }}>
-        <ChatToolBar onEmojiSelect={this.emojiSelectHandle} />
+        <ChatToolBar
+          onEmojiSelect={this.emojiSelectHandle}
+          onImage={this.fileHandle}
+        />
         <textarea
           type="text"
           className={style.input_area}

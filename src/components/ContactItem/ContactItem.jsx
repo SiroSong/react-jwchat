@@ -24,7 +24,7 @@ export default class ContactItem extends Component {
         onClick={this.clickHandle}>
         <img
           className={style.icon}
-          src={this.props.contact.avator}
+          src={this.props.contact.avatar}
           onClick={this.iconClickHandle}
         />
         <div className={style.info_area}>

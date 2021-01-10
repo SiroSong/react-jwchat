@@ -1,12 +1,13 @@
 .text_content {
   background-color: #91ed61;
   color: #333;
-  font-size: 13px;
   padding: 8px;
   border-radius: 3px;
   max-width: 60%;
   word-wrap: break-word;
   word-break: break-all;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 .arrow {
   position: relative;
