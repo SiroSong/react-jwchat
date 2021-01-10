@@ -10,21 +10,7 @@ module.exports = merge(webpackBase, {
     filename: 'bundle.js',
   },
   module: {
-    rules: [
-      // {
-      //   test: /\.css$/,
-      //   exclude: /\.min\.css$/,
-      //   loader: ['style-loader', 'css-loader?modules'],
-      // },
-      // {
-      //   test: /\.min\.css$/,
-      //   loader: ['style-loader', 'css-loader'],
-      // },
-      // {
-      //   test: /\.css$/i,
-      //   use: ['style-loader', 'css-loader'],
-      // },
-    ],
+    rules: [],
   },
   devServer: {
     contentBase: path.resolve(__dirname, '../example/src'),

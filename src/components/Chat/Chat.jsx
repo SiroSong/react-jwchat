@@ -8,6 +8,13 @@ import ChatRecordList from '../ChatRecordList/ChatRecordList'
 const textHeight = 150
 
 export default class Chat extends Component {
+  static propTypes = {
+    onSend: PropTypes.func.isRequired,
+    me: PropTypes.object.isRequired,
+    contact: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
+  }
+
   static defaultProps = {
     style: {
       width: 600,
@@ -27,6 +34,8 @@ export default class Chat extends Component {
   }
 
   render() {
+    const listHeight = this.props.style.height - textHeight - 60
+
     return (
       <div className={style.content} style={this.props.style}>
         <ChatHeader data={this.props.contact} />
@@ -34,7 +43,7 @@ export default class Chat extends Component {
           {...this.props}
           ref={this.chatRecordList}
           data={this.props.chatList}
-          height={this.props.style.height - textHeight - 60}
+          height={listHeight}
         />
         <ChatInput
           {...this.props}
