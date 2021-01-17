@@ -4,7 +4,13 @@ import style from './style.module.css'
 import MsgItem from '../MsgItem/MsgItem'
 
 export default class ChatRecordList extends Component {
-  static propTypes = {}
+  static propTypes = {
+    onEarlier: PropTypes.func,
+  }
+
+  static defaultProps = {
+    onEarlier: () => {},
+  }
 
   state = {
     clientHeight: 0,
@@ -78,7 +84,9 @@ export default class ChatRecordList extends Component {
           ref={this.listArea}
           onScroll={this.scrollHandle}>
           <div className={style.load_more_area}>
-            <button className={style.load_more}>加载更多···</button>
+            <button className={style.load_more} onClick={this.props.onEarlier}>
+              加载更多···
+            </button>
           </div>
           {this.props.data.map((bubble) => (
             <MsgItem {...this.props} data={bubble} key={bubble._id} />

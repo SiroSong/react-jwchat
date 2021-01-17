@@ -25,19 +25,20 @@ const App = () => {
         onClick={(contact) => console.log(contact)}
         border
       /> */}
-      {/* <ContactList
+      <ContactList
         contactList={contactList}
         style={{
           marginRight: 10,
           height: 500,
           borderRadius: 5,
         }}
-      /> */}
+      />
       <Chat
         contact={contact}
         me={my}
         chatList={msgList}
         onSend={(msg) => setMsgList([...msgList, msg])}
+        onEarlier={() => console.log('EarlierEarlier')}
         onImage={imageHandle}
         style={{
           width: 600,
