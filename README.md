@@ -12,7 +12,9 @@ npm install react-jwchat
 
 ## 组件
 
-#### <Chat />
+#### `<Chat />`
+
+***
 
 **使用：**
 
@@ -42,7 +44,9 @@ npm install react-jwchat
 | onEarlier | func    | 点击加载更多回调                               | false    |
 | style     | style   | 容器样式（使用组件时需要指定width、height）    | true     |
 
-#### <ContactItem />
+#### `<ContactItem />`
+
+***
 
 **使用：**
 
@@ -62,7 +66,9 @@ npm install react-jwchat
 | border  | boolean | 时候显示列表项底部分隔线，在ContactList组件中默认为true | false    |
 | style   | style   | 容器样式                                                | false    |
 
-#### <ContactList />
+#### `<ContactList />`
+
+***
 
 **使用：**
 
