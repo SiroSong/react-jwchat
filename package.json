@@ -11,8 +11,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "123"
+    "url": "https://gitee.com/wx_504ae56474/react-jwchat.git"
   },
+  "keywords": [
+    "react",
+    "chat",
+    "UI"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
