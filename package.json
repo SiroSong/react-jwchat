@@ -1,11 +1,12 @@
 {
   "name": "react-jwchat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is an easy-to-use web chat component, based on react.",
   "main": "lib/index.js",
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js",
-    "build": "webpack --config config/webpack.prod.js"
+    "build": "webpack --config config/webpack.prod.js",
+    "pub": "npm run build && npm publish"
   },
   "author": "SiroSong",
   "license": "MIT",
