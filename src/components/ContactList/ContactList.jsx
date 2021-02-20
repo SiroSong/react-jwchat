@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { ContactItem } from '../..'
+import ContactItem from '../ContactItem/ContactItem'
 import style from './style.module.css'
 
 export default class ContactList extends Component {

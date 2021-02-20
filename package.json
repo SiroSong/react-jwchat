@@ -1,7 +1,7 @@
 {
-  "name": "react-chat",
+  "name": "react-jwchat",
   "version": "1.0.0",
-  "description": "123",
+  "description": "This is an easy-to-use web chat component, based on react.",
   "main": "lib/index.js",
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js",
