@@ -2,32 +2,29 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
 
-export default class ImgPopover extends Component {
-  static propTypes = {
-    onImage: PropTypes.func.isRequired,
+export default function ImgPopover({}) {
+  const fileSelector = React.createRef()
+
+  const selectImg = () => {
+    fileSelector.current.click()
   }
 
-  fileSelector = React.createRef()
-
-  selectImg = () => {
-    this.fileSelector.current.click()
-  }
-
-  fileHandle = (event) => {
+  const fileHandle = (event) => {
     const files = event.target.files
     this.props.onImage(files)
   }
+  return (
+    <div className={style.content} onClick={selectImg}>
+      <input
+        type="file"
+        accept="image/*"
+        ref={fileSelector}
+        onChange={fileHandle}
+      />
+    </div>
+  )
+}
 
-  render() {
-    return (
-      <div className={style.content} onClick={this.selectImg}>
-        <input
-          type="file"
-          accept="image/*"
-          ref={this.fileSelector}
-          onChange={this.fileHandle}
-        />
-      </div>
-    )
-  }
+ImgPopover.propTypes = {
+  onImage: PropTypes.func.isRequired,
 }

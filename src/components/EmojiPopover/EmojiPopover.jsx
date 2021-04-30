@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
+import { toClasses } from '../../utils/toClass'
 
 const emojiList = [
   '😀',
@@ -92,24 +93,29 @@ const emojiList = [
 ]
 
 export default class EmojiPopover extends Component {
-  static propTypes = {}
-
   state = {
     visible: false,
   }
 
   componentDidMount() {
     addEventListener('click', (e) => {
-      if (this.state.visible || e.target.getAttribute('datatype') === 'emoji') {
-        this.clickHandle()
+      if (e.target.getAttribute('datatype') === 'emoji') {
+        this.switchEmojiModal(true)
+      } else {
+        this.switchEmojiModal(false)
       }
     })
   }
 
-  clickHandle = () => this.setState({ visible: !this.state.visible })
+  switchEmojiModal = (vis = null) => {
+    if (vis !== null) {
+      this.setState({ visible: vis })
+    } else {
+      this.setState({ visible: !this.state.visible })
+    }
+  }
 
-  iconClickHandle = (event) => {
-    const emoji = event.target.getAttribute('datatype')
+  iconClickHandle = (emoji) => {
     this.props.onSelect(emoji)
   }
 
@@ -118,18 +124,25 @@ export default class EmojiPopover extends Component {
       <div className={style.content}>
         <div
           className={style.emoji_wrapper}
-          onClick={this.iconClickHandle}
           style={{ display: !this.state.visible && 'none' }}>
           {emojiList.map((emoji) => (
-            <span className={style.emoji_item} datatype={emoji} key={emoji}>
+            <span
+              onClick={this.iconClickHandle.bind(this, emoji)}
+              className={style.emoji_item}
+              datatype={emoji}
+              key={emoji}>
               {emoji}
             </span>
           ))}
         </div>
         <div
-          className={`${style.tool_icon} ${style.emoji}`}
+          className={toClasses([style.tool_icon, style.emoji])}
           datatype="emoji"></div>
       </div>
     )
   }
+}
+
+EmojiPopover.propTypes = {
+  onSelect: PropTypes.func.isRequired,
 }

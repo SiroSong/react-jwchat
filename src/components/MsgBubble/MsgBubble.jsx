@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
+import { toClasses } from '../../utils/toClass'
 
-export default class MsgBubble extends Component {
-  static propTypes = {}
-
-  renderContent = (message) => {
+export default function MsgBubble({ data, isMe }) {
+  const renderContent = (message) => {
     switch (message.type) {
       case 'text':
         return message.content
@@ -16,16 +15,19 @@ export default class MsgBubble extends Component {
     }
   }
 
-  render() {
-    const { data, isMe } = this.props
+  return (
+    <div
+      className={toClasses([
+        style.text_content,
+        style.arrow,
+        isMe ? style.arrow_right : style.arrow_left,
+      ])}>
+      {renderContent(data)}
+    </div>
+  )
+}
 
-    return (
-      <div
-        className={`${style.text_content} ${style.arrow} ${
-          isMe ? style.arrow_right : style.arrow_left
-        }`}>
-        {this.renderContent(data)}
-      </div>
-    )
-  }
+MsgBubble.propTypes = {
+  data: PropTypes.object.isRequired,
+  isMe: PropTypes.bool.isRequired,
 }

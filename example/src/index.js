@@ -42,8 +42,8 @@ const App = () => {
         onEarlier={() => console.log('EarlierEarlier')}
         onImage={imageHandle}
         style={{
-          width: 600,
-          height: 500,
+          width: 800,
+          height: 700,
           borderRadius: 5,
         }}
       />
