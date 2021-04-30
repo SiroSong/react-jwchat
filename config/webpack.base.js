@@ -1,4 +1,7 @@
 module.exports = {
+  output: {
+    clean: true,
+  },
   module: {
     rules: [
       {
@@ -25,6 +28,6 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 }
