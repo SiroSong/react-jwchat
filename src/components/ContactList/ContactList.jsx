@@ -26,15 +26,13 @@ export default class ContactList extends Component {
   }
 
   computeHeight = () => {
-    setTimeout(() => {
-      const clientHeight = this.listArea.current.clientHeight
-      const scrollHeight = this.listArea.current.scrollHeight
-      const isBarHide = clientHeight === scrollHeight
-      const c_s = clientHeight / scrollHeight
-      const thumbHeight = c_s * clientHeight
+    const clientHeight = this.listArea.current.clientHeight
+    const scrollHeight = this.listArea.current.scrollHeight
+    const isBarHide = clientHeight === scrollHeight
+    const c_s = clientHeight / scrollHeight
+    const thumbHeight = c_s * clientHeight
 
-      this.setState({ clientHeight, scrollHeight, thumbHeight, c_s, isBarHide })
-    }, 0)
+    this.setState({ clientHeight, scrollHeight, thumbHeight, c_s, isBarHide })
   }
 
   selectContactHandle = (contact) => {

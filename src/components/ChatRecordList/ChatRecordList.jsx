@@ -27,23 +27,27 @@ export default class ChatRecordList extends Component {
     this.computeHeight()
   }
 
-  computeHeight = () => {
-    setTimeout(() => {
-      const clientHeight = this.listArea.current.clientHeight
-      const scrollHeight = this.listArea.current.scrollHeight
-      const isBarHide = clientHeight === scrollHeight
-      const c_s = clientHeight / scrollHeight
-      const thumbHeight = c_s * clientHeight
+  componentDidUpdate(prevProps) {
+    if (prevProps.data.length !== this.props.data.length) {
+      this.computeHeight()
+    }
+  }
 
-      this.setState(
-        { clientHeight, scrollHeight, thumbHeight, c_s, isBarHide },
-        () => {
-          if (true) {
-            this.scrollToBottom()
-          }
+  computeHeight = () => {
+    const clientHeight = this.listArea.current.clientHeight
+    const scrollHeight = this.listArea.current.scrollHeight
+    const isBarHide = clientHeight === scrollHeight
+    const c_s = clientHeight / scrollHeight
+    const thumbHeight = c_s * clientHeight
+
+    this.setState(
+      { clientHeight, scrollHeight, thumbHeight, c_s, isBarHide },
+      () => {
+        if (true) {
+          this.scrollToBottom()
         }
-      )
-    }, 0)
+      }
+    )
   }
 
   scrollToBottom = () => {
@@ -61,7 +65,7 @@ export default class ChatRecordList extends Component {
       return ''
     }
 
-    if (scrollTop !== 0 && scrollTop + thumbHeight !== clientHeight) {
+    if (scrollTop !== 0 && clientHeight - (scrollTop + thumbHeight) > 5) {
       return style.shadow_vertical
     }
 

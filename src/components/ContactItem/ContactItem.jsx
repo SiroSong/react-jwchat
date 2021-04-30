@@ -1,44 +1,36 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
+import { toClasses } from '../../utils/toClass'
 
-export default class ContactItem extends Component {
-  iconClickHandle = (e) => {
-    e.stopPropagation()
-    this.props.iconOnClick
-      ? this.props.iconOnClick(this.props.contact)
-      : this.clickHandle()
-  }
-
-  clickHandle = (e) => {
-    this.props.onClick(this.props.contact)
-  }
-
-  render() {
-    return (
-      <div
-        style={this.props.style}
-        className={`${style.content} ${
-          this.props.border && style.bottom_border
-        } ${this.props.selected && style.selected}`}
-        onClick={this.clickHandle}>
-        <img
-          className={style.icon}
-          src={this.props.contact.avatar}
-          onClick={this.iconClickHandle}
-        />
-        <div className={style.info_area}>
-          <span className={`${style.nickname} ${style.ellipsis}`}>
-            {this.props.contact.nickname}
-          </span>
-          <span className={`${style.desc} ${style.ellipsis}`}>
-            {this.props.contact.message}
-          </span>
-        </div>
-        <span className={style.date_area}>{this.props.contact.date}</span>
+export default function ContactItem({
+  styles,
+  selected,
+  border,
+  contact,
+  onClick,
+}) {
+  return (
+    <div
+      style={styles}
+      className={toClasses([
+        style.content,
+        border && style.bottom_border,
+        selected && style.selected,
+      ])}
+      onClick={onClick.bind(this, contact)}>
+      <img className={style.icon} src={contact.avatar} />
+      <div className={style.info_area}>
+        <span className={`${style.nickname} ${style.ellipsis}`}>
+          {contact.nickname}
+        </span>
+        <span className={`${style.desc} ${style.ellipsis}`}>
+          {contact.message}
+        </span>
       </div>
-    )
-  }
+      <span className={style.date_area}>{contact.date}</span>
+    </div>
+  )
 }
 
 ContactItem.propTypes = {
