@@ -2,7 +2,9 @@
 
 ## 介绍
 
-react-jwchat是一个简单的web聊天组件。
+react-jwchat 是一个简单的 web 聊天组件。
+
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5af08366dd6b4e96a27af39387d2ca41~tplv-k3u1fbpfcp-watermark.image)
 
 ## 安装
 
@@ -12,9 +14,11 @@ npm install react-jwchat
 
 ## 组件
 
-#### Chat
+### Chat
 
-***
+---
+
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/33c1266b60c448c6ba22c9dea0dc65a1~tplv-k3u1fbpfcp-watermark.image)
 
 **使用：**
 
@@ -42,33 +46,38 @@ npm install react-jwchat
 | onSend    | func    | 发送消息时触发回调，回调参数为组装好的消息对象 | true     |
 | onImage   | func    | 选择图片后触发回调，回调参数为图片列表         | true     |
 | onEarlier | func    | 点击加载更多回调                               | false    |
-| style     | style   | 容器样式（使用组件时需要指定width、height）    | true     |
+| style     | style   | 容器样式（使用组件时需要指定 width、height）   | true     |
 
-#### ContactItem
+---
 
-***
+### **ContactItem**
+
+---
+
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8ff5d05c61e44312b1150f30a5e4a947~tplv-k3u1fbpfcp-watermark.image)
 
 **使用：**
 
 ```jsx
-<ContactItem
-    contact={contact}
-    onClick={(contact) => console.log(contact)}
-/>
+<ContactItem contact={contact} onClick={(contact) => console.log(contact)} />
 ```
 
 **属性：**
 
-| key     | type    | desc                                                    | required |
-| ------- | ------- | ------------------------------------------------------- | -------- |
-| contact | contact | 联系人信息                                              | true     |
-| onClick | func    | 点击回调，回调参数包含当前联系人信息                    | false    |
-| border  | boolean | 时候显示列表项底部分隔线，在ContactList组件中默认为true | false    |
-| style   | style   | 容器样式                                                | false    |
+| key     | type    | desc                                                       | required |
+| ------- | ------- | ---------------------------------------------------------- | -------- |
+| contact | contact | 联系人信息                                                 | true     |
+| onClick | func    | 点击回调，回调参数包含当前联系人信息                       | false    |
+| border  | boolean | 时候显示列表项底部分隔线，在 ContactList 组件中默认为 true | false    |
+| style   | style   | 容器样式                                                   | false    |
 
-#### ContactList
+---
 
-***
+### **ContactList**
+
+---
+
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ad25d9fc5f34ec9a3a3c17730e7c784~tplv-k3u1fbpfcp-watermark.image)
 
 **使用：**
 
@@ -81,11 +90,13 @@ npm install react-jwchat
 
 **属性：**
 
-| key         | type      | desc                                         | required |
-| ----------- | --------- | -------------------------------------------- | -------- |
-| contactList | contact[] | 联系人列表，数组中的每个元素都为contact类型  | true     |
-| onSelect    | func      | 选中联系人触发回调，参数为当前选中联系人对象 | false    |
-| style       | style     | 容器样式(**使用时需要指定高度**)             | false    |
+| key         | type      | desc                                          | required |
+| ----------- | --------- | --------------------------------------------- | -------- |
+| contactList | contact[] | 联系人列表，数组中的每个元素都为 contact 类型 | true     |
+| onSelect    | func      | 选中联系人触发回调，参数为当前选中联系人对象  | false    |
+| style       | style     | 容器样式(**使用时需要指定高度**)              | false    |
+
+---
 
 ## API
 
@@ -93,7 +104,7 @@ npm install react-jwchat
 
 联系人信息对象
 
-***
+---
 
 示例：
 
@@ -123,7 +134,7 @@ npm install react-jwchat
 
 消息对象
 
-***
+---
 
 示例：
 
@@ -166,8 +177,7 @@ npm install react-jwchat
 
 | key     | desc                               |
 | ------- | ---------------------------------- |
-| _id     | 每条信息的唯一标识，组件内自动生成 |
+| \_id    | 每条信息的唯一标识，组件内自动生成 |
 | date    | 消息产生时间                       |
 | user    | 当前消息发起人的信息               |
 | message | 消息内容主体                       |
-
