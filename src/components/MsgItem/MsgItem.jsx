@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
+import globalStyle from '../../style/common.module.css'
 import MsgBubble from '../MsgBubble/MsgBubble'
 import dayjs from 'dayjs'
+import { toClasses } from '../../utils/toClass'
 
 export default class MsgItem extends Component {
   static propTypes = {}
@@ -13,7 +15,8 @@ export default class MsgItem extends Component {
 
     return (
       <div
-        className={style.content}
+        // className={style.content}
+        className={toClasses([style.content, globalStyle.flex])}
         style={{ flexDirection: isMe && 'row-reverse' }}>
         <div className={style.avatar}>
           <img src={this.props.data.user.avatar} />
