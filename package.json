@@ -1,6 +1,6 @@
 {
   "name": "react-jwchat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is an easy-to-use web chat component, based on react.",
   "main": "lib/index.js",
   "scripts": {
@@ -17,7 +17,8 @@
   "keywords": [
     "react",
     "chat",
-    "UI"
+    "UI",
+    "聊天"
   ],
   "devDependencies": {
     "@babel/cli": "^7.13.14",
