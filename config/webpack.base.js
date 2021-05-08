@@ -19,11 +19,8 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: 'file-loader',
-        options: {
-          outputPath: 'images',
-        },
+        test: /\.(png|jpe?g|gif)$/,
+        use: [{ loader: 'url-loader' }],
       },
     ],
   },
