@@ -9,7 +9,12 @@ export default function MsgBubble({ data, isMe }) {
       case 'text':
         return message.content
       case 'image':
-        return <img src={message.content} />
+        return (
+          <img
+            className={toClasses([style.img_content])}
+            src={message.content}
+          />
+        )
       default:
         break
     }

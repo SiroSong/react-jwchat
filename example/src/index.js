@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { render } from 'react-dom'
-// import { Chat, ContactItem, ContactList } from '../../src'
-import { Chat, ContactItem, ContactList } from 'react-jwchat'
+import { Chat, ContactItem, ContactList } from '../../src'
+// import { Chat, ContactItem, ContactList } from 'react-jwchat'
 import { contact, contactList, messageList, my } from './fackData'
 
 const App = () => {
