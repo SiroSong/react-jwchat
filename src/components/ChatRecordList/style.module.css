@@ -52,6 +52,11 @@
   width: 5px;
   position: relative;
   overflow: hidden;
+  transition: all 0.5s;
+}
+.scroll_bar_track:hover {
+  cursor: pointer;
+  background-color: rgba(170, 170, 170, 0.3);
 }
 .scroll_bar_thumb {
   position: absolute;

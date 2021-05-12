@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
 import MsgItem from '../MsgItem/MsgItem'
+import { toClasses } from '../../utils/toClass'
 
 export default class ChatRecordList extends Component {
   static propTypes = {
@@ -19,9 +20,11 @@ export default class ChatRecordList extends Component {
     scrollTop: 0,
     isBarHide: true,
     c_s: 0,
+    press: false,
   }
 
   listArea = React.createRef()
+  pressed = false
 
   componentDidMount() {
     this.computeHeight()
@@ -65,7 +68,7 @@ export default class ChatRecordList extends Component {
       return ''
     }
 
-    if (scrollTop !== 0 && clientHeight - (scrollTop + thumbHeight) > 5) {
+    if (scrollTop !== 0 && clientHeight - (scrollTop + thumbHeight) !== 0) {
       return style.shadow_vertical
     }
 
@@ -78,10 +81,31 @@ export default class ChatRecordList extends Component {
     }
   }
 
+  pressScrollBarHandle = (e) => {
+    if (this.state.press === false) return
+    this.setState((preState) => {
+      if (
+        preState.thumbHeight + preState.scrollTop === preState.clientHeight &&
+        e.movementY > 0
+      ) {
+        return null
+      } else if (preState.scrollTop <= 0 && e.movementY < 0) {
+        return null
+      } else {
+        return {
+          scrollTop: this.state.scrollTop + e.movementY,
+        }
+      }
+    })
+  }
+  pressTag = (tag = false) => {
+    this.setState({ press: tag })
+  }
+
   render() {
     return (
       <div
-        className={`${style.content} ${this.renderShadow()}`}
+        className={toClasses([style.content, this.renderShadow()])}
         style={{ height: this.props.height }}>
         <div
           className={style.list_area}
@@ -100,6 +124,9 @@ export default class ChatRecordList extends Component {
           className={style.scroll_bar_track}
           style={{ display: this.state.isBarHide && 'none' }}>
           <span
+            onMouseDown={this.pressTag.bind(this, true)}
+            onMouseUp={this.pressTag.bind(this, false)}
+            // onMouseMove={this.pressScrollBarHandle}
             className={style.scroll_bar_thumb}
             style={{
               height: this.state.thumbHeight,
