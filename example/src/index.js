@@ -19,19 +19,21 @@ const App = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        height: '90vh',
       }}>
       {/* <ContactItem
         contact={contact}
         onClick={(contact) => console.log(contact)}
         border
       /> */}
+
       <ContactList
-        contactList={contactList}
+        data={contactList}
         style={{
           marginRight: 10,
           height: 500,
           borderRadius: 5,
+          overflow: 'hidden',
         }}
       />
       <Chat

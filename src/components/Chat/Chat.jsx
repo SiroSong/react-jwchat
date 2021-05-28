@@ -4,8 +4,11 @@ import style from './style.module.css'
 import ChatHeader from '../ChatHeader/ChatHeader'
 import ChatInput from '../ChatInput/ChatInput'
 import ChatRecordList from '../ChatRecordList/ChatRecordList'
+import ScrollBarWrapper from '../ScrollBarWrapper/ScrollBarWrapper'
 
 const textHeight = 150
+
+const WrappedChatRecordList = ScrollBarWrapper(ChatRecordList)
 
 export default class Chat extends Component {
   static propTypes = {
@@ -39,11 +42,19 @@ export default class Chat extends Component {
     return (
       <div className={style.content} style={this.props.style}>
         <ChatHeader data={this.props.contact} />
-        <ChatRecordList
+        {/* <ChatRecordList
           {...this.props}
           ref={this.chatRecordList}
           data={this.props.chatList}
           height={listHeight}
+        /> */}
+        <WrappedChatRecordList
+          {...this.props}
+          ref={this.chatRecordList}
+          data={this.props.chatList}
+          height={listHeight}
+          style={{ height: listHeight }}
+          bottom
         />
         <ChatInput
           {...this.props}
