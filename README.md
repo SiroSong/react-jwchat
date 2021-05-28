@@ -82,19 +82,16 @@ npm install react-jwchat
 **使用：**
 
 ```jsx
-<ContactList
-  contactList={contactList}
-  onSelect={(contact) => console.log(contact)}
-/>
+<ContactList data={contactList} onSelect={(contact) => console.log(contact)} />
 ```
 
 **属性：**
 
-| key         | type      | desc                                          | required |
-| ----------- | --------- | --------------------------------------------- | -------- |
-| contactList | contact[] | 联系人列表，数组中的每个元素都为 contact 类型 | true     |
-| onSelect    | func      | 选中联系人触发回调，参数为当前选中联系人对象  | false    |
-| style       | style     | 容器样式(**使用时需要指定高度**)              | false    |
+| key      | type      | desc                                          | required |
+| -------- | --------- | --------------------------------------------- | -------- |
+| data     | contact[] | 联系人列表，数组中的每个元素都为 contact 类型 | true     |
+| onSelect | func      | 选中联系人触发回调，参数为当前选中联系人对象  | false    |
+| style    | style     | 容器样式(**使用时需要指定高度**)              | false    |
 
 ---
 
