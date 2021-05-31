@@ -6,6 +6,10 @@ react-jwchat 是一个简单的 web 聊天组件。
 
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5af08366dd6b4e96a27af39387d2ca41~tplv-k3u1fbpfcp-watermark.image)
 
+## Star 趋势
+
+[![Giteye chart](https://chart.giteye.net/gitee/wx_504ae56474/react-jwchat/27AJP6G9.png)](https://giteye.net/chart/27AJP6G9)
+
 ## 安装
 
 ```bash
