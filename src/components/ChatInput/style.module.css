@@ -33,3 +33,6 @@
 .but:active {
   background-color: #1aad19;
 }
+.but:disabled {
+  background-color: #ddd;
+}

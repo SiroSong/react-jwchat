@@ -1,34 +1,29 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component, useState } from 'react'
 import style from './style.module.css'
 import md5 from 'md5'
 import dayjs from 'dayjs'
 import ChatToolBar from '../ChatToolsBar/ChatToolBar'
 
-export default class ChatInput extends Component {
-  static propTypes = {}
+export default function ChatInput({
+  me = {},
+  onSend = () => {},
+  onImage = () => {},
+  height,
+}) {
+  const [text, setText] = useState('')
+  const [isShift, setIsShift] = useState(false)
+  const [isAllowSend, setIsAllowSend] = useState(false)
 
-  state = {
-    text: '',
-    isShift: false,
-    isAllowSend: false,
-  }
-
-  textArea = React.createRef()
-
-  componentDidMount() {
-    console.log(md5('123'))
-  }
-
-  textChangeHandle = (e) => {
+  const textChangeHandle = (e) => {
     const isAllowSend = !!e.target.value.trim()
     const text = e.target.value
 
-    this.setState({ text, isAllowSend })
+    setText(text)
+    setIsAllowSend(isAllowSend)
   }
 
-  sendHandle = () => {
-    if (!this.state.isAllowSend) {
+  const sendHandle = () => {
+    if (!isAllowSend) {
       return
     }
 
@@ -36,72 +31,68 @@ export default class ChatInput extends Component {
     const date = dayjs().unix()
 
     const msgData = {
-      _id: md5(`${this.state.text}${date}${randomNum}`),
+      _id: md5(`${text}${date}${randomNum}`),
       date: date,
-      user: this.props.me,
+      user: me,
       message: {
         type: 'text',
-        content: this.state.text,
+        content: text,
       },
     }
-    this.props.onSend(msgData)
-    this.resetText()
+    onSend(msgData)
+    resetText()
   }
 
-  resetText = () => this.setState({ text: '', isAllowSend: false })
+  const resetText = () => {
+    setText('')
+    setIsAllowSend(false)
+  }
 
-  keyDownHandle = (e) => {
+  const keyDownHandle = (e) => {
     if (e.keyCode === 16) {
-      this.setState({ isShift: true })
+      setIsShift(true)
     }
 
-    if (e.keyCode === 13 && !this.state.isShift) {
+    if (e.keyCode === 13 && !isShift) {
       e.preventDefault()
-      this.sendHandle()
+      sendHandle()
     }
   }
 
-  keyUpHandle = (e) => {
+  const keyUpHandle = (e) => {
     if (e.keyCode === 16) {
-      this.setState({ isShift: false })
+      setIsShift(false)
     }
   }
 
-  emojiSelectHandle = (emoji) => {
-    this.setState({
-      text: this.state.text + emoji,
-      isAllowSend: true,
-    })
+  const emojiSelectHandle = (emoji) => {
+    setText(text + emoji)
+    setIsAllowSend(true)
   }
 
-  fileHandle = (files) => {
-    this.props.onImage(files)
+  const fileHandle = (files) => {
+    onImage(files)
   }
 
-  render() {
-    return (
-      <div className={style.content} style={{ height: this.props.height }}>
-        <ChatToolBar
-          onEmojiSelect={this.emojiSelectHandle}
-          onImage={this.fileHandle}
-        />
-        <textarea
-          type="text"
-          className={style.input_area}
-          onKeyUp={this.keyUpHandle}
-          onKeyDown={this.keyDownHandle}
-          onChange={this.textChangeHandle}
-          value={this.state.text}
-          placeholder="请输入..."></textarea>
-        <div className={style.but_area}>
-          <button
-            className={style.but}
-            onClick={this.sendHandle}
-            disabled={!this.state.isAllowSend}>
-            发送
-          </button>
-        </div>
+  return (
+    <div className={style.content} style={{ height: height }}>
+      <ChatToolBar onEmojiSelect={emojiSelectHandle} onImage={fileHandle} />
+      <textarea
+        type="text"
+        className={style.input_area}
+        onKeyUp={keyUpHandle}
+        onKeyDown={keyDownHandle}
+        onChange={textChangeHandle}
+        value={text}
+        placeholder="请输入..."></textarea>
+      <div className={style.but_area}>
+        <button
+          className={style.but}
+          onClick={sendHandle}
+          disabled={!isAllowSend}>
+          发送
+        </button>
       </div>
-    )
-  }
+    </div>
+  )
 }
