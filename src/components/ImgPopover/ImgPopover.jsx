@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
 
-export default function ImgPopover({}) {
+export default function ImgPopover({ onImage }) {
   const fileSelector = React.createRef()
 
   const selectImg = () => {
@@ -11,7 +11,7 @@ export default function ImgPopover({}) {
 
   const fileHandle = (event) => {
     const files = event.target.files
-    this.props.onImage(files)
+    onImage(files)
   }
   return (
     <div className={style.content} onClick={selectImg}>
