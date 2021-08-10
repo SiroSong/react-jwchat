@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
-import globalStyle from '../../style/common.module.css'
+// import globalStyle from '../../style/common.module.css'
 import MsgBubble from '../MsgBubble/MsgBubble'
 import dayjs from 'dayjs'
-import { toClasses } from '../../utils/toClass'
+import { cns } from '../../utils/toClass'
 
 export default function MsgItem({ data, me }) {
   const isMe = data.user.id === me.id
 
   return (
     <div
-      className={toClasses([style.content, globalStyle.flex])}
+      className={cns([style.content, 'flex'])}
       style={{ flexDirection: isMe && 'row-reverse' }}>
       <div className={style.avatar}>
         <img src={data.user.avatar} />

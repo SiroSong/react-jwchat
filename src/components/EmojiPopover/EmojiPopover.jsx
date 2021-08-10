@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
-import { toClasses } from '../../utils/toClass'
+import { cns } from '../../utils/toClass'
 
 const emojiList = [
   '😀',
@@ -133,7 +133,7 @@ export default function EmojiPopover({ onSelect = () => {} }) {
         ))}
       </div>
       <div
-        className={toClasses([style.tool_icon, style.emoji])}
+        className={cns([style.tool_icon, style.emoji])}
         datatype="emoji"></div>
     </div>
   )

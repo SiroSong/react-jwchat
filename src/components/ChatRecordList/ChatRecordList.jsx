@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import style from './style.module.css'
 import MsgItem from '../MsgItem/MsgItem'
-import { toClasses } from '../../utils/toClass'
+import { cns } from '../../utils/toClass'
 
 const ChatRecordList = React.forwardRef((props, ref) => {
   const renderShadow = () => {
@@ -23,7 +23,7 @@ const ChatRecordList = React.forwardRef((props, ref) => {
 
   return (
     <div
-      className={toClasses([style.list_area, renderShadow()])}
+      className={cns([style.list_area, renderShadow()])}
       ref={ref}
       onScroll={props.onScroll}>
       <div className={style.load_more_area}>

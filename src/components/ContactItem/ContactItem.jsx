@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
-import { toClasses } from '../../utils/toClass'
+import { cns } from '../../utils/toClass'
 
 export default function ContactItem({
   styles,
@@ -13,7 +13,7 @@ export default function ContactItem({
   return (
     <div
       style={styles}
-      className={toClasses([
+      className={cns([
         style.content,
         border && style.bottom_border,
         selected && style.selected,

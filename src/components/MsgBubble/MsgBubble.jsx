@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
-import { toClasses } from '../../utils/toClass'
+import { cns } from '../../utils/toClass'
 
 export default function MsgBubble({ data, isMe }) {
   const renderContent = (message) => {
@@ -10,10 +10,7 @@ export default function MsgBubble({ data, isMe }) {
         return message.content
       case 'image':
         return (
-          <img
-            className={toClasses([style.img_content])}
-            src={message.content}
-          />
+          <img className={cns([style.img_content])} src={message.content} />
         )
       default:
         break
@@ -22,7 +19,7 @@ export default function MsgBubble({ data, isMe }) {
 
   return (
     <div
-      className={toClasses([
+      className={cns([
         style.text_content,
         style.arrow,
         isMe ? style.arrow_right : style.arrow_left,

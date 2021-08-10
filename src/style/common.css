@@ -1,0 +1,21 @@
+/* flex */
+.flex {
+  display: flex;
+}
+.flex_1 {
+  flex: auto;
+}
+.jus_cen {
+  justify-content: center;
+}
+.ali_cen {
+  align-items: center;
+}
+
+/* position */
+.pos_a {
+  position: absolute;
+}
+.pos_r {
+  position: relative;
+}

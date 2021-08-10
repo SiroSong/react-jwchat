@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { toClasses } from '../../utils/toClass'
+import { cns } from '../../utils/toClass'
 import style from './style.module.css'
 
 export default function ScrollBarWrapper(Wrapped) {
@@ -14,6 +14,7 @@ export default function ScrollBarWrapper(Wrapped) {
     }
 
     scrollRef = React.createRef()
+    mouseMoving = false
 
     componentDidMount() {
       this.computeHeight()
@@ -49,14 +50,29 @@ export default function ScrollBarWrapper(Wrapped) {
     }
 
     scrollHandle = (e) => {
-      this.setState({ scrollTop: e.target.scrollTop * this.state.c_s })
+      this.setState({ scrollTop: e.target.scrollTop * this.state.c_s }, () => {
+        this.scrollRef.current.scrollTop = e.target.scrollTop
+      })
+    }
+
+    mouseDownHandle = () => {
+      this.mouseMoving = true
+    }
+    mouseUpHandle = () => {
+      this.mouseMoving = false
+    }
+
+    dragHandle = (e) => {
+      if (this.mouseMoving) {
+        console.log(e.clientY - this.scrollRef.current.offsetTop)
+      }
     }
 
     render() {
       const { scrollTop, thumbHeight, isBarHide, clientHeight } = this.state
 
       return (
-        <div className={toClasses([style.content])} style={this.props.style}>
+        <div className={cns([style.content])} style={this.props.style}>
           <Wrapped
             {...this.props}
             ref={this.scrollRef}
@@ -70,11 +86,15 @@ export default function ScrollBarWrapper(Wrapped) {
             className={style.scroll_bar_track}
             style={{ display: isBarHide && 'none' }}>
             <span
+              onMouseDown={this.mouseDownHandle}
+              onMouseUp={this.mouseUpHandle}
+              onMouseMove={this.dragHandle}
               className={style.scroll_bar_thumb}
               style={{
                 height: thumbHeight,
-                top: scrollTop,
-              }}></span>
+                transform: `translateY(${scrollTop}px)`,
+              }}
+            />
           </div>
         </div>
       )

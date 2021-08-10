@@ -5,10 +5,12 @@ import ChatHeader from '../ChatHeader/ChatHeader'
 import ChatInput from '../ChatInput/ChatInput'
 import ChatRecordList from '../ChatRecordList/ChatRecordList'
 import ScrollBarWrapper from '../ScrollBarWrapper/ScrollBarWrapper'
+import ScrollWrapper from '../ScrollWrapper/ScrollWrapper'
 
 const textHeight = 150
 
-const WrappedChatRecordList = ScrollBarWrapper(ChatRecordList)
+// const WrappedChatRecordList = ScrollBarWrapper(ChatRecordList)
+const WrappedChatRecordList = ScrollWrapper(ChatRecordList)
 
 export default class Chat extends Component {
   static propTypes = {
