@@ -4,7 +4,6 @@ import style from './style.module.css'
 import ChatHeader from '../ChatHeader/ChatHeader'
 import ChatInput from '../ChatInput/ChatInput'
 import ChatRecordList from '../ChatRecordList/ChatRecordList'
-import ScrollBarWrapper from '../ScrollBarWrapper/ScrollBarWrapper'
 import ScrollWrapper from '../ScrollWrapper/ScrollWrapper'
 
 const textHeight = 150
@@ -30,8 +29,6 @@ export default class Chat extends Component {
     onSend: (msg) => console.warn('传入onSend属性，用于接收输入框内容', msg),
   }
 
-  chatRecordList = React.createRef()
-
   sendHandle = (msgData) => {
     this.props.onSend(msgData)
   }
@@ -42,15 +39,8 @@ export default class Chat extends Component {
     return (
       <div className={style.content} style={this.props.style}>
         <ChatHeader data={this.props.contact} />
-        {/* <ChatRecordList
-          {...this.props}
-          ref={this.chatRecordList}
-          data={this.props.chatList}
-          height={listHeight}
-        /> */}
         <WrappedChatRecordList
           {...this.props}
-          ref={this.chatRecordList}
           data={this.props.chatList}
           height={listHeight}
           style={{ height: listHeight }}
