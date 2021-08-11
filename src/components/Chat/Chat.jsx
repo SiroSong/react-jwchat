@@ -9,7 +9,6 @@ import ScrollWrapper from '../ScrollWrapper/ScrollWrapper'
 
 const textHeight = 150
 
-// const WrappedChatRecordList = ScrollBarWrapper(ChatRecordList)
 const WrappedChatRecordList = ScrollWrapper(ChatRecordList)
 
 export default class Chat extends Component {
@@ -35,7 +34,6 @@ export default class Chat extends Component {
 
   sendHandle = (msgData) => {
     this.props.onSend(msgData)
-    this.chatRecordList.current.computeHeight()
   }
 
   render() {
@@ -56,7 +54,7 @@ export default class Chat extends Component {
           data={this.props.chatList}
           height={listHeight}
           style={{ height: listHeight }}
-          bottom
+          scrollToBottom
         />
         <ChatInput
           {...this.props}

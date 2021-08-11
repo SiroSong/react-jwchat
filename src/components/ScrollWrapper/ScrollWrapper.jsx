@@ -15,6 +15,8 @@ const ScrollWrapper = (Comp) =>
     const [isPressing, setIsPressing] = useState(false)
     const [showScrollBar, setShowScrollBar] = useState(false)
 
+    const [shadowStyle, setShadowStyle] = useState()
+
     const scrollHandle = () => {
       setScrollT(scrollView.current.scrollTop)
     }
@@ -57,7 +59,6 @@ const ScrollWrapper = (Comp) =>
 
     useEffect(() => {
       if (scrollView.current) {
-        console.log(scrollView.current.clientHeight)
         setViewPortH(scrollView.current.clientHeight)
         setScrollH(scrollView.current.scrollHeight)
       }
@@ -66,6 +67,16 @@ const ScrollWrapper = (Comp) =>
     useLayoutEffect(() => {
       if (scrollView.current) {
         scrollView.current.scrollTop = scrollT
+      }
+
+      if (showScrollBar !== true) return
+
+      if (scrollT === 0) {
+        setShadowStyle(styles.shadow_bottom)
+      } else if (scrollT === scrollH - viewPortH) {
+        setShadowStyle(styles.shadow_top)
+      } else {
+        setShadowStyle(styles.shadow_vertical)
       }
     }, [scrollT])
 
@@ -81,11 +92,15 @@ const ScrollWrapper = (Comp) =>
     }, [scrollH])
 
     useEffect(() => {
-      setScrollT(scrollH - viewPortH)
+      if (props.scrollToBottom) {
+        setScrollT(scrollH - viewPortH)
+      }
     }, [scrollR])
 
     return (
-      <section style={props.style} className={cns([styles.wrapper_content])}>
+      <section
+        style={props.style}
+        className={cns([styles.wrapper_content, shadowStyle])}>
         <div
           className={styles.list_block}
           ref={scrollView}

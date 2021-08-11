@@ -4,23 +4,6 @@ import MsgItem from '../MsgItem/MsgItem'
 import { cns } from '../../utils/toClass'
 
 const ChatRecordList = React.forwardRef((props, ref) => {
-  const renderShadow = () => {
-    const { isBarHide, scrollTop, thumbHeight, clientHeight } = props
-
-    if (isBarHide) {
-      return ''
-    }
-    if (scrollTop !== 0 && clientHeight - (scrollTop + thumbHeight) !== 0) {
-      return style.shadow_vertical
-    }
-    if (scrollTop === 0) {
-      return style.shadow_bottom
-    }
-    if (scrollTop + thumbHeight === clientHeight) {
-      return style.shadow_top
-    }
-  }
-
   return (
     <div className={cns([style.list_area])} ref={ref} onScroll={props.onScroll}>
       <div className={style.load_more_area}>
