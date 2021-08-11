@@ -144,28 +144,28 @@ export const messageList = [
     },
     message: { type: 'text', content: '❓ ' },
   },
-  {
-    _id: 'f3386f6dcf4e69a8bd51a0d688d0e980',
-    date: 1610016470,
-    user: {
-      id: 1234,
-      avatar: '//game.gtimg.cn/images/lol/act/a20201103lmpwjl/icon-ht.png',
-      nickname: 'sirosong',
-      desc: '这是我的第一条信息',
-    },
-    message: { type: 'text', content: '对面下路压线那么深你不来？' },
-  },
-  {
-    _id: '75b5bde8f3b9ef7aa9b704492cb28baf',
-    date: 1610016580,
-    user: {
-      id: 1234,
-      avatar: '//game.gtimg.cn/images/lol/act/a20201103lmpwjl/icon-ht.png',
-      nickname: 'sirosong',
-      desc: '这是我的第一条信息',
-    },
-    message: { type: 'text', content: '敌我打野差距👎 ' },
-  },
+  // {
+  //   _id: 'f3386f6dcf4e69a8bd51a0d688d0e980',
+  //   date: 1610016470,
+  //   user: {
+  //     id: 1234,
+  //     avatar: '//game.gtimg.cn/images/lol/act/a20201103lmpwjl/icon-ht.png',
+  //     nickname: 'sirosong',
+  //     desc: '这是我的第一条信息',
+  //   },
+  //   message: { type: 'text', content: '对面下路压线那么深你不来？' },
+  // },
+  // {
+  //   _id: '75b5bde8f3b9ef7aa9b704492cb28baf',
+  //   date: 1610016580,
+  //   user: {
+  //     id: 1234,
+  //     avatar: '//game.gtimg.cn/images/lol/act/a20201103lmpwjl/icon-ht.png',
+  //     nickname: 'sirosong',
+  //     desc: '这是我的第一条信息',
+  //   },
+  //   message: { type: 'text', content: '敌我打野差距👎 ' },
+  // },
   // {
   //   _id: '75b5bde8f3b9ef7aa9b704492cb28baf',
   //   date: 1610016880,

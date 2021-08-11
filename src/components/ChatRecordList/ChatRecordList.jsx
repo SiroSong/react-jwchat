@@ -22,10 +22,7 @@ const ChatRecordList = React.forwardRef((props, ref) => {
   }
 
   return (
-    <div
-      className={cns([style.list_area, renderShadow()])}
-      ref={ref}
-      onScroll={props.onScroll}>
+    <div className={cns([style.list_area])} ref={ref} onScroll={props.onScroll}>
       <div className={style.load_more_area}>
         <button className={style.load_more} onClick={props.onEarlier}>
           加载更多···
