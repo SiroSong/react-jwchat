@@ -26,7 +26,6 @@ const App = () => {
         onClick={(contact) => console.log(contact)}
         border
       /> */}
-
       <ContactList
         data={contactList}
         style={{
@@ -34,6 +33,7 @@ const App = () => {
           height: 500,
           borderRadius: 5,
           overflow: 'hidden',
+          width: 240,
         }}
       />
       <Chat

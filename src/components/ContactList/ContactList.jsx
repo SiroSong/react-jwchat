@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react'
 import PropTypes from 'prop-types'
 import ContactItem from '../ContactItem/ContactItem'
 import style from './style.module.css'
-import ScrollBarWrapper from '../ScrollBarWrapper/ScrollBarWrapper'
+import ScrollWrapper from '../ScrollWrapper/ScrollWrapper'
 
 const ContactList = React.forwardRef((props, ref) => {
   const [selectId, setSelectId] = useState()
@@ -26,7 +26,7 @@ const ContactList = React.forwardRef((props, ref) => {
   )
 })
 
-export default ScrollBarWrapper(ContactList)
+export default ScrollWrapper(ContactList)
 
 ContactList.propTypes = {
   data: PropTypes.array.isRequired,
