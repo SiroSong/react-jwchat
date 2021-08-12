@@ -6,6 +6,7 @@ module.exports = {
   },
   module: {
     rules: [
+      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       {
         test: /\.(jsx|js)$/,
         exclude: /(node_modules|bower_components)/,
@@ -18,11 +19,20 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-modules-typescript-loader' },
+          { loader: 'css-loader' },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/,
-        use: [{ loader: 'url-loader' }],
+        use: [
+          {
+            loader: 'file-loader',
+            options: { publicPath: 'assets', name: 'images/[hash].[ext]' },
+          },
+        ],
       },
     ],
   },

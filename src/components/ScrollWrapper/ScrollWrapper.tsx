@@ -1,11 +1,23 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, {
+  CSSProperties,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react'
 import { cns } from 'src/utils/toClass'
 import styles from './style.module.css'
 
-const ScrollWrapper = (Comp) =>
-  React.forwardRef((props, ref) => {
-    const scrollView = useRef()
-    const thumb = useRef()
+interface IProps {
+  data: Object[]
+  style: CSSProperties
+  scrollToBottom: boolean
+}
+
+const ScrollWrapper = (Comp: React.FunctionComponent) =>
+  React.forwardRef<{}, IProps>((props, ref) => {
+    const scrollView = useRef<HTMLDivElement>(null)
+    const thumb = useRef<HTMLSpanElement>(null)
 
     const [viewPortH, setViewPortH] = useState(1)
     const [scrollH, setScrollH] = useState(1)
@@ -15,21 +27,23 @@ const ScrollWrapper = (Comp) =>
     const [isPressing, setIsPressing] = useState(false)
     const [showScrollBar, setShowScrollBar] = useState(false)
 
-    const [shadowStyle, setShadowStyle] = useState()
+    const [shadowStyle, setShadowStyle] = useState<string>('')
 
-    const scrollHandle = () => {
-      setScrollT(scrollView.current.scrollTop)
+    const scrollHandle = (): void => {
+      if (scrollView.current) {
+        setScrollT(scrollView.current.scrollTop)
+      }
     }
 
-    const mouseUpHandle = (e) => {
+    const mouseUpHandle = (e: MouseEvent): void => {
       setIsPressing(false)
     }
 
-    const mouseDownHandle = (e) => {
+    const mouseDownHandle = (e: React.MouseEvent): void => {
       setIsPressing(true)
     }
 
-    const mouseMovingHandle = (e) => {
+    const mouseMovingHandle = (e: React.MouseEvent): void => {
       if (isPressing !== true) return
 
       const curScrollT = scrollT * scrollR + e.nativeEvent.movementY / scrollR

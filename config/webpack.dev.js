@@ -9,9 +9,6 @@ module.exports = merge(webpackBase, {
     path: path.resolve(__dirname, '../example/src'),
     filename: 'bundle.js',
   },
-  module: {
-    rules: [],
-  },
   devServer: {
     contentBase: path.resolve(__dirname, '../example/src'),
     open: true,
