@@ -26,13 +26,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: { publicPath: 'assets', name: 'images/[hash].[ext]' },
-          },
-        ],
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: 'asset/resource', //在导出一个 data URI 和发送一个单独的文件之间自动选择
+        generator: {
+          filename: 'images/[hash][ext]',
+        },
       },
     ],
   },
