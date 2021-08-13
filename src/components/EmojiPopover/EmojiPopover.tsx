@@ -92,18 +92,18 @@ const emojiList = [
   '🤕',
 ]
 
-export default function EmojiPopover({ onSelect = () => {} }) {
-  const [visible, setVisible] = useState(false)
+interface IProps {
+  onSelect: (emoji: string) => void
+}
 
-  const switchEmojiModal = (vis = null) => {
-    if (vis !== null) {
-      setVisible(vis)
-    } else {
-      setVisible(!visible)
-    }
+export default function EmojiPopover({ onSelect = () => {} }: IProps) {
+  const [visible, setVisible] = useState<boolean>(false)
+
+  const switchEmojiModal = (vis: boolean) => {
+    setVisible(vis)
   }
 
-  const iconClickHandle = (emoji) => {
+  const iconClickHandle = (emoji: string) => {
     onSelect(emoji)
   }
 
@@ -124,7 +124,7 @@ export default function EmojiPopover({ onSelect = () => {} }) {
         style={{ display: !visible && 'none' }}>
         {emojiList.map((emoji) => (
           <span
-            onClick={iconClickHandle.bind(this, emoji)}
+            onClick={iconClickHandle.bind(null, emoji)}
             className={style.emoji_item}
             datatype={emoji}
             key={emoji}>

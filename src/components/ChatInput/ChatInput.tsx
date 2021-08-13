@@ -1,15 +1,23 @@
-import React, { Component, useState } from 'react'
+import React, { Component, UIEventHandler, useState } from 'react'
 import style from './style.module.css'
-import md5 from 'md5'
+import * as md5 from 'md5'
 import dayjs from 'dayjs'
 import ChatToolBar from '../ChatToolsBar/ChatToolBar'
+import { IContact } from '../Chat/Chat'
+
+interface IProps {
+  me: IContact
+  onSend: UIEventHandler
+  onImage?: UIEventHandler
+  height: number
+}
 
 export default function ChatInput({
-  me = {},
+  me,
   onSend = () => {},
   onImage = () => {},
   height,
-}) {
+}: IProps) {
   const [text, setText] = useState('')
   const [isShift, setIsShift] = useState(false)
   const [isAllowSend, setIsAllowSend] = useState(false)

@@ -6,7 +6,11 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader',
+        exclude: /(node_modules)/,
+      },
       {
         test: /\.(jsx|js)$/,
         exclude: /(node_modules|bower_components)/,

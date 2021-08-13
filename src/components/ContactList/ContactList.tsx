@@ -1,18 +1,26 @@
-import React, { Component, useState } from 'react'
+import React, { Component, ReactNode, UIEventHandler, useState } from 'react'
 import PropTypes from 'prop-types'
 import ContactItem from '../ContactItem/ContactItem'
 import style from './style.module.css'
 import ScrollWrapper from '../ScrollWrapper/ScrollWrapper'
+import { IContact } from '../Chat/Chat'
 
-const ContactList = React.forwardRef((props, ref) => {
-  const [selectId, setSelectId] = useState()
-  const selectContactHandle = (con) => {
+interface IProps {
+  onSelect: Function
+  data: IContact[]
+  onScroll: UIEventHandler<HTMLDivElement>
+}
+
+const ContactList = (props: IProps) => {
+  const [selectId, setSelectId] = useState<number | string>()
+
+  const selectContactHandle = (con: IContact) => {
     setSelectId(con.id)
-    props.onSelect && props.onSelect(contact)
+    props.onSelect && props.onSelect(con)
   }
 
   return (
-    <div className={style.list_area} ref={ref} onScroll={props.onScroll}>
+    <div className={style.list_area} onScroll={props.onScroll}>
       {props.data.map((contact, index) => (
         <ContactItem
           contact={contact}
@@ -24,7 +32,7 @@ const ContactList = React.forwardRef((props, ref) => {
       ))}
     </div>
   )
-})
+}
 
 export default ScrollWrapper(ContactList)
 

@@ -1,12 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component, CSSProperties, UIEventHandler } from 'react'
 import style from './style.module.css'
 import MsgItem from '../MsgItem/MsgItem'
 import { cns } from '../../utils/toClass'
+import { IContact } from '../Chat/Chat'
 
-const ChatRecordList = React.forwardRef((props, ref) => {
+interface IProps {
+  onScroll: UIEventHandler<HTMLDivElement>
+  onEarlier: UIEventHandler<HTMLButtonElement>
+  data: any[]
+  me: IContact
+  style?: CSSProperties
+}
+
+const ChatRecordList = (props: IProps) => {
   return (
-    <div className={cns([style.list_area])} ref={ref} onScroll={props.onScroll}>
-      <div className={style.load_more_area}>
+    <div className={cns([style.list_area])} onScroll={props.onScroll}>
+      <div>
         <button className={style.load_more} onClick={props.onEarlier}>
           加载更多···
         </button>
@@ -16,6 +25,6 @@ const ChatRecordList = React.forwardRef((props, ref) => {
       ))}
     </div>
   )
-})
+}
 
 export default ChatRecordList
