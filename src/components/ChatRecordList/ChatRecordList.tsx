@@ -1,12 +1,11 @@
-import React, { Component, CSSProperties, UIEventHandler } from 'react'
+import React, { CSSProperties, MouseEventHandler } from 'react'
 import style from './style.module.css'
 import MsgItem from '../MsgItem/MsgItem'
 import { cns } from '../../utils/toClass'
 import { IContact } from '../Chat/Chat'
 
 interface IProps {
-  onScroll: UIEventHandler<HTMLDivElement>
-  onEarlier: UIEventHandler<HTMLButtonElement>
+  onEarlier?: MouseEventHandler
   data: any[]
   me: IContact
   style?: CSSProperties
@@ -14,7 +13,7 @@ interface IProps {
 
 const ChatRecordList = (props: IProps) => {
   return (
-    <div className={cns([style.list_area])} onScroll={props.onScroll}>
+    <div className={cns([style.list_area])}>
       <div>
         <button className={style.load_more} onClick={props.onEarlier}>
           加载更多···

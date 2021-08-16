@@ -2,9 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
 import { cns } from '../../utils/toClass'
+import { TMessage, TPureMsg } from '../ChatInput/ChatInput'
 
-export default function MsgBubble({ data, isMe }) {
-  const renderContent = (message) => {
+interface IProps {
+  data: TPureMsg
+  isMe: boolean
+}
+
+export default function MsgBubble({ data, isMe }: IProps) {
+  const renderContent = (message: TPureMsg) => {
     switch (message.type) {
       case 'text':
         return message.content

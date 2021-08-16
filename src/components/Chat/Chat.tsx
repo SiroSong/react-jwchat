@@ -1,4 +1,9 @@
-import React, { Component, CSSProperties, UIEventHandler } from 'react'
+import React, {
+  Component,
+  CSSProperties,
+  MouseEventHandler,
+  UIEventHandler,
+} from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
 import ChatHeader from '../ChatHeader/ChatHeader'
@@ -17,6 +22,7 @@ interface IProps {
   style: CSSProperties & { height: number }
   chatList: any[]
   onImage?: Function
+  onEarlier?: MouseEventHandler
 }
 
 export interface IContact {

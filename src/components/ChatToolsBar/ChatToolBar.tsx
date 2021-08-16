@@ -5,7 +5,7 @@ import EmojiPopover from '../EmojiPopover/EmojiPopover'
 import ImgPopover from '../ImgPopover/ImgPopover'
 
 interface IProps {
-  tools: any[]
+  tools?: any[]
   onEmojiSelect: Function
   onImage: Function
 }

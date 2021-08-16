@@ -1,15 +1,21 @@
-import React, { Component } from 'react'
+import React, { ChangeEventHandler, Component, useRef } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
 
-export default function ImgPopover({ onImage }) {
-  const fileSelector = React.createRef()
+interface IProps {
+  onImage: Function
+}
+
+export default function ImgPopover({ onImage }: IProps) {
+  const fileSelector = useRef<HTMLInputElement>(null)
 
   const selectImg = () => {
-    fileSelector.current.click()
+    if (fileSelector.current) {
+      fileSelector.current.click()
+    }
   }
 
-  const fileHandle = (event) => {
+  const fileHandle: ChangeEventHandler<HTMLInputElement> = (event) => {
     const files = event.target.files
     onImage(files)
   }

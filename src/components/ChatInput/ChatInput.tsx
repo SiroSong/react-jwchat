@@ -1,15 +1,35 @@
-import React, { Component, UIEventHandler, useState } from 'react'
+import React, {
+  ChangeEvent,
+  ChangeEventHandler,
+  KeyboardEventHandler,
+  UIEventHandler,
+  useState,
+} from 'react'
 import style from './style.module.css'
-import * as md5 from 'md5'
+import md5 from 'md5'
 import dayjs from 'dayjs'
 import ChatToolBar from '../ChatToolsBar/ChatToolBar'
 import { IContact } from '../Chat/Chat'
 
 interface IProps {
   me: IContact
-  onSend: UIEventHandler
-  onImage?: UIEventHandler
+  onSend: Function
+  onImage?: Function
   height: number
+}
+
+type MessageType = 'text' | 'image'
+
+export type TPureMsg = {
+  type: MessageType
+  content: string
+}
+
+export type TMessage = {
+  _id: string
+  date: number
+  user: IContact
+  message: TPureMsg
 }
 
 export default function ChatInput({
@@ -22,7 +42,9 @@ export default function ChatInput({
   const [isShift, setIsShift] = useState(false)
   const [isAllowSend, setIsAllowSend] = useState(false)
 
-  const textChangeHandle = (e) => {
+  const textChangeHandle: ChangeEventHandler = (
+    e: ChangeEvent<HTMLInputElement>
+  ) => {
     const isAllowSend = !!e.target.value.trim()
     const text = e.target.value
 
@@ -38,7 +60,7 @@ export default function ChatInput({
     const randomNum = Math.floor(Math.random() * 1000)
     const date = dayjs().unix()
 
-    const msgData = {
+    const msgData: TMessage = {
       _id: md5(`${text}${date}${randomNum}`),
       date: date,
       user: me,
@@ -56,7 +78,7 @@ export default function ChatInput({
     setIsAllowSend(false)
   }
 
-  const keyDownHandle = (e) => {
+  const keyDownHandle: KeyboardEventHandler = (e) => {
     if (e.keyCode === 16) {
       setIsShift(true)
     }
@@ -67,18 +89,18 @@ export default function ChatInput({
     }
   }
 
-  const keyUpHandle = (e) => {
+  const keyUpHandle: KeyboardEventHandler = (e) => {
     if (e.keyCode === 16) {
       setIsShift(false)
     }
   }
 
-  const emojiSelectHandle = (emoji) => {
+  const emojiSelectHandle = (emoji: string) => {
     setText(text + emoji)
     setIsAllowSend(true)
   }
 
-  const fileHandle = (files) => {
+  const fileHandle = (files: FileList) => {
     onImage(files)
   }
 
@@ -86,7 +108,6 @@ export default function ChatInput({
     <div className={style.content} style={{ height: height }}>
       <ChatToolBar onEmojiSelect={emojiSelectHandle} onImage={fileHandle} />
       <textarea
-        type="text"
         className={style.input_area}
         onKeyUp={keyUpHandle}
         onKeyDown={keyDownHandle}

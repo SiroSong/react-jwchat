@@ -93,10 +93,10 @@ const emojiList = [
 ]
 
 interface IProps {
-  onSelect: (emoji: string) => void
+  onSelect: Function
 }
 
-export default function EmojiPopover({ onSelect = () => {} }: IProps) {
+export default function EmojiPopover({ onSelect }: IProps) {
   const [visible, setVisible] = useState<boolean>(false)
 
   const switchEmojiModal = (vis: boolean) => {
@@ -108,7 +108,7 @@ export default function EmojiPopover({ onSelect = () => {} }: IProps) {
   }
 
   useEffect(() => {
-    addEventListener('click', (e) => {
+    addEventListener('click', (e: { target: any }) => {
       if (e.target.getAttribute('datatype') === 'emoji') {
         switchEmojiModal(true)
       } else {
@@ -121,7 +121,7 @@ export default function EmojiPopover({ onSelect = () => {} }: IProps) {
     <div className={style.content}>
       <div
         className={style.emoji_wrapper}
-        style={{ display: !visible && 'none' }}>
+        style={{ display: visible ? 'block' : 'none' }}>
         {emojiList.map((emoji) => (
           <span
             onClick={iconClickHandle.bind(null, emoji)}
