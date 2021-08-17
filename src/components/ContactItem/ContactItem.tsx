@@ -1,7 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component, CSSProperties } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
-import { toClasses } from '../../utils/toClass'
+import { cns } from '../../utils/toClass'
+
+interface IProps {
+  styles?: CSSProperties
+  selected: boolean
+  border: boolean
+  contact: any
+  onClick: Function
+}
 
 export default function ContactItem({
   styles,
@@ -9,16 +17,16 @@ export default function ContactItem({
   border,
   contact,
   onClick,
-}) {
+}: IProps) {
   return (
     <div
       style={styles}
-      className={toClasses([
+      className={cns([
         style.content,
         border && style.bottom_border,
         selected && style.selected,
       ])}
-      onClick={onClick.bind(this, contact)}>
+      onClick={onClick.bind(null, contact)}>
       <img className={style.icon} src={contact.avatar} />
       <div className={style.info_area}>
         <span className={`${style.nickname} ${style.ellipsis}`}>

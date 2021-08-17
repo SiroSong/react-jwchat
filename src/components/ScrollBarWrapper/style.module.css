@@ -10,6 +10,11 @@
   overflow: hidden;
   transition: all 0.5s;
   background-color: white;
+  top: 0;
+  left: 0;
+}
+.scroll_bar_track:hover {
+  cursor: pointer;
 }
 .scroll_bar_thumb {
   position: absolute;

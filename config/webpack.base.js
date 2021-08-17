@@ -1,9 +1,16 @@
+const path = require('path')
+
 module.exports = {
   output: {
     clean: true,
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader',
+        exclude: /(node_modules)/,
+      },
       {
         test: /\.(jsx|js)$/,
         exclude: /(node_modules|bower_components)/,
@@ -16,15 +23,22 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-modules-typescript-loader' },
+          { loader: 'css-loader' },
+        ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/,
-        use: [{ loader: 'url-loader' }],
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: 'asset/inline',
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css'],
+    alias: {
+      src: path.resolve(__dirname, '../src'),
+    },
   },
 }

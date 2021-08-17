@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
-import { toClasses } from '../../utils/toClass'
+import { cns } from '../../utils/toClass'
 
 const emojiList = [
   '😀',
@@ -92,23 +92,23 @@ const emojiList = [
   '🤕',
 ]
 
-export default function EmojiPopover({ onSelect = () => {} }) {
-  const [visible, setVisible] = useState(false)
+interface IProps {
+  onSelect: Function
+}
 
-  const switchEmojiModal = (vis = null) => {
-    if (vis !== null) {
-      setVisible(vis)
-    } else {
-      setVisible(!visible)
-    }
+export default function EmojiPopover({ onSelect }: IProps) {
+  const [visible, setVisible] = useState<boolean>(false)
+
+  const switchEmojiModal = (vis: boolean) => {
+    setVisible(vis)
   }
 
-  const iconClickHandle = (emoji) => {
+  const iconClickHandle = (emoji: string) => {
     onSelect(emoji)
   }
 
   useEffect(() => {
-    addEventListener('click', (e) => {
+    addEventListener('click', (e: { target: any }) => {
       if (e.target.getAttribute('datatype') === 'emoji') {
         switchEmojiModal(true)
       } else {
@@ -121,10 +121,10 @@ export default function EmojiPopover({ onSelect = () => {} }) {
     <div className={style.content}>
       <div
         className={style.emoji_wrapper}
-        style={{ display: !visible && 'none' }}>
+        style={{ display: visible ? 'block' : 'none' }}>
         {emojiList.map((emoji) => (
           <span
-            onClick={iconClickHandle.bind(this, emoji)}
+            onClick={iconClickHandle.bind(null, emoji)}
             className={style.emoji_item}
             datatype={emoji}
             key={emoji}>
@@ -133,7 +133,7 @@ export default function EmojiPopover({ onSelect = () => {} }) {
         ))}
       </div>
       <div
-        className={toClasses([style.tool_icon, style.emoji])}
+        className={cns([style.tool_icon, style.emoji])}
         datatype="emoji"></div>
     </div>
   )

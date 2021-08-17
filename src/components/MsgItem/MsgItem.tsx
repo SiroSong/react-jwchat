@@ -1,18 +1,24 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
-import globalStyle from '../../style/common.module.css'
 import MsgBubble from '../MsgBubble/MsgBubble'
 import dayjs from 'dayjs'
-import { toClasses } from '../../utils/toClass'
+import { cns } from '../../utils/toClass'
+import { TMessage } from '../ChatInput/ChatInput'
+import { IContact } from '../Chat/Chat'
 
-export default function MsgItem({ data, me }) {
+interface IProps {
+  data: TMessage
+  me: IContact
+}
+
+export default function MsgItem({ data, me }: IProps) {
   const isMe = data.user.id === me.id
 
   return (
     <div
-      className={toClasses([style.content, globalStyle.flex])}
-      style={{ flexDirection: isMe && 'row-reverse' }}>
+      className={cns([style.content, 'flex'])}
+      style={{ flexDirection: isMe ? 'row-reverse' : 'row' }}>
       <div className={style.avatar}>
         <img src={data.user.avatar} />
       </div>

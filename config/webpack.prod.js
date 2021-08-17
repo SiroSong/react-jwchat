@@ -4,7 +4,7 @@ const path = require('path')
 
 module.exports = merge(webpackBase, {
   mode: 'production',
-  entry: path.resolve(__dirname, '../src/index.js'),
+  entry: path.resolve(__dirname, '../src/components/index.ts'),
   output: {
     path: path.resolve(__dirname, '../lib'),
     filename: 'index.js',

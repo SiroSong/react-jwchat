@@ -1,9 +1,3 @@
-export function toClasses(classes = []) {
-  return classes.reduce((finalClasses, cls) => {
-    if (cls) {
-      return finalClasses + ' ' + cls
-    } else {
-      return finalClasses
-    }
-  }, '')
+export function cns(classes = []) {
+  return classes.join(' ')
 }

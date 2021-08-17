@@ -1,0 +1,50 @@
+@import 'src/style/common.css';
+
+.wrapper_content {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  border-top: solid 1px rgb(226, 226, 226);
+  border-bottom: solid 1px rgb(226, 226, 226);
+}
+.list_block {
+  flex: auto;
+  overflow: auto;
+  overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  box-sizing: border-box;
+}
+.list_block::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+.scroll_bar_block {
+  width: 8px;
+  /* border-radius: 4px; */
+  overflow: hidden;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  background-color: white;
+}
+.scroll_bar_block:hover {
+  background-color: #eee;
+}
+.scroll_thumb {
+  display: block;
+  width: 100%;
+  background-color: #aaa;
+  border-radius: 4px;
+}
+.scroll_thumb:hover {
+  cursor: pointer;
+}
+.shadow_top {
+  box-shadow: inset 0px 5px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.shadow_bottom {
+  box-shadow: inset 0px -5px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.shadow_vertical {
+  box-shadow: inset 0px 5px 10px -5px rgba(0, 0, 0, 0.2),
+    inset 0px -5px 10px -5px rgba(0, 0, 0, 0.2);
+}

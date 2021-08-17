@@ -1,7 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
-export default function ChatHeader(props) {
+import { IContact } from '../Chat/Chat'
+
+interface IProps {
+  data: IContact
+}
+
+export default function ChatHeader(props: IProps) {
   return (
     <div className={style.content}>
       <img className={style.avatar} src={props.data.avatar} />

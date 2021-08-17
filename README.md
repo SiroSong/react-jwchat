@@ -14,6 +14,8 @@ react-jwchat 是一个简单的 web 聊天组件。
 
 ```bash
 npm install react-jwchat
+# or
+yarn add react-jwchat
 ```
 
 ## 组件

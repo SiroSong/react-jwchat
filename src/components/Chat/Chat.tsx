@@ -1,16 +1,40 @@
-import React, { Component } from 'react'
+import React, {
+  Component,
+  CSSProperties,
+  MouseEventHandler,
+  UIEventHandler,
+} from 'react'
 import PropTypes from 'prop-types'
 import style from './style.module.css'
 import ChatHeader from '../ChatHeader/ChatHeader'
 import ChatInput from '../ChatInput/ChatInput'
 import ChatRecordList from '../ChatRecordList/ChatRecordList'
-import ScrollBarWrapper from '../ScrollBarWrapper/ScrollBarWrapper'
+import ScrollWrapper from '../ScrollWrapper/ScrollWrapper'
 
 const textHeight = 150
 
-const WrappedChatRecordList = ScrollBarWrapper(ChatRecordList)
+const WrappedChatRecordList = ScrollWrapper(ChatRecordList)
 
-export default class Chat extends Component {
+interface IProps {
+  onSend: Function
+  me: IContact
+  contact: IContact
+  style: CSSProperties & { height: number }
+  chatList: any[]
+  onImage?: Function
+  onEarlier?: MouseEventHandler
+}
+
+export interface IContact {
+  id: number | string
+  avatar: string
+  nickname: string
+  message: string
+  date: string
+  desc: string
+}
+
+export default class Chat extends Component<IProps, {}> {
   static propTypes = {
     onSend: PropTypes.func.isRequired,
     me: PropTypes.object.isRequired,
@@ -26,14 +50,12 @@ export default class Chat extends Component {
     contact: {},
     me: {},
     chatList: [],
-    onSend: (msg) => console.warn('传入onSend属性，用于接收输入框内容', msg),
+    onSend: (msg: any) =>
+      console.warn('传入onSend属性，用于接收输入框内容', msg),
   }
 
-  chatRecordList = React.createRef()
-
-  sendHandle = (msgData) => {
+  sendHandle = (msgData: any) => {
     this.props.onSend(msgData)
-    this.chatRecordList.current.computeHeight()
   }
 
   render() {
@@ -42,24 +64,17 @@ export default class Chat extends Component {
     return (
       <div className={style.content} style={this.props.style}>
         <ChatHeader data={this.props.contact} />
-        {/* <ChatRecordList
-          {...this.props}
-          ref={this.chatRecordList}
-          data={this.props.chatList}
-          height={listHeight}
-        /> */}
         <WrappedChatRecordList
           {...this.props}
-          ref={this.chatRecordList}
           data={this.props.chatList}
-          height={listHeight}
           style={{ height: listHeight }}
-          bottom
+          scrollToBottom
         />
         <ChatInput
           {...this.props}
           height={textHeight}
           onSend={this.sendHandle}
+          onImage={this.props.onImage}
         />
       </div>
     )

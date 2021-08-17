@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { render } from 'react-dom'
-import { Chat, ContactItem, ContactList } from '../../src'
+import { Chat, ContactItem, ContactList } from '../../src/components'
 // import { Chat, ContactItem, ContactList } from 'react-jwchat'
 import { contact, contactList, messageList, my } from './fackData'
 
@@ -26,7 +26,6 @@ const App = () => {
         onClick={(contact) => console.log(contact)}
         border
       /> */}
-
       <ContactList
         data={contactList}
         style={{
@@ -34,6 +33,7 @@ const App = () => {
           height: 500,
           borderRadius: 5,
           overflow: 'hidden',
+          width: 240,
         }}
       />
       <Chat
