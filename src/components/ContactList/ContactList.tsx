@@ -6,7 +6,7 @@ import ScrollWrapper from '../ScrollWrapper/ScrollWrapper'
 import { IContact } from '../Chat/Chat'
 
 interface IProps {
-  onSelect: Function
+  onSelect?: Function
   data: IContact[]
   onScroll: UIEventHandler<HTMLDivElement>
 }

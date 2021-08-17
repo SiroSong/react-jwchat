@@ -2,7 +2,6 @@ import React, {
   ChangeEvent,
   ChangeEventHandler,
   KeyboardEventHandler,
-  UIEventHandler,
   useState,
 } from 'react'
 import style from './style.module.css'
@@ -35,7 +34,7 @@ export type TMessage = {
 export default function ChatInput({
   me,
   onSend = () => {},
-  onImage = () => {},
+  onImage,
   height,
 }: IProps) {
   const [text, setText] = useState('')
@@ -100,13 +99,9 @@ export default function ChatInput({
     setIsAllowSend(true)
   }
 
-  const fileHandle = (files: FileList) => {
-    onImage(files)
-  }
-
   return (
     <div className={style.content} style={{ height: height }}>
-      <ChatToolBar onEmojiSelect={emojiSelectHandle} onImage={fileHandle} />
+      <ChatToolBar onEmojiSelect={emojiSelectHandle} onImage={onImage} />
       <textarea
         className={style.input_area}
         onKeyUp={keyUpHandle}

@@ -6,19 +6,21 @@ import ImgPopover from '../ImgPopover/ImgPopover'
 
 interface IProps {
   tools?: any[]
-  onEmojiSelect: Function
-  onImage: Function
+  onEmojiSelect?: Function
+  onImage?: Function
 }
 
 export default function ChatToolBar({
   tools = [],
-  onEmojiSelect = () => {},
-  onImage = () => {},
+  onEmojiSelect,
+  onImage,
 }: IProps) {
   return (
     <div className={style.content}>
-      <EmojiPopover onSelect={onEmojiSelect} />
-      <ImgPopover onImage={onImage} />
+      {typeof onEmojiSelect === 'function' && (
+        <EmojiPopover onSelect={onEmojiSelect} />
+      )}
+      {typeof onImage === 'function' && <ImgPopover onImage={onImage} />}
       {tools.map((tool) => tool)}
     </div>
   )
