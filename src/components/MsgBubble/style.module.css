@@ -28,6 +28,8 @@
   right: -4px;
 }
 .img_content {
-  width: 100%;
-  height: auto;
+  display: block;
+  width: auto;
+  max-width: 400px;
+  height: 150px;
 }
