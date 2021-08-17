@@ -1,7 +1,7 @@
 import React, { UIEventHandler } from 'react';
 import { IContact } from '../Chat/Chat';
 interface IProps {
-    onSelect: Function;
+    onSelect?: Function;
     data: IContact[];
     onScroll: UIEventHandler<HTMLDivElement>;
 }

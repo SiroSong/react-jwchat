@@ -1,6 +1,6 @@
 {
   "name": "react-jwchat",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "This is an easy-to-use web chat component, based on react.",
   "main": "lib/index.js",
   "types": "lib/types/src/components/index.d.ts",

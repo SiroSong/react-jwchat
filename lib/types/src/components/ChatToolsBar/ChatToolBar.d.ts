@@ -2,8 +2,8 @@
 import PropTypes from 'prop-types';
 interface IProps {
     tools?: any[];
-    onEmojiSelect: Function;
-    onImage: Function;
+    onEmojiSelect?: Function;
+    onImage?: Function;
 }
 declare function ChatToolBar({ tools, onEmojiSelect, onImage, }: IProps): JSX.Element;
 declare namespace ChatToolBar {
