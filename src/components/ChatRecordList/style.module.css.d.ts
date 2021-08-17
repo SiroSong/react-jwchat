@@ -7,12 +7,6 @@ interface CssExports {
   'load_more': string;
   'scroll_bar_thumb': string;
   'scroll_bar_track': string;
-<<<<<<< HEAD
-  'shadow_bottom': string;
-  'shadow_top': string;
-  'shadow_vertical': string;
-=======
->>>>>>> v1.4
 }
 export const cssExports: CssExports;
 export default cssExports;
