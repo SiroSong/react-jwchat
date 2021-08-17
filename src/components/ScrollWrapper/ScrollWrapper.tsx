@@ -51,14 +51,12 @@ const ScrollWrapper: HOC<{}, IProps> = (Comp) => (props) => {
   const mouseMovingHandle = (e: React.MouseEvent): void => {
     if (isPressing !== true) return
 
-    const curScrollT = scrollT * scrollR + e.nativeEvent.movementY / scrollR
-
-    if (curScrollT >= 0 && viewPortH * scrollR + curScrollT <= viewPortH) {
-      setScrollT((preScrollT) => preScrollT + e.nativeEvent.movementY / scrollR)
-    }
-
-    if (curScrollT < 0) {
+    if (scrollT < 0) {
       setScrollT(0)
+    } else if (scrollT > scrollH - viewPortH) {
+      setScrollT(scrollH - viewPortH)
+    } else {
+      setScrollT((preScrollT) => preScrollT + e.nativeEvent.movementY / scrollR)
     }
   }
 
@@ -88,9 +86,9 @@ const ScrollWrapper: HOC<{}, IProps> = (Comp) => (props) => {
 
     if (showScrollBar !== true) return
 
-    if (scrollT === 0) {
+    if (scrollT <= 0) {
       setShadowStyle(styles.shadow_bottom)
-    } else if (scrollT === scrollH - viewPortH) {
+    } else if (scrollT >= scrollH - viewPortH) {
       setShadowStyle(styles.shadow_top)
     } else {
       setShadowStyle(styles.shadow_vertical)
