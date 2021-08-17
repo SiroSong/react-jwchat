@@ -1,5 +1,8 @@
 # react-jwchat
 
+[![star](https://gitee.com/wx_504ae56474/react-jwchat/badge/star.svg?theme=dark)](https://gitee.com/wx_504ae56474/react-jwchat/stargazers)
+[![fork](https://gitee.com/wx_504ae56474/react-jwchat/badge/fork.svg?theme=dark)](https://gitee.com/wx_504ae56474/react-jwchat/members)
+
 ## 介绍
 
 react-jwchat 是一个简单的 web 聊天组件。
