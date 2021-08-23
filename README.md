@@ -5,7 +5,11 @@
 
 ## 介绍
 
-react-jwchat 是一个简单的 web 聊天组件。
+react-jwchat 是一个简单的 web 聊天组件。主要作用是为快速实现在线聊天功能的前端页面，主要组件（暂时）包含聊天组件、联系人列表组件、单个联系人组件。
+
+希望大家能多多提出宝贵意见，一起学习，共同进步。
+
+**_希望大家能不吝 Star 🌟，谢谢大家啦～_**
 
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5af08366dd6b4e96a27af39387d2ca41~tplv-k3u1fbpfcp-watermark.image)
 
