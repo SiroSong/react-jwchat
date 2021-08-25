@@ -1,7 +1,10 @@
 # react-jwchat
 
-[![star](https://gitee.com/wx_504ae56474/react-jwchat/badge/star.svg?theme=dark)](https://gitee.com/wx_504ae56474/react-jwchat/stargazers)
-[![fork](https://gitee.com/wx_504ae56474/react-jwchat/badge/fork.svg?theme=dark)](https://gitee.com/wx_504ae56474/react-jwchat/members)
+![](https://badgen.net/npm/v/react-jwchat)
+[![star](https://gitee.com/wx_504ae56474/react-jwchat/badge/star.svg?theme=gray)](https://gitee.com/wx_504ae56474/react-jwchat/stargazers)
+[![fork](https://gitee.com/wx_504ae56474/react-jwchat/badge/fork.svg?theme=gray)](https://gitee.com/wx_504ae56474/react-jwchat/members)
+![npm bundle size](https://img.shields.io/bundlephobia/min/react-jwchat?color=success&style=flat-square)
+![NPM](https://img.shields.io/npm/l/react-jwchat?style=flat-square)
 
 ## 介绍
 
