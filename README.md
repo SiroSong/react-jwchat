@@ -1,10 +1,13 @@
 # react-jwchat
 
-![](https://badgen.net/npm/v/react-jwchat)
-[![star](https://gitee.com/wx_504ae56474/react-jwchat/badge/star.svg?theme=gray)](https://gitee.com/wx_504ae56474/react-jwchat/stargazers)
+[![star](https://gitee.com/wx_504ae56474/react-jwchat/badge/star.svg?theme=dark)](https://gitee.com/wx_504ae56474/react-jwchat/stargazers)
 [![fork](https://gitee.com/wx_504ae56474/react-jwchat/badge/fork.svg?theme=gray)](https://gitee.com/wx_504ae56474/react-jwchat/members)
-![npm bundle size](https://img.shields.io/bundlephobia/min/react-jwchat?color=success&style=flat-square)
-![NPM](https://img.shields.io/npm/l/react-jwchat?style=flat-square)
+
+![npm type definitions](https://img.shields.io/npm/types/react-jwchat?style=for-the-badge)
+![npm](https://img.shields.io/npm/v/react-jwchat?style=for-the-badge&color=yellowgreen)
+![npm bundle size](https://img.shields.io/bundlephobia/min/react-jwchat?color=success&style=for-the-badge)
+![npm](https://img.shields.io/npm/dw/react-jwchat?style=for-the-badge&color=yellow)
+![NPM](https://img.shields.io/npm/l/react-jwchat?color=orange&style=for-the-badge)
 
 ## 介绍
 
