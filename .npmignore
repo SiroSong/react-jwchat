@@ -3,9 +3,15 @@
 
 # webpack配置
 config
+
 # 开发时预览代码
 example
+
 # 组件源代码目录
 src
+
 # babel 配置
 .babelrc
+
+# ts打包增量文件
+lib/types/tsconfig.tsbuildinfo
