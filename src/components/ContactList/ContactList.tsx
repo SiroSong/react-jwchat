@@ -27,7 +27,7 @@ const ContactList = (props: IProps) => {
           key={contact.id}
           border={index + 1 !== props.data.length}
           selected={selectId === contact.id}
-          onClick={selectContactHandle.bind(this, contact)}
+          onClick={selectContactHandle.bind(null, contact)}
         />
       ))}
     </div>
