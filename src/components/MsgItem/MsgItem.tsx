@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import style from './style.module.css'
 import MsgBubble from '../MsgBubble/MsgBubble'
 import dayjs from 'dayjs'
-import { cns } from '../../utils/toClass'
+import cns from '../../utils/toClass'
 import { TMessage } from '../ChatInput/ChatInput'
 import { IContact } from '../Chat/Chat'
 

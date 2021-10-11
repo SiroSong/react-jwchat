@@ -26,12 +26,12 @@ interface IProps {
 }
 
 export interface IContact {
-  id: number | string
-  avatar: string
-  nickname: string
-  message: string
-  date: string
-  desc: string
+  id?: number | string
+  avatar?: string
+  nickname?: string
+  message?: string
+  date?: string
+  desc?: string
 }
 
 export default class Chat extends Component<IProps, {}> {

@@ -1,7 +1,7 @@
 import React, { CSSProperties, MouseEventHandler } from 'react'
 import style from './style.module.css'
 import MsgItem from '../MsgItem/MsgItem'
-import { cns } from '../../utils/toClass'
+import cns from '../../utils/toClass'
 import { IContact } from '../Chat/Chat'
 
 interface IProps {

@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import { cns } from 'src/utils/toClass'
+import cns from '../../utils/toClass'
 import styles from './style.module.css'
 
 type IProps = {
