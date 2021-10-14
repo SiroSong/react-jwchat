@@ -1,8 +1,5 @@
 # react-jwchat
 
-[![star](https://gitee.com/wx_504ae56474/react-jwchat/badge/star.svg?theme=dark)](https://gitee.com/wx_504ae56474/react-jwchat/stargazers)
-[![fork](https://gitee.com/wx_504ae56474/react-jwchat/badge/fork.svg?theme=gray)](https://gitee.com/wx_504ae56474/react-jwchat/members)
-
 ![npm type definitions](https://img.shields.io/npm/types/react-jwchat?style=for-the-badge)
 ![npm](https://img.shields.io/npm/v/react-jwchat?style=for-the-badge&color=yellowgreen)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/react-jwchat?color=success&style=for-the-badge)
@@ -13,9 +10,15 @@
 
 react-jwchat 是一个简单的 web 聊天组件。主要作用是为快速实现在线聊天功能的前端页面，主要组件（暂时）包含聊天组件、联系人列表组件、单个联系人组件。
 
-希望大家能多多提出宝贵意见，一起学习，共同进步。
+目前已同步推送
+[GitHub](https://github.com/SiroSong/react-jwchat)
+和
+[Gitee](https://gitee.com/wx_504ae56474/react-jwchat)
+代码仓库
 
-**_希望大家能不吝 Star 🌟，谢谢大家啦～_**
+欢迎大家能多多提出宝贵意见，一起学习，共同进步。
+
+**_希望大家能不吝 Star 🌟，你们的 🌟 是对作者最大的鼓励～～～_**
 
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5af08366dd6b4e96a27af39387d2ca41~tplv-k3u1fbpfcp-watermark.image)
 
