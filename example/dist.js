@@ -849,32 +849,32 @@
     }
   }
 
-  var css_248z$b = ".style-module_content__pQKrC {\n  background-color: white;\n}\n";
-  var style$8 = {"content":"style-module_content__pQKrC"};
+  var css_248z$b = ".style-module_content__pQKrC {\r\n  background-color: white;\r\n}\r\n";
+  var style$a = {"content":"style-module_content__pQKrC"};
   styleInject(css_248z$b);
 
-  var css_248z$a = ".style-module_content__25yl0 {\n  display: flex;\n  align-items: center;\n  padding: 10px;\n}\n.style-module_avatar__13mCc {\n  width: 40px;\n  height: 40px;\n  background-color: aqua;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.style-module_desc_area__1YlmW {\n  display: flex;\n  flex-direction: column;\n  padding-left: 10px;\n}\n.style-module_nickname__1s_XV {\n  font-size: 14px;\n  color: #333;\n}\n.style-module_sologan__18Gk6 {\n  font-size: 12px;\n  color: #999;\n}\n";
-  var style$7 = {"content":"style-module_content__25yl0","avatar":"style-module_avatar__13mCc","desc_area":"style-module_desc_area__1YlmW","nickname":"style-module_nickname__1s_XV","sologan":"style-module_sologan__18Gk6"};
+  var css_248z$a = ".style-module_content__25yl0 {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n}\r\n.style-module_avatar__13mCc {\r\n  width: 40px;\r\n  height: 40px;\r\n  background-color: aqua;\r\n  border-radius: 50%;\r\n  overflow: hidden;\r\n}\r\n.style-module_desc_area__1YlmW {\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding-left: 10px;\r\n}\r\n.style-module_nickname__1s_XV {\r\n  font-size: 14px;\r\n  color: #333;\r\n}\r\n.style-module_sologan__18Gk6 {\r\n  font-size: 12px;\r\n  color: #999;\r\n}\r\n";
+  var style$9 = {"content":"style-module_content__25yl0","avatar":"style-module_avatar__13mCc","desc_area":"style-module_desc_area__1YlmW","nickname":"style-module_nickname__1s_XV","sologan":"style-module_sologan__18Gk6"};
   styleInject(css_248z$a);
 
   function ChatHeader(props) {
     return /*#__PURE__*/React.createElement("div", {
-      className: style$7.content
+      className: style$9.content
     }, /*#__PURE__*/React.createElement("img", {
-      className: style$7.avatar,
+      className: style$9.avatar,
       src: props.data.avatar
     }), /*#__PURE__*/React.createElement("div", {
-      className: style$7.desc_area
+      className: style$9.desc_area
     }, /*#__PURE__*/React.createElement("span", {
-      className: style$7.nickname
+      className: style$9.nickname
     }, props.data.nickname), /*#__PURE__*/React.createElement("span", {
-      className: style$7.sologan
+      className: style$9.sologan
     }, props.data.desc)));
   }
   ChatHeader.propTypes = {};
 
-  var css_248z$9 = ".style-module_content__18jrj {\n  box-sizing: border-box;\n  width: 100%;\n  min-height: 100px;\n  display: flex;\n  flex-direction: column;\n  /* box-shadow: 0px -5px 10px -5px rgba(0, 0, 0, 0.2); */\n}\n.style-module_input_area__2-keW {\n  border: none;\n  outline: none;\n  flex: 1;\n  resize: none;\n  padding: 10px;\n  font-size: 13px;\n  letter-spacing: 2px;\n}\n.style-module_input_area__2-keW::placeholder {\n  color: #999;\n}\n.style-module_but_area__2hTRY {\n  align-self: flex-end;\n  padding: 3px 10px 10px 0px;\n}\n.style-module_but__s8BSe {\n  padding: 3px 20px;\n  border: none;\n  outline: none;\n  background-color: #2ba245;\n  color: white;\n  border-radius: 3px;\n}\n.style-module_but__s8BSe:active {\n  background-color: #1aad19;\n}\n.style-module_but__s8BSe:disabled {\n  background-color: #ddd;\n}\n";
-  var style$6 = {"content":"style-module_content__18jrj","input_area":"style-module_input_area__2-keW","but_area":"style-module_but_area__2hTRY","but":"style-module_but__s8BSe"};
+  var css_248z$9 = ".style-module_content__18jrj {\r\n  box-sizing: border-box;\r\n  width: 100%;\r\n  min-height: 100px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  /* box-shadow: 0px -5px 10px -5px rgba(0, 0, 0, 0.2); */\r\n}\r\n.style-module_input_area__2-keW {\r\n  border: none;\r\n  outline: none;\r\n  flex: 1;\r\n  resize: none;\r\n  padding: 10px;\r\n  font-size: 13px;\r\n  letter-spacing: 2px;\r\n}\r\n.style-module_input_area__2-keW::placeholder {\r\n  color: #999;\r\n}\r\n.style-module_but_area__2hTRY {\r\n  align-self: flex-end;\r\n  padding: 3px 10px 10px 0px;\r\n}\r\n.style-module_but__s8BSe {\r\n  padding: 3px 20px;\r\n  border: none;\r\n  outline: none;\r\n  background-color: #2ba245;\r\n  color: white;\r\n  border-radius: 3px;\r\n}\r\n.style-module_but__s8BSe:active {\r\n  background-color: #1aad19;\r\n}\r\n.style-module_but__s8BSe:disabled {\r\n  background-color: #ddd;\r\n}\r\n";
+  var style$8 = {"content":"style-module_content__18jrj","input_area":"style-module_input_area__2-keW","but_area":"style-module_but_area__2hTRY","but":"style-module_but__s8BSe"};
   styleInject(css_248z$9);
 
   var md5$1 = {exports: {}};
@@ -1205,12 +1205,12 @@
 
   var dayjs = dayjs_min.exports;
 
-  var css_248z$8 = ".style-module_content__vroQ3 {\n  height: 30px;\n  display: flex;\n  align-items: center;\n  padding: 0px 10px;\n}\n.style-module_tool_icon__2F3JT {\n  height: 20px;\n  width: 20px;\n  background-size: 100%;\n  background-repeat: no-repeat;\n  background-position: center;\n  margin-right: 10px;\n}\n.style-module_tool_icon__2F3JT:hover {\n  cursor: pointer;\n}\n.style-module_emoji__3BPWV {\n  background-image: url('../../image/emoji_black.png');\n}\n.style-module_emoji__3BPWV:hover {\n  background-image: url('../../image/emoji_light.png');\n}\n.style-module_file__2rtEA {\n  background-image: url('../../image/file_black.png');\n}\n.style-module_file__2rtEA:hover {\n  background-image: url('../../image/file_light.png');\n}\n.style-module_pic__yDV_L {\n  background-image: url('../../image/pic_black.png');\n}\n.style-module_pic__yDV_L:hover {\n  background-image: url('../../image/pic_light.png');\n}\n";
-  var style$5 = {"content":"style-module_content__vroQ3","tool_icon":"style-module_tool_icon__2F3JT","emoji":"style-module_emoji__3BPWV","file":"style-module_file__2rtEA","pic":"style-module_pic__yDV_L"};
+  var css_248z$8 = ".style-module_content__vroQ3 {\r\n  height: 30px;\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 0px 10px;\r\n}\r\n.style-module_tool_icon__2F3JT {\r\n  height: 20px;\r\n  width: 20px;\r\n  background-size: 100%;\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  margin-right: 10px;\r\n}\r\n.style-module_tool_icon__2F3JT:hover {\r\n  cursor: pointer;\r\n}\r\n.style-module_emoji__3BPWV {\r\n  background-image: url('../../image/emoji_black.png');\r\n}\r\n.style-module_emoji__3BPWV:hover {\r\n  background-image: url('../../image/emoji_light.png');\r\n}\r\n.style-module_file__2rtEA {\r\n  background-image: url('../../image/file_black.png');\r\n}\r\n.style-module_file__2rtEA:hover {\r\n  background-image: url('../../image/file_light.png');\r\n}\r\n.style-module_pic__yDV_L {\r\n  background-image: url('../../image/pic_black.png');\r\n}\r\n.style-module_pic__yDV_L:hover {\r\n  background-image: url('../../image/pic_light.png');\r\n}\r\n";
+  var style$7 = {"content":"style-module_content__vroQ3","tool_icon":"style-module_tool_icon__2F3JT","emoji":"style-module_emoji__3BPWV","file":"style-module_file__2rtEA","pic":"style-module_pic__yDV_L"};
   styleInject(css_248z$8);
 
-  var css_248z$7 = ".style-module_content__1gLLj {\n  position: relative;\n}\n.style-module_emoji_wrapper__2e7a7 {\n  position: absolute;\n  bottom: -90px;\n  left: 30px;\n  display: flex;\n  flex-wrap: wrap;\n  width: 288px;\n  background-color: white;\n  border: solid 1px #aaaaaa;\n  border-radius: 5px;\n  padding: 3px;\n}\n.style-module_emoji_wrapper__2e7a7::before {\n  content: '';\n  border: solid 8px transparent;\n  border-right: solid 8px #aaaaaa;\n  position: absolute;\n  top: 50%;\n  left: -16px;\n}\n.style-module_emoji_wrapper__2e7a7::after {\n  content: '';\n  border: solid 8px transparent;\n  border-right: solid 8px white;\n  position: absolute;\n  top: 50%;\n  left: -14.5px;\n}\n.style-module_emoji_item__3yPhL {\n  box-sizing: border-box;\n  padding: 0px 7px 0px 3px;\n}\n.style-module_emoji_item__3yPhL:hover {\n  background-color: #f1f1f1;\n  border-radius: 50%;\n  cursor: pointer;\n}\n.style-module_tool_icon__vGDyp {\n  height: 20px;\n  width: 20px;\n  background-size: 100%;\n  background-repeat: no-repeat;\n  background-position: center;\n  margin-right: 10px;\n}\n.style-module_emoji__gMGv6 {\n  background-image: url('../../image/emoji_black.png');\n}\n.style-module_emoji__gMGv6:hover {\n  cursor: pointer;\n  background-image: url('../../image/emoji_light.png');\n}\n";
-  var style$4 = {"content":"style-module_content__1gLLj","emoji_wrapper":"style-module_emoji_wrapper__2e7a7","emoji_item":"style-module_emoji_item__3yPhL","tool_icon":"style-module_tool_icon__vGDyp","emoji":"style-module_emoji__gMGv6"};
+  var css_248z$7 = ".style-module_content__1gLLj {\r\n  position: relative;\r\n}\r\n.style-module_emoji_wrapper__2e7a7 {\r\n  position: absolute;\r\n  bottom: -90px;\r\n  left: 30px;\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  width: 288px;\r\n  background-color: white;\r\n  border: solid 1px #aaaaaa;\r\n  border-radius: 5px;\r\n  padding: 3px;\r\n}\r\n.style-module_emoji_wrapper__2e7a7::before {\r\n  content: '';\r\n  border: solid 8px transparent;\r\n  border-right: solid 8px #aaaaaa;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: -16px;\r\n}\r\n.style-module_emoji_wrapper__2e7a7::after {\r\n  content: '';\r\n  border: solid 8px transparent;\r\n  border-right: solid 8px white;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: -14.5px;\r\n}\r\n.style-module_emoji_item__3yPhL {\r\n  box-sizing: border-box;\r\n  padding: 0px 7px 0px 3px;\r\n}\r\n.style-module_emoji_item__3yPhL:hover {\r\n  background-color: #f1f1f1;\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n}\r\n.style-module_tool_icon__vGDyp {\r\n  height: 20px;\r\n  width: 20px;\r\n  background-size: 100%;\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  margin-right: 10px;\r\n}\r\n.style-module_emoji__gMGv6 {\r\n  background-image: url('../../image/emoji_black.png');\r\n}\r\n.style-module_emoji__gMGv6:hover {\r\n  cursor: pointer;\r\n  background-image: url('../../image/emoji_light.png');\r\n}\r\n";
+  var style$6 = {"content":"style-module_content__1gLLj","emoji_wrapper":"style-module_emoji_wrapper__2e7a7","emoji_item":"style-module_emoji_item__3yPhL","tool_icon":"style-module_tool_icon__vGDyp","emoji":"style-module_emoji__gMGv6"};
   styleInject(css_248z$7);
 
   function cns(classes) {
@@ -1244,21 +1244,21 @@
       });
     }, []);
     return /*#__PURE__*/React.createElement("div", {
-      className: style$4.content
+      className: style$6.content
     }, /*#__PURE__*/React.createElement("div", {
-      className: style$4.emoji_wrapper,
+      className: style$6.emoji_wrapper,
       style: {
         display: visible ? 'block' : 'none'
       }
     }, emojiList.map(function (emoji) {
       return /*#__PURE__*/React.createElement("span", {
         onClick: iconClickHandle.bind(null, emoji),
-        className: style$4.emoji_item,
+        className: style$6.emoji_item,
         datatype: emoji,
         key: emoji
       }, emoji);
     })), /*#__PURE__*/React.createElement("div", {
-      className: cns([style$4.tool_icon, style$4.emoji]),
+      className: cns([style$6.tool_icon, style$6.emoji]),
       datatype: "emoji"
     }));
   }
@@ -1266,8 +1266,8 @@
     onSelect: PropTypes.func.isRequired
   };
 
-  var css_248z$6 = ".style-module_content__rLR0z {\n  width: 20px;\n  height: 20px;\n  background-image: url('../../image/pic_black.png');\n  background-size: 100%;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n.style-module_content__rLR0z:hover {\n  background-image: url('../../image/pic_light.png');\n  cursor: pointer;\n}\n.style-module_content__rLR0z > input {\n  display: none;\n}\n";
-  var style$3 = {"content":"style-module_content__rLR0z"};
+  var css_248z$6 = ".style-module_content__rLR0z {\r\n  width: 20px;\r\n  height: 20px;\r\n  background-image: url('../../image/pic_black.png');\r\n  background-size: 100%;\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n}\r\n.style-module_content__rLR0z:hover {\r\n  background-image: url('../../image/pic_light.png');\r\n  cursor: pointer;\r\n}\r\n.style-module_content__rLR0z > input {\r\n  display: none;\r\n}\r\n";
+  var style$5 = {"content":"style-module_content__rLR0z"};
   styleInject(css_248z$6);
 
   function ImgPopover(_ref) {
@@ -1286,7 +1286,7 @@
     };
 
     return /*#__PURE__*/React.createElement("div", {
-      className: style$3.content,
+      className: style$5.content,
       onClick: selectImg
     }, /*#__PURE__*/React.createElement("input", {
       type: "file",
@@ -1305,7 +1305,7 @@
         onEmojiSelect = _ref.onEmojiSelect,
         onImage = _ref.onImage;
     return /*#__PURE__*/React.createElement("div", {
-      className: style$5.content
+      className: style$7.content
     }, typeof onEmojiSelect === 'function' && /*#__PURE__*/React.createElement(EmojiPopover, {
       onSelect: onEmojiSelect
     }), typeof onImage === 'function' && /*#__PURE__*/React.createElement(ImgPopover, {
@@ -1397,7 +1397,7 @@
     };
 
     return /*#__PURE__*/React.createElement("div", {
-      className: style$6.content,
+      className: style$8.content,
       style: {
         height: height
       }
@@ -1405,31 +1405,31 @@
       onEmojiSelect: emojiSelectHandle,
       onImage: onImage
     }), /*#__PURE__*/React.createElement("textarea", {
-      className: style$6.input_area,
+      className: style$8.input_area,
       onKeyUp: keyUpHandle,
       onKeyDown: keyDownHandle,
       onChange: textChangeHandle,
       value: text,
       placeholder: "\u8BF7\u8F93\u5165..."
     }), /*#__PURE__*/React.createElement("div", {
-      className: style$6.but_area
+      className: style$8.but_area
     }, /*#__PURE__*/React.createElement("button", {
-      className: style$6.but,
+      className: style$8.but,
       onClick: sendHandle,
       disabled: !isAllowSend
     }, "\u53D1\u9001")));
   }
 
-  var css_248z$5 = ".style-module_content__3rUoF {\n  display: flex;\n  border-top: solid 1px rgba(0, 0, 0, 0.05);\n  border-bottom: solid 1px rgba(0, 0, 0, 0.05);\n  box-sizing: border-box;\n}\n.style-module_list_area__3dtJ8 {\n  flex: 1;\n  overflow: auto;\n  -ms-overflow-style: none;\n  overflow: -moz-scrollbars-none;\n  padding: 10px;\n}\n.style-module_list_area__3dtJ8::-webkit-scrollbar {\n  width: 0 !important;\n}\n.style-module_load_more__8KgmW {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 20px;\n  width: 100px;\n  text-align: center;\n  color: #999;\n  background-color: #f1f1f1;\n  font-size: 12px;\n  margin: 0 auto;\n  border: none;\n  outline: none;\n  border-radius: 10px;\n}\n.style-module_load_more__8KgmW:hover {\n  cursor: pointer;\n}\n.style-module_list__6l0AK {\n  width: 100%;\n  height: 80px;\n  background-color: rgb(145, 163, 145);\n  border-bottom: solid 1px;\n}\n.style-module_scroll_bar_track__1YJFb {\n  width: 5px;\n  position: relative;\n  overflow: hidden;\n  transition: all 0.5s;\n}\n.style-module_scroll_bar_track__1YJFb:hover {\n  cursor: pointer;\n  background-color: rgba(170, 170, 170, 0.3);\n}\n.style-module_scroll_bar_thumb__2lkfo {\n  position: absolute;\n  background-color: #aaaaaa;\n  width: 100%;\n  border-radius: 2.5px;\n}\n";
-  var style$2 = {"content":"style-module_content__3rUoF","list_area":"style-module_list_area__3dtJ8","load_more":"style-module_load_more__8KgmW","list":"style-module_list__6l0AK","scroll_bar_track":"style-module_scroll_bar_track__1YJFb","scroll_bar_thumb":"style-module_scroll_bar_thumb__2lkfo"};
+  var css_248z$5 = ".style-module_content__3rUoF {\r\n  display: flex;\r\n  border-top: solid 1px rgba(0, 0, 0, 0.05);\r\n  border-bottom: solid 1px rgba(0, 0, 0, 0.05);\r\n  box-sizing: border-box;\r\n}\r\n.style-module_list_area__3dtJ8 {\r\n  flex: 1;\r\n  overflow: auto;\r\n  -ms-overflow-style: none;\r\n  overflow: -moz-scrollbars-none;\r\n  padding: 10px;\r\n}\r\n.style-module_list_area__3dtJ8::-webkit-scrollbar {\r\n  width: 0 !important;\r\n}\r\n.style-module_load_more__8KgmW {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 20px;\r\n  width: 100px;\r\n  text-align: center;\r\n  color: #999;\r\n  background-color: #f1f1f1;\r\n  font-size: 12px;\r\n  margin: 0 auto;\r\n  border: none;\r\n  outline: none;\r\n  border-radius: 10px;\r\n}\r\n.style-module_load_more__8KgmW:hover {\r\n  cursor: pointer;\r\n}\r\n.style-module_list__6l0AK {\r\n  width: 100%;\r\n  height: 80px;\r\n  background-color: rgb(145, 163, 145);\r\n  border-bottom: solid 1px;\r\n}\r\n.style-module_scroll_bar_track__1YJFb {\r\n  width: 5px;\r\n  position: relative;\r\n  overflow: hidden;\r\n  transition: all 0.5s;\r\n}\r\n.style-module_scroll_bar_track__1YJFb:hover {\r\n  cursor: pointer;\r\n  background-color: rgba(170, 170, 170, 0.3);\r\n}\r\n.style-module_scroll_bar_thumb__2lkfo {\r\n  position: absolute;\r\n  background-color: #aaaaaa;\r\n  width: 100%;\r\n  border-radius: 2.5px;\r\n}\r\n";
+  var style$4 = {"content":"style-module_content__3rUoF","list_area":"style-module_list_area__3dtJ8","load_more":"style-module_load_more__8KgmW","list":"style-module_list__6l0AK","scroll_bar_track":"style-module_scroll_bar_track__1YJFb","scroll_bar_thumb":"style-module_scroll_bar_thumb__2lkfo"};
   styleInject(css_248z$5);
 
-  var css_248z$4 = "@import '../../style/common.css';\n\n.style-module_content__1F2bF {\n  padding-top: 20px;\n}\n.style-module_avatar__1AUi7 {\n  min-width: 35px;\n  width: 35px;\n  padding-top: 14px;\n}\n.style-module_avatar__1AUi7 > img {\n  width: 100%;\n  height: auto;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.style-module_text_area__2vof2 {\n  flex: 1;\n  padding: 0px 10px;\n  display: flex;\n  flex-direction: column;\n}\n.style-module_comment_area__1uXSc {\n  font-size: 12px;\n  color: #999;\n  padding-bottom: 4px;\n}\n.style-module_nickname_text__24UeB {\n}\n.style-module_date_text__36T5H {\n  margin-left: 10px;\n}\n";
-  var style$1 = {"content":"style-module_content__1F2bF","avatar":"style-module_avatar__1AUi7","text_area":"style-module_text_area__2vof2","comment_area":"style-module_comment_area__1uXSc","nickname_text":"style-module_nickname_text__24UeB","date_text":"style-module_date_text__36T5H"};
+  var css_248z$4 = "@import '../../style/common.css';\r\n\r\n.style-module_content__1F2bF {\r\n  padding-top: 20px;\r\n}\r\n.style-module_avatar__1AUi7 {\r\n  min-width: 35px;\r\n  width: 35px;\r\n  padding-top: 14px;\r\n}\r\n.style-module_avatar__1AUi7 > img {\r\n  width: 100%;\r\n  height: auto;\r\n  border-radius: 50%;\r\n  overflow: hidden;\r\n}\r\n.style-module_text_area__2vof2 {\r\n  flex: 1;\r\n  padding: 0px 10px;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n.style-module_comment_area__1uXSc {\r\n  font-size: 12px;\r\n  color: #999;\r\n  padding-bottom: 4px;\r\n}\r\n.style-module_nickname_text__24UeB {\r\n}\r\n.style-module_date_text__36T5H {\r\n  margin-left: 10px;\r\n}\r\n";
+  var style$3 = {"content":"style-module_content__1F2bF","avatar":"style-module_avatar__1AUi7","text_area":"style-module_text_area__2vof2","comment_area":"style-module_comment_area__1uXSc","nickname_text":"style-module_nickname_text__24UeB","date_text":"style-module_date_text__36T5H"};
   styleInject(css_248z$4);
 
-  var css_248z$3 = ".style-module_text_content__3oMUf {\n  background-color: #91ed61;\n  color: #333;\n  padding: 8px;\n  border-radius: 3px;\n  max-width: 60%;\n  word-wrap: break-word;\n  word-break: break-all;\n  font-size: 13px;\n  letter-spacing: 2px;\n}\n.style-module_arrow__3nCA7 {\n  position: relative;\n}\n.style-module_arrow__3nCA7::after {\n  content: '';\n  position: absolute;\n  width: 8px;\n  height: 8px;\n  background-color: #91ed61;\n  transform: rotate(45deg);\n  top: 8px;\n}\n.style-module_arrow_left__Ud5Ne::after {\n  left: -4px;\n}\n.style-module_arrow_right__11jRS::after {\n  right: -4px;\n}\n.style-module_img_content__3z8uV {\n  display: block;\n  width: auto;\n  max-width: 400px;\n  height: 150px;\n}\n";
-  var style = {"text_content":"style-module_text_content__3oMUf","arrow":"style-module_arrow__3nCA7","arrow_left":"style-module_arrow_left__Ud5Ne","arrow_right":"style-module_arrow_right__11jRS","img_content":"style-module_img_content__3z8uV"};
+  var css_248z$3 = ".style-module_text_content__3oMUf {\r\n  background-color: #91ed61;\r\n  color: #333;\r\n  padding: 8px;\r\n  border-radius: 3px;\r\n  max-width: 60%;\r\n  word-wrap: break-word;\r\n  word-break: break-all;\r\n  font-size: 13px;\r\n  letter-spacing: 2px;\r\n}\r\n.style-module_arrow__3nCA7 {\r\n  position: relative;\r\n}\r\n.style-module_arrow__3nCA7::after {\r\n  content: '';\r\n  position: absolute;\r\n  width: 8px;\r\n  height: 8px;\r\n  background-color: #91ed61;\r\n  transform: rotate(45deg);\r\n  top: 8px;\r\n}\r\n.style-module_arrow_left__Ud5Ne::after {\r\n  left: -4px;\r\n}\r\n.style-module_arrow_right__11jRS::after {\r\n  right: -4px;\r\n}\r\n.style-module_img_content__3z8uV {\r\n  display: block;\r\n  width: auto;\r\n  max-width: 400px;\r\n  height: 150px;\r\n}\r\n";
+  var style$2 = {"text_content":"style-module_text_content__3oMUf","arrow":"style-module_arrow__3nCA7","arrow_left":"style-module_arrow_left__Ud5Ne","arrow_right":"style-module_arrow_right__11jRS","img_content":"style-module_img_content__3z8uV"};
   styleInject(css_248z$3);
 
   function MsgBubble(_ref) {
@@ -1443,14 +1443,14 @@
 
         case 'image':
           return /*#__PURE__*/React.createElement("img", {
-            className: cns([style.img_content]),
+            className: cns([style$2.img_content]),
             src: message.content
           });
       }
     };
 
     return /*#__PURE__*/React.createElement("div", {
-      className: cns([style.text_content, style.arrow, isMe ? style.arrow_right : style.arrow_left])
+      className: cns([style$2.text_content, style$2.arrow, isMe ? style$2.arrow_right : style$2.arrow_left])
     }, renderContent(data));
   }
   MsgBubble.propTypes = {
@@ -1463,25 +1463,25 @@
         me = _ref.me;
     var isMe = data.user.id === me.id;
     return /*#__PURE__*/React.createElement("div", {
-      className: cns([style$1.content, 'flex']),
+      className: cns([style$3.content, 'flex']),
       style: {
         flexDirection: isMe ? 'row-reverse' : 'row'
       }
     }, /*#__PURE__*/React.createElement("div", {
-      className: style$1.avatar
+      className: style$3.avatar
     }, /*#__PURE__*/React.createElement("img", {
       src: data.user.avatar
     })), /*#__PURE__*/React.createElement("div", {
-      className: style$1.text_area,
+      className: style$3.text_area,
       style: {
         alignItems: isMe ? 'flex-end' : 'flex-start'
       }
     }, /*#__PURE__*/React.createElement("div", {
-      className: style$1.comment_area
+      className: style$3.comment_area
     }, /*#__PURE__*/React.createElement("span", {
-      className: style$1.nickname_text
+      className: style$3.nickname_text
     }, data.user.nickname), /*#__PURE__*/React.createElement("span", {
-      className: style$1.date_text
+      className: style$3.date_text
     }, dayjs.unix(data.date).format('MM-DD HH:mm:ss'))), /*#__PURE__*/React.createElement(MsgBubble, {
       isMe: isMe,
       data: data.message
@@ -1494,9 +1494,9 @@
 
   var ChatRecordList = function ChatRecordList(props) {
     return /*#__PURE__*/React.createElement("div", {
-      className: cns([style$2.list_area])
+      className: cns([style$4.list_area])
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
-      className: style$2.load_more,
+      className: style$4.load_more,
       onClick: props.onEarlier
     }, "\u52A0\u8F7D\u66F4\u591A\xB7\xB7\xB7")), props.data.map(function (bubble) {
       return /*#__PURE__*/React.createElement(MsgItem, _extends({}, props, {
@@ -1506,7 +1506,7 @@
     }));
   };
 
-  var css_248z$2 = "@import 'src/style/common.css';\n\n.style-module_wrapper_content__FNELi {\n  position: relative;\n  display: flex;\n  box-sizing: border-box;\n  border-top: solid 1px rgb(226, 226, 226);\n  border-bottom: solid 1px rgb(226, 226, 226);\n}\n.style-module_list_block__1FpPY {\n  flex: auto;\n  overflow: auto;\n  overflow-x: hidden;\n  scrollbar-width: none; /* Firefox */\n  -ms-overflow-style: none; /* IE 10+ */\n  box-sizing: border-box;\n}\n.style-module_list_block__1FpPY::-webkit-scrollbar {\n  display: none; /* Chrome Safari */\n}\n.style-module_scroll_bar_block__3GTY- {\n  width: 8px;\n  /* border-radius: 4px; */\n  overflow: hidden;\n  transition: all 0.3s;\n  box-sizing: border-box;\n  background-color: white;\n}\n.style-module_scroll_bar_block__3GTY-:hover {\n  background-color: #eee;\n}\n.style-module_scroll_thumb__1YwbG {\n  display: block;\n  width: 100%;\n  background-color: #aaa;\n  border-radius: 4px;\n}\n.style-module_scroll_thumb__1YwbG:hover {\n  cursor: pointer;\n}\n.style-module_shadow_top__3Bhfl {\n  box-shadow: inset 0px 5px 10px -5px rgba(0, 0, 0, 0.2);\n}\n.style-module_shadow_bottom__i8pvm {\n  box-shadow: inset 0px -5px 10px -5px rgba(0, 0, 0, 0.2);\n}\n.style-module_shadow_vertical__2p-f8 {\n  box-shadow: inset 0px 5px 10px -5px rgba(0, 0, 0, 0.2),\n    inset 0px -5px 10px -5px rgba(0, 0, 0, 0.2);\n}\n";
+  var css_248z$2 = "@import 'src/style/common.css';\r\n\r\n.style-module_wrapper_content__FNELi {\r\n  position: relative;\r\n  display: flex;\r\n  box-sizing: border-box;\r\n  border-top: solid 1px rgb(226, 226, 226);\r\n  border-bottom: solid 1px rgb(226, 226, 226);\r\n}\r\n.style-module_list_block__1FpPY {\r\n  flex: auto;\r\n  overflow: auto;\r\n  overflow-x: hidden;\r\n  scrollbar-width: none; /* Firefox */\r\n  -ms-overflow-style: none; /* IE 10+ */\r\n  box-sizing: border-box;\r\n}\r\n.style-module_list_block__1FpPY::-webkit-scrollbar {\r\n  display: none; /* Chrome Safari */\r\n}\r\n.style-module_scroll_bar_block__3GTY- {\r\n  width: 8px;\r\n  /* border-radius: 4px; */\r\n  overflow: hidden;\r\n  transition: all 0.3s;\r\n  box-sizing: border-box;\r\n  background-color: white;\r\n}\r\n.style-module_scroll_bar_block__3GTY-:hover {\r\n  background-color: #eee;\r\n}\r\n.style-module_scroll_thumb__1YwbG {\r\n  display: block;\r\n  width: 100%;\r\n  background-color: #aaa;\r\n  border-radius: 4px;\r\n}\r\n.style-module_scroll_thumb__1YwbG:hover {\r\n  cursor: pointer;\r\n}\r\n.style-module_shadow_top__3Bhfl {\r\n  box-shadow: inset 0px 5px 10px -5px rgba(0, 0, 0, 0.2);\r\n}\r\n.style-module_shadow_bottom__i8pvm {\r\n  box-shadow: inset 0px -5px 10px -5px rgba(0, 0, 0, 0.2);\r\n}\r\n.style-module_shadow_vertical__2p-f8 {\r\n  box-shadow: inset 0px 5px 10px -5px rgba(0, 0, 0, 0.2),\r\n    inset 0px -5px 10px -5px rgba(0, 0, 0, 0.2);\r\n}\r\n";
   var styles = {"wrapper_content":"style-module_wrapper_content__FNELi","list_block":"style-module_list_block__1FpPY","scroll_bar_block":"style-module_scroll_bar_block__3GTY-","scroll_thumb":"style-module_scroll_thumb__1YwbG","shadow_top":"style-module_shadow_top__3Bhfl","shadow_bottom":"style-module_shadow_bottom__i8pvm","shadow_vertical":"style-module_shadow_vertical__2p-f8"};
   styleInject(css_248z$2);
 
@@ -1684,7 +1684,7 @@
       value: function render() {
         var listHeight = this.props.style.height - textHeight - 60;
         return /*#__PURE__*/React.createElement("div", {
-          className: style$8.content,
+          className: style$a.content,
           style: this.props.style
         }, /*#__PURE__*/React.createElement(ChatHeader, {
           data: this.props.contact
@@ -1725,22 +1725,167 @@
     }
   });
 
-  var css_248z$1 = ".style-module_content__2SebG {\n  background-color: white;\n  min-height: 60px;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  border-radius: 5px;\n  box-sizing: border-box;\n  padding: 0px 10px;\n  position: relative;\n  transition: all 0.3s;\n}\n.style-module_content__2SebG:hover {\n  cursor: pointer;\n}\n.style-module_icon__34x6x {\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.style-module_info_area__17H5j {\n  display: flex;\n  flex-direction: column;\n  padding-left: 10px;\n  flex: 1;\n}\n.style-module_nickname__1DDph {\n  font-size: 13px;\n  color: #333;\n}\n.style-module_desc__pD4jq {\n  font-size: 11px;\n  color: #666;\n}\n.style-module_ellipsis__3NMV_ {\n  max-width: 100px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.style-module_selected__1Ub3X {\n  box-shadow: 0px 0px 10px rgb(180, 180, 180);\n  transform: scale(1.02);\n  z-index: 1000;\n}\n.style-module_selected__1Ub3X:after {\n  display: none;\n}\n.style-module_bottom_border__3BtoA:after {\n  content: '';\n  width: 90%;\n  height: 1px;\n  background-color: rgb(230, 230, 230);\n  position: absolute;\n  bottom: 0px;\n  left: 50%;\n  margin-left: -45%;\n}\n.style-module_date_area__3Bypo {\n  font-size: 12px;\n  color: #666;\n}\n";
+  var css_248z$1 = ".style-module_content__2SebG {\r\n  background-color: white;\r\n  min-height: 60px;\r\n  width: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n  padding: 0px 10px;\r\n  position: relative;\r\n  transition: all 0.3s;\r\n}\r\n.style-module_content__2SebG:hover {\r\n  cursor: pointer;\r\n}\r\n.style-module_icon__34x6x {\r\n  width: 35px;\r\n  height: 35px;\r\n  border-radius: 50%;\r\n  overflow: hidden;\r\n}\r\n.style-module_info_area__17H5j {\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding-left: 10px;\r\n  flex: 1;\r\n}\r\n.style-module_nickname__1DDph {\r\n  font-size: 13px;\r\n  color: #333;\r\n}\r\n.style-module_desc__pD4jq {\r\n  font-size: 11px;\r\n  color: #666;\r\n}\r\n.style-module_ellipsis__3NMV_ {\r\n  max-width: 100px;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\r\n}\r\n.style-module_selected__1Ub3X {\r\n  box-shadow: 0px 0px 10px rgb(180, 180, 180);\r\n  transform: scale(1.02);\r\n  z-index: 1000;\r\n}\r\n.style-module_selected__1Ub3X:after {\r\n  display: none;\r\n}\r\n.style-module_bottom_border__3BtoA:after {\r\n  content: '';\r\n  width: 90%;\r\n  height: 1px;\r\n  background-color: rgb(230, 230, 230);\r\n  position: absolute;\r\n  bottom: 0px;\r\n  left: 50%;\r\n  margin-left: -45%;\r\n}\r\n.style-module_date_area__3Bypo {\r\n  font-size: 12px;\r\n  color: #666;\r\n}\r\n";
+  var style$1 = {"content":"style-module_content__2SebG","icon":"style-module_icon__34x6x","info_area":"style-module_info_area__17H5j","nickname":"style-module_nickname__1DDph","desc":"style-module_desc__pD4jq","ellipsis":"style-module_ellipsis__3NMV_","selected":"style-module_selected__1Ub3X","bottom_border":"style-module_bottom_border__3BtoA","date_area":"style-module_date_area__3Bypo"};
   styleInject(css_248z$1);
 
-  ({
+  function ContactItem(_ref) {
+    var styles = _ref.styles,
+        selected = _ref.selected,
+        border = _ref.border,
+        contact = _ref.contact,
+        onClick = _ref.onClick;
+    return /*#__PURE__*/React.createElement("div", {
+      style: styles,
+      className: cns([style$1.content, border && style$1.bottom_border, selected && style$1.selected]),
+      onClick: onClick.bind(null, contact)
+    }, /*#__PURE__*/React.createElement("img", {
+      className: style$1.icon,
+      src: contact.avatar
+    }), /*#__PURE__*/React.createElement("div", {
+      className: style$1.info_area
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "".concat(style$1.nickname, " ").concat(style$1.ellipsis)
+    }, contact.nickname), /*#__PURE__*/React.createElement("span", {
+      className: "".concat(style$1.desc, " ").concat(style$1.ellipsis)
+    }, contact.message)), /*#__PURE__*/React.createElement("span", {
+      className: style$1.date_area
+    }, contact.date));
+  }
+  ContactItem.propTypes = {
     contact: PropTypes.object.isRequired,
     className: PropTypes.any,
     style: PropTypes.object
-  });
+  };
+  ContactItem.defaultProps = {
+    onClick: function onClick() {}
+  };
 
-  var css_248z = ".style-module_content__2qIFv {\n  max-width: 280px;\n  min-width: 230px;\n  overflow: hidden;\n  background-color: white;\n  display: flex;\n}\n.style-module_list_area__3Dhdf {\n  background-color: white;\n  flex: 1;\n  overflow: auto;\n  -ms-overflow-style: none;\n  overflow: -moz-scrollbars-none;\n}\n.style-module_list_area__3Dhdf::-webkit-scrollbar {\n  width: 0 !important;\n}\n.style-module_scroll_bar_track__AZMED {\n  width: 3px;\n  position: relative;\n}\n.style-module_scroll_bar_thumb__DFtLB {\n  position: absolute;\n  background-color: #aaaaaa;\n  width: 100%;\n  border-radius: 1px;\n}\n";
+  var css_248z = ".style-module_content__2qIFv {\r\n  max-width: 280px;\r\n  min-width: 230px;\r\n  overflow: hidden;\r\n  background-color: white;\r\n  display: flex;\r\n}\r\n.style-module_list_area__3Dhdf {\r\n  background-color: white;\r\n  flex: 1;\r\n  overflow: auto;\r\n  -ms-overflow-style: none;\r\n  overflow: -moz-scrollbars-none;\r\n}\r\n.style-module_list_area__3Dhdf::-webkit-scrollbar {\r\n  width: 0 !important;\r\n}\r\n.style-module_scroll_bar_track__AZMED {\r\n  width: 3px;\r\n  position: relative;\r\n}\r\n.style-module_scroll_bar_thumb__DFtLB {\r\n  position: absolute;\r\n  background-color: #aaaaaa;\r\n  width: 100%;\r\n  border-radius: 1px;\r\n}\r\n";
+  var style = {"content":"style-module_content__2qIFv","list_area":"style-module_list_area__3Dhdf","scroll_bar_track":"style-module_scroll_bar_track__AZMED","scroll_bar_thumb":"style-module_scroll_bar_thumb__DFtLB"};
   styleInject(css_248z);
 
-  ({
-    data: PropTypes.array.isRequired
-  });
+  var ContactList = function ContactList(props) {
+    var _useState = react.exports.useState(),
+        _useState2 = _slicedToArray(_useState, 2),
+        selectId = _useState2[0],
+        setSelectId = _useState2[1];
 
+    var selectContactHandle = function selectContactHandle(con) {
+      setSelectId(con.id);
+      props.onSelect && props.onSelect(con);
+    };
+
+    return /*#__PURE__*/React.createElement("div", {
+      className: style.list_area,
+      onScroll: props.onScroll
+    }, props.data.map(function (contact, index) {
+      return /*#__PURE__*/React.createElement(ContactItem, {
+        contact: contact,
+        key: contact.id,
+        border: index + 1 !== props.data.length,
+        selected: selectId === contact.id,
+        onClick: selectContactHandle.bind(null, contact)
+      });
+    }));
+  };
+
+  var ContactList$1 = ScrollWrapper(ContactList);
+  ContactList.propTypes = {
+    data: PropTypes.array.isRequired
+  };
+
+  var contactList = [{
+    id: 1,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Fizz.png',
+    nickname: '菲兹',
+    message: '你抓不到我！',
+    date: '02-07'
+  }, {
+    id: 8,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Khazix.png',
+    nickname: '卡兹克',
+    message: '❓',
+    date: '02-07'
+  }, {
+    id: 7,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Jayce.png',
+    nickname: '杰斯',
+    message: '吃我一炮',
+    date: '02-07'
+  }, {
+    id: 16,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Jinx.png',
+    nickname: '金克丝',
+    message: '起飞🤣 ！！！',
+    date: '02-07'
+  }, {
+    id: 2,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Vladimir.png',
+    nickname: '弗拉基米尔',
+    message: '让我嘬一口...',
+    date: '02-07'
+  }, {
+    id: 3,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/XinZhao.png',
+    nickname: '阿信',
+    message: '寒芒，我是寒芒！',
+    date: '02-07'
+  }, {
+    id: 4,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Caitlyn.png',
+    nickname: '凯特琳',
+    message: '超级瞄准已部署。',
+    date: '02-07'
+  }, {
+    id: 5,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Teemo.png',
+    nickname: '提莫',
+    message: '这波团我想活下来',
+    date: '02-07'
+  }, {
+    id: 6,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Volibear.png',
+    nickname: '沃利贝尔',
+    message: '熊大呢？',
+    date: '02-07'
+  }, {
+    id: 9,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Rengar.png',
+    nickname: '雷恩加尔',
+    message: '您已被该玩家禁言',
+    date: '02-07'
+  }, {
+    id: 11,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Chogath.png',
+    nickname: '科加斯',
+    message: '您已被该玩家禁言',
+    date: '02-07'
+  }, {
+    id: 12,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Amumu.png',
+    nickname: '阿木木',
+    message: '您已被该玩家禁言这是我的第一条信这是我的第一条信',
+    date: '02-07'
+  }, {
+    id: 13,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Draven.png',
+    nickname: '德莱文',
+    message: '您已被该玩家禁言',
+    date: '02-07'
+  }, {
+    id: 14,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Lucian.png',
+    nickname: '卢锡安',
+    message: '您已被该玩家禁言',
+    date: '02-07'
+  }, {
+    id: 15,
+    avatar: '//game.gtimg.cn/images/lol/act/img/champion/Diana.png',
+    nickname: '黛安娜',
+    message: '您已被该玩家禁言',
+    date: '02-07'
+  }];
   var contact = {
     id: 9527,
     avatar: '//game.gtimg.cn/images/lol/act/img/champion/Khazix.png',
@@ -1852,7 +1997,20 @@
         msgList = _useState2[0],
         setMsgList = _useState2[1];
 
-    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Chat, {
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex'
+      }
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(ContactList$1, {
+      data: contactList,
+      style: {
+        marginRight: 10,
+        height: 500,
+        borderRadius: 5,
+        overflow: 'hidden',
+        width: 240
+      }
+    })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Chat, {
       contact: contact,
       me: my,
       chatList: msgList,
@@ -1867,7 +2025,7 @@
         height: 500,
         borderRadius: 5
       }
-    }));
+    })));
   };
 
   ReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.getElementById('root'));

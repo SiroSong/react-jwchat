@@ -8,7 +8,7 @@ import { IContact } from '../Chat/Chat'
 interface IProps {
   onSelect?: Function
   data: IContact[]
-  onScroll: UIEventHandler<HTMLDivElement>
+  onScroll?: UIEventHandler<HTMLDivElement>
 }
 
 const ContactList = (props: IProps) => {

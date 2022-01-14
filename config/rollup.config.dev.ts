@@ -19,8 +19,11 @@ export default {
     commonjs(),
     postcss({ plugins: [] }),
     resolve({ extensions }),
-    babel({ exclude: 'node_modules/**', extensions }),
-    replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
+    babel({ exclude: 'node_modules/**', extensions, babelHelpers: 'bundled' }),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      preventAssignment: true,
+    }),
     serve({
       port: 8888,
       contentBase: ['example', 'src'],
