@@ -21,7 +21,7 @@ export default {
     resolve({ extensions }),
     babel({ exclude: 'node_modules/**', extensions, babelHelpers: 'bundled' }),
     replace({
-      'process.env.NODE_ENV': JSON.stringify('production'),
+      'process.env.NODE_ENV': JSON.stringify('development'),
       preventAssignment: true,
     }),
     serve({
