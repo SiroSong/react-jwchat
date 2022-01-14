@@ -7,7 +7,7 @@
   "scripts": {
     "tsc": "tsc",
     "start": "rollup -c  ./config/rollup.config.dev.ts -w",
-    "build": "tsc && rollup -c",
+    "build": "rollup -c ./config/rollup.config.prod.ts && tsc",
     "pub": "npm run build && npm publish"
   },
   "author": "SiroSong",
@@ -36,8 +36,10 @@
     "postcss": "^8.3.9",
     "prop-types": "^15.7.2",
     "rollup": "^2.58.0",
+    "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.4.3"
   },
   "dependencies": {
