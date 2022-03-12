@@ -1,6 +1,6 @@
 {
   "name": "react-jwchat",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "This is an easy-to-use web chat component, based on react.",
   "main": "lib/index.js",
   "types": "lib/types/src/components/index.d.ts",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SiroSong/react-jwchat.git"
+    "url": "https://gitee.com/wx_504ae56474/react-jwchat"
   },
   "keywords": [
     "react",

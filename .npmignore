@@ -15,3 +15,9 @@ src
 
 # ts打包增量文件
 lib/types/tsconfig.tsbuildinfo
+
+# 格式化代码
+.prettierrc.yml
+
+# 依赖锁
+pnpm-lock.yaml
