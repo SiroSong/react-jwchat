@@ -40,8 +40,8 @@
   white-space: nowrap;
 }
 .selected {
-  box-shadow: 0px 0px 10px rgb(180, 180, 180);
-  transform: scale(1.02);
+  box-shadow: 0px 0px 20px rgb(180, 180, 180);
+  transform: scale(1.05);
   z-index: 1000;
 }
 .selected:after {

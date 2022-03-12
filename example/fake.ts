@@ -162,7 +162,7 @@ export const messageList = [
     date: 1610016580,
     user: {
       id: 1234,
-      avatar: '//game.gtimg.cn/images/lol/act/a20201103lmpwjl/icon-ht.png',
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC_aiJfKgKic97zGdWHJ-G1WiiEDHgPo8gSg&usqp=CAU',
       nickname: 'sirosong',
       desc: '这是我的第一条信息',
     },
