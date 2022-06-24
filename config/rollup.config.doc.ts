@@ -6,6 +6,7 @@ import replace from '@rollup/plugin-replace'
 import serve from 'rollup-plugin-serve'
 import postcss from 'rollup-plugin-postcss'
 import cleaner from 'rollup-plugin-cleaner'
+import { terser } from 'rollup-plugin-terser'
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
 
@@ -18,7 +19,7 @@ export default {
   },
   plugins: [
     cleaner({ targets: [path.resolve('./doc/dist/doc.js')] }),
-    commonjs(),
+    commonjs({ include: 'node_modules/**' }),
     postcss({ plugins: [] }),
     resolve({ extensions }),
     babel({ exclude: 'node_modules/**', extensions, babelHelpers: 'bundled' }),
@@ -26,5 +27,6 @@ export default {
       'process.env.NODE_ENV': JSON.stringify('production'),
       preventAssignment: true,
     }),
+    terser(),
   ],
 }
