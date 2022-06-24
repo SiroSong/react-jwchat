@@ -8,7 +8,8 @@
     "tsc": "tsc",
     "start": "rollup -c  ./config/rollup.config.dev.ts -w",
     "build": "rollup -c ./config/rollup.config.prod.ts && tsc",
-    "pub": "npm run build && npm publish"
+    "pub": "npm run build && npm publish",
+    "doc": "rollup -c ./config/rollup.config.doc.ts"
   },
   "author": "SiroSong",
   "license": "MIT",
