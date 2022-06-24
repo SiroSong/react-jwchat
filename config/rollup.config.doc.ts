@@ -13,7 +13,7 @@ export default {
   input: './doc/doc.tsx',
   output: {
     file: path.resolve('./doc/dist/doc.js'),
-    format: 'iife',
+    format: 'umd',
     sourcemap: false,
   },
   plugins: [

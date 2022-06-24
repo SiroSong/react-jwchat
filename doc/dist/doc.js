@@ -1,5 +1,7 @@
-(function () {
-  'use strict';
+(function (factory) {
+  typeof define === 'function' && define.amd ? define(factory) :
+  factory();
+})((function () { 'use strict';
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -2026,4 +2028,4 @@
 
   ReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.getElementById('root'));
 
-})();
+}));
