@@ -21,6 +21,10 @@ export default {
     commonjs(),
     postcss({ plugins: [] }),
     resolve({ extensions }),
-    babel({ exclude: 'node_modules/**', extensions, babelHelpers: 'bundled' })
+    babel({ exclude: 'node_modules/**', extensions, babelHelpers: 'bundled' }),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      preventAssignment: true,
+    }),
   ],
 }
