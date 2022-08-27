@@ -8,3 +8,6 @@ declare module '*.css' {
   }
   export = value
 }
+
+declare module '*.css'
+declare module '*.less'

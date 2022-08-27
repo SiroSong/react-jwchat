@@ -1,51 +1,61 @@
 {
   "name": "react-jwchat",
-  "version": "1.2.1",
-  "description": "This is an easy-to-use web chat component, based on react.",
-  "main": "lib/index.js",
-  "types": "lib/types/src/components/index.d.ts",
-  "scripts": {
-    "tsc": "tsc",
-    "start": "rollup -c  ./config/rollup.config.dev.ts -w",
-    "build": "rollup -c ./config/rollup.config.prod.ts && tsc",
-    "pub": "npm run build && npm publish"
-  },
+  "version": "1.5.0",
   "author": "SiroSong",
   "license": "MIT",
+  "description": "This is an easy-to-use web chat component, based on react.",
   "repository": {
     "type": "git",
     "url": "https://gitee.com/wx_504ae56474/react-jwchat"
   },
-  "keywords": [
-    "react",
-    "chat",
-    "UI",
-    "聊天"
+  "homepage": "http://wx_504ae56474.gitee.io/react-jwchat",
+  "keywords": ["react", "chat", "UI", "聊天"],
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "build": "father build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
   ],
-  "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
-    "@babel/preset-react": "^7.14.5",
-    "@babel/preset-typescript": "^7.15.0",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^21.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.5",
-    "@rollup/plugin-replace": "^3.0.0",
-    "@types/md5": "^2.3.1",
-    "@types/react": "^17.0.27",
-    "postcss": "^8.3.9",
-    "prop-types": "^15.7.2",
-    "rollup": "^2.58.0",
-    "rollup-plugin-cleaner": "^1.0.0",
-    "rollup-plugin-postcss": "^4.0.1",
-    "rollup-plugin-serve": "^1.1.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.4.3"
+  "module": "dist/esm/index.js",
+  "typings": "dist/esm/index.d.ts",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
   },
   "dependencies": {
-    "dayjs": "^1.10.7",
+    "@types/react": "^18.0.17",
+    "dayjs": "^1.11.5",
     "md5": "^2.3.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/react": "^13.0.0",
+    "@types/jest": "^27.0.3",
+    "@types/md5": "^2.3.2",
+    "@umijs/fabric": "^2.8.1",
+    "@umijs/test": "^3.0.5",
+    "dumi": "^1.1.0",
+    "father": "^4.0.0-rc.2",
+    "gh-pages": "^3.0.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.1",
+    "react-jwchat": "^1.2.1",
+    "yorkie": "^2.0.0"
   }
 }
