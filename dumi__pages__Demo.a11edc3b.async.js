@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_jwchat=self.webpackChunkreact_jwchat||[]).push([[448],{94698:function(v,a,e){e.r(a),e.d(a,{default:function(){return u}});var t=e(47074),r=e(50959),o=function(){var c=(0,t.UO)(),d=c.id,m=(0,t.WF)(),s=m.demos,f=s[d]||{},n=f.component;return n&&(0,r.createElement)(n)},u=o}}]);
