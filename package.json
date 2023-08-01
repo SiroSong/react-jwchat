@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "react-jwchat 是一个简单的 web 聊天组件。react-jwchat is a simple web chat component.",
   "homepage": "https://sirosong.github.io/react-jwchat",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SiroSong/react-jwchat"
+  },
   "license": "MIT",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -19,9 +19,13 @@ react-jwchat 是一个简单的 web 聊天组件。react-jwchat is a simple web 
 
 ![](https://files.catbox.moe/0xp47m.png)
 
+## Repo
+
+### 🫧🫧🫧[react-jwchat](https://github.com/SiroSong/react-jwchat)🔗
+
 ## HomePage
 
-### [sirosong.github.io/react-jwchat/](https://sirosong.github.io/react-jwchat/)
+### 🦄🦄🦄[sirosong.github.io/react-jwchat/](https://sirosong.github.io/react-jwchat/)🔗
 
 ## Usage
 
