@@ -4,7 +4,7 @@ hero:
   description: react-jwchat 是一个简单的 web 聊天组件。react-jwchat is a simple web chat component.
   actions:
     - text: 快速开始
-      link: /components
+      link: /components/chat
     # - text: World
     #   link: /
 # features:
