@@ -6,7 +6,7 @@ export default defineConfig({
   outputPath: "docs-dist",
   themeConfig: {
     name: "RC",
-    logo: "/logo.png",
+    logo: "/react-jwchat/logo.png",
   },
-  favicons: ["/logo.png"],
+  favicons: ["/react-jwchat/logo.png"],
 })
