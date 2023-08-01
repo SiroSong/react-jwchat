@@ -42,13 +42,13 @@
 .selected {
   box-shadow: 0px 0px 20px rgb(180, 180, 180);
   transform: scale(1.05);
-  z-index: 1000;
+  z-index: 10;
 }
 .selected:after {
   display: none;
 }
 .bottom_border:after {
-  content: '';
+  content: "";
   width: 90%;
   height: 1px;
   background-color: rgb(230, 230, 230);
