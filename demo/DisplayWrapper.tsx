@@ -1,7 +1,7 @@
-import React from "react";
+import React, { ReactNode } from "react"
 
-export default function DisplayWrapper(props: any) {
+export default function DisplayWrapper({ children }: { children: ReactNode }) {
   return (
-    <div style={{display: 'flex', justifyContent: 'center'}}>{props.children}</div>
+    <div style={{ display: "flex", justifyContent: "center" }}>{children}</div>
   )
 }

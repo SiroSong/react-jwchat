@@ -1,98 +1,54 @@
-import dayjs from "dayjs"
-import md5 from "md5"
-import React, {
-  ChangeEvent,
-  ChangeEventHandler,
-  KeyboardEventHandler,
-  useState,
-} from "react"
-import { IChatInput, IMessage } from "../../types"
-import ChatToolBar from "../ChatToolsBar"
-import style from "./style.module.css"
+import React, { KeyboardEventHandler, useState } from "react"
 
-export default function ChatInput({
-  me,
-  onSend = () => {},
-  onImage,
-  height,
-}: IChatInput) {
+import ChatToolBar from "@/ChatToolsBar"
+import { IChatInput, IMessage } from "@/types"
+import { uid } from "@/utils"
+
+export default function ChatInput({ me, onSend, onImage }: IChatInput) {
   const [text, setText] = useState("")
-  const [isShift, setIsShift] = useState(false)
-  const [isAllowSend, setIsAllowSend] = useState(false)
 
-  const textChangeHandle: ChangeEventHandler = (
-    e: ChangeEvent<HTMLInputElement>,
-  ) => {
-    const isAllowSend = !!e.target.value.trim()
-    const text = e.target.value
-
-    setText(text)
-    setIsAllowSend(isAllowSend)
-  }
+  const canSend = !!text.trim()
 
   const sendHandle = () => {
-    if (!isAllowSend) {
-      return
-    }
-
-    const randomNum = Math.floor(Math.random() * 1000)
-    const date = dayjs().unix()
+    if (!canSend) return
 
     const msgData: IMessage = {
-      _id: md5(`${text}${date}${randomNum}`),
-      date: date,
+      _id: uid(),
+      date: Math.floor(Date.now() / 1000),
       user: me,
-      message: {
-        type: "text",
-        content: text,
-      },
+      message: { type: "text", content: text },
     }
-    onSend(msgData)
-    resetText()
-  }
 
-  const resetText = () => {
+    onSend(msgData)
     setText("")
-    setIsAllowSend(false)
   }
 
   const keyDownHandle: KeyboardEventHandler = (e) => {
-    if (e.keyCode === 16) {
-      setIsShift(true)
-    }
-
-    if (e.keyCode === 13 && !isShift) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault()
       sendHandle()
     }
   }
 
-  const keyUpHandle: KeyboardEventHandler = (e) => {
-    if (e.keyCode === 16) {
-      setIsShift(false)
-    }
-  }
-
-  const emojiSelectHandle = (emoji: string) => {
-    setText(text + emoji)
-    setIsAllowSend(true)
-  }
-
   return (
-    <div className={style.content} style={{ height: height }}>
-      <ChatToolBar onEmojiSelect={emojiSelectHandle} onImage={onImage} />
+    <div className="box-border flex w-full shrink-0 flex-col">
+      <ChatToolBar
+        onEmojiSelect={(emoji) => setText(text + emoji)}
+        onImage={onImage}
+      />
       <textarea
-        className={style.input_area}
-        onKeyUp={keyUpHandle}
+        className="h-25 resize-none border-none p-2.5 text-[13px] tracking-[2px] outline-none placeholder:text-[#999]"
         onKeyDown={keyDownHandle}
-        onChange={textChangeHandle}
+        onChange={(e) => setText(e.target.value)}
         value={text}
-        placeholder="请输入..."></textarea>
-      <div className={style.but_area}>
+        placeholder="请输入..."
+      />
+      <div className="self-end pt-0.75 pr-2.5 pb-2.5">
         <button
-          className={style.but}
+          type="button"
+          className="rounded-[3px] border-none bg-[#2ba245] px-5 py-0.75 text-white outline-none active:bg-[#1aad19] disabled:bg-[#ddd]"
           onClick={sendHandle}
-          disabled={!isAllowSend}>
+          disabled={!canSend}>
           发送
         </button>
       </div>

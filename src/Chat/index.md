@@ -12,18 +12,19 @@ nav:
 
 ### Properties
 
-| key     | type    | desc                                         | required |
-| ------- | ------- | -------------------------------------------- | -------- |
-| contact | Contact | 联系人信息                                   | true     |
-| me      | Contact | 本人信息                                     | true     |
-| style   | style   | 容器样式（使用组件时需要指定 width、height） | true     |
+| key      | type      | desc                                         | required |
+| -------- | --------- | -------------------------------------------- | -------- |
+| contact  | Contact   | 联系人信息                                   | true     |
+| me       | Contact   | 本人信息                                     | true     |
+| chatList | Message[] | 消息列表                                     | false    |
+| style    | style     | 容器样式，默认 `{ width: 600, height: 500 }` | false    |
 
 ### Events
 
 | key       | type | desc                                           | required |
 | --------- | ---- | ---------------------------------------------- | -------- |
 | onSend    | func | 发送消息时触发回调，回调参数为组装好的消息对象 | true     |
-| onImage   | func | 选择图片后触发回调，回调参数为图片列表         | true     |
+| onImage   | func | 选择图片后触发回调，回调参数为 FileList        | false    |
 | onEarlier | func | 点击加载更多回调                               | false    |
 
 ### Message

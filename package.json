@@ -3,79 +3,94 @@
   "version": "0.0.1",
   "description": "react-jwchat 是一个简单的 web 聊天组件。react-jwchat is a simple web chat component.",
   "homepage": "https://sirosong.github.io/react-jwchat",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/SiroSong/react-jwchat"
   },
-  "license": "MIT",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./style.css": "./dist/style.css",
+    "./dist/style.css": "./dist/style.css",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build": "father build",
+    "build": "father build && tailwindcss -i ./src/style.css -o ./dist/style.css --minify",
     "build:watch": "father dev",
     "dev": "dumi dev",
     "docs:build": "dumi build",
     "doctor": "father doctor",
-    "lint": "npm run lint:es && npm run lint:css",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "lint": "oxlint && stylelint \"{src,test}/**/*.{css,less}\"",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
-    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+    "lint:es": "oxlint",
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@umijs/lint": "^4.7.3",
+    "dumi": "^2.4.48",
+    "father": "^4.6.34",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0",
+    "oxfmt": "^0.62.0",
+    "oxlint": "^1.77.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "stylelint": "^15.11.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "lint-staged": {
+    "*.{css,less}": [
+      "stylelint --fix",
+      "oxfmt"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "oxlint --fix",
+      "oxfmt"
+    ],
+    "*.{json,md}": [
+      "oxfmt"
+    ]
   },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
   },
-  "lint-staged": {
-    "*.{md,json}": [
-      "prettier --write --no-error-on-unmatched-pattern"
-    ],
-    "*.{css,less}": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --parser=typescript --write"
-    ]
-  },
-  "dependencies": {
-    "dayjs": "^1.11.9",
-    "md5": "^2.3.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^17.6.7",
-    "@commitlint/config-conventional": "^17.6.7",
-    "@types/react": "^18.2.18",
-    "@types/react-dom": "^18.2.7",
-    "@umijs/lint": "^4.0.73",
-    "dumi": "^2.2.4",
-    "eslint": "^8.46.0",
-    "father": "^4.3.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
-    "prettier": "^3.0.0",
-    "prettier-plugin-organize-imports": "^3.2.3",
-    "prettier-plugin-packagejson": "^2.4.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "stylelint": "^15.10.2"
-  },
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
-  },
-  "publishConfig": {
-    "access": "public"
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.21.0",
+      "onFail": "download"
+    }
   },
   "authors": [
     "sirosong"

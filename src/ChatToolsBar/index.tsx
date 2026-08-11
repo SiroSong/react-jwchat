@@ -1,21 +1,14 @@
 import React from "react"
-import { IChatToolBar } from "../../types"
-import EmojiPopover from "../EmojiPopover"
-import ImgPopover from "../ImgPopover"
-import style from "./style.module.css"
 
-export default function ChatToolBar({
-  tools = [],
-  onEmojiSelect,
-  onImage,
-}: IChatToolBar) {
+import EmojiPopover from "@/EmojiPopover"
+import ImgPopover from "@/ImgPopover"
+import { IChatToolBar } from "@/types"
+
+export default function ChatToolBar({ onEmojiSelect, onImage }: IChatToolBar) {
   return (
-    <div className={style.content}>
-      {typeof onEmojiSelect === "function" && (
-        <EmojiPopover onSelect={onEmojiSelect} />
-      )}
-      {typeof onImage === "function" && <ImgPopover onImage={onImage} />}
-      {tools.map((tool) => tool)}
+    <div className="flex h-7.5 shrink-0 items-center gap-2.5 px-2.5">
+      {onEmojiSelect && <EmojiPopover onSelect={onEmojiSelect} />}
+      {onImage && <ImgPopover onImage={onImage} />}
     </div>
   )
 }

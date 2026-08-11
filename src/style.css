@@ -1,0 +1,25 @@
+/* 组件库产物，不引入 preflight，避免重置使用方页面的全局样式 */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+
+@source "./";
+
+/* 细滚动条，替代此前自绘的 ScrollWrapper */
+@utility jw-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #aaa transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}

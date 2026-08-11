@@ -1,31 +1,37 @@
 import React, { useState } from "react"
-import { IContact, IContactList } from "../../types"
-import ContactItem from "../ContactItem"
-import ScrollWrapper from "../ScrollWrapper"
-import style from "./style.module.css"
 
-function ContactList(props: IContactList) {
+import ContactItem from "@/ContactItem"
+import { IContact, IContactList } from "@/types"
+
+export default function ContactList({
+  data,
+  style,
+  onSelect,
+  onScroll,
+}: IContactList) {
   const [selectId, setSelectId] = useState<number | string>()
 
-  const selectContactHandle = (con: IContact) => {
-    setSelectId(con.id)
+  const selectContactHandle = (con: IContact | undefined) => {
+    if (!con) return
 
-    if (props.onSelect) props.onSelect(con)
+    setSelectId(con.id)
+    onSelect?.(con)
   }
 
   return (
-    <div className={style.list_area} onScroll={props.onScroll}>
-      {props?.data?.map((contact, index) => (
+    <div
+      className="jw-scroll box-border bg-white"
+      style={{ ...style, overflowY: "auto" }}
+      onScroll={onScroll}>
+      {data?.map((contact, index) => (
         <ContactItem
           contact={contact}
           key={contact.id}
-          border={index + 1 !== props.data.length}
+          border={index + 1 !== data.length}
           selected={selectId === contact.id}
-          onClick={selectContactHandle.bind(null, contact)}
+          onClick={selectContactHandle}
         />
       ))}
     </div>
   )
 }
-
-export default ScrollWrapper(ContactList)

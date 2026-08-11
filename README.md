@@ -19,14 +19,6 @@ react-jwchat 是一个简单的 web 聊天组件。react-jwchat is a simple web 
 
 ![](https://files.catbox.moe/0xp47m.png)
 
-## Repo
-
-### 🫧🫧🫧[react-jwchat](https://github.com/SiroSong/react-jwchat)🔗
-
-## HomePage
-
-### 🦄🦄🦄[sirosong.github.io/react-jwchat/](https://sirosong.github.io/react-jwchat/)🔗
-
 ## Usage
 
 ```bash
@@ -35,6 +27,25 @@ npm install react-jwchat
 yarn add react-jwchat
 # or
 pnpm install react-jwchat
+```
+
+```tsx
+import { Chat, IMessage } from "react-jwchat"
+// 若打包器不处理依赖内的 css import，手动引入：
+// import "react-jwchat/style.css"
+
+export default function App() {
+  const [chatList, setChatList] = useState<IMessage[]>([])
+
+  return (
+    <Chat
+      me={{ id: 1, nickname: "me", avatar: "..." }}
+      contact={{ id: 2, nickname: "friend", avatar: "..." }}
+      chatList={chatList}
+      onSend={(msg) => setChatList([...chatList, msg])}
+    />
+  )
+}
 ```
 
 ## Development

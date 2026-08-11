@@ -1,3 +1,21 @@
 {
-  "extends": "@umijs/lint/dist/config/stylelint"
+  "extends": "@umijs/lint/dist/config/stylelint",
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "source",
+          "utility",
+          "theme",
+          "variant",
+          "custom-variant",
+          "apply",
+          "plugin",
+          "config",
+          "reference"
+        ]
+      }
+    ]
+  }
 }
