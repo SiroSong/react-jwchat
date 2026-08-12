@@ -16,10 +16,10 @@ export default function ContactItem({
     <div
       style={style}
       className={cns(
-        "relative box-border flex min-h-15 w-full cursor-pointer items-center rounded-[5px] bg-white px-2.5 transition-all duration-300",
+        "relative box-border flex min-h-15 w-full cursor-pointer items-center rounded-[5px] bg-jw-surface px-2.5 transition-all duration-300",
         border &&
           !selected &&
-          "after:absolute after:bottom-0 after:left-[5%] after:h-px after:w-[90%] after:bg-[rgb(230,230,230)] after:content-['']",
+          "after:absolute after:bottom-0 after:left-[5%] after:h-px after:w-[90%] after:bg-jw-border after:content-['']",
         selected && "z-10 scale-105 shadow-[0_0_20px_rgb(180,180,180)]",
       )}
       onClick={() => onClick?.(contact)}>
@@ -29,14 +29,14 @@ export default function ContactItem({
         alt={contact?.nickname ?? ""}
       />
       <div className="flex flex-1 flex-col pl-2.5">
-        <span className={cns("text-[13px] text-[#333]", ellipsis)}>
+        <span className={cns("text-[13px] text-jw-text", ellipsis)}>
           {contact?.nickname}
         </span>
-        <span className={cns("text-[11px] text-[#666]", ellipsis)}>
+        <span className={cns("text-[11px] text-jw-text-secondary", ellipsis)}>
           {contact?.message}
         </span>
       </div>
-      <span className="text-xs text-[#666]">{contact?.date}</span>
+      <span className="text-xs text-jw-text-secondary">{contact?.date}</span>
     </div>
   )
 }

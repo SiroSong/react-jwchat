@@ -37,7 +37,7 @@ export default function ChatInput({ me, onSend, onImage }: IChatInput) {
         onImage={onImage}
       />
       <textarea
-        className="h-25 resize-none border-none p-2.5 text-[13px] tracking-[2px] outline-none placeholder:text-[#999]"
+        className="h-25 resize-none border-none bg-jw-surface p-2.5 text-[13px] tracking-[2px] text-jw-text outline-none placeholder:text-jw-text-tertiary"
         onKeyDown={keyDownHandle}
         onChange={(e) => setText(e.target.value)}
         value={text}
@@ -46,7 +46,7 @@ export default function ChatInput({ me, onSend, onImage }: IChatInput) {
       <div className="self-end pt-0.75 pr-2.5 pb-2.5">
         <button
           type="button"
-          className="rounded-[3px] border-none bg-[#2ba245] px-5 py-0.75 text-white outline-none active:bg-[#1aad19] disabled:bg-[#ddd]"
+          className="rounded-[3px] border-none bg-jw-primary px-5 py-0.75 text-jw-primary-foreground outline-none active:bg-jw-primary-active disabled:bg-jw-disabled"
           onClick={sendHandle}
           disabled={!canSend}>
           发送

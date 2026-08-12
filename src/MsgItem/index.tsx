@@ -21,7 +21,7 @@ export default function MsgItem({ data, me }: IMsgItem) {
       <div
         className="flex flex-1 flex-col px-2.5"
         style={{ alignItems: isMe ? "flex-end" : "flex-start" }}>
-        <div className="pb-1 text-xs text-[#999]">
+        <div className="pb-1 text-xs text-jw-text-tertiary">
           <span>{data.user.nickname}</span>
           <span className="ml-2.5">{formatDate(data.date)}</span>
         </div>

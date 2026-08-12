@@ -10,7 +10,7 @@ export default function ImgPopover({ onImage }: IImgPopover) {
       type="button"
       aria-label="发送图片"
       onClick={() => fileSelector.current?.click()}
-      className="flex cursor-pointer border-none bg-transparent p-0 text-[#666] hover:text-[#2ba245]">
+      className="flex cursor-pointer border-none bg-transparent p-0 text-jw-text-secondary hover:text-jw-primary">
       <svg
         className="size-5"
         viewBox="0 0 24 24"
