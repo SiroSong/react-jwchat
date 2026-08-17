@@ -48,6 +48,30 @@ export default function App() {
 }
 ```
 
+## Theming / 主题定制
+
+所有颜色都是 CSS 变量，覆盖同名变量即可换肤。**使用方不需要安装 tailwindcss** —— `react-jwchat/style.css` 是预编译好的普通 CSS，tailwindcss 只是本库的构建期依赖。
+
+```css
+@import "react-jwchat/style.css";
+
+:root {
+  --color-jw-primary: #7c3aed; /* 发送按钮、图标 hover */
+  --color-jw-primary-active: #6d28d9;
+  --color-jw-bubble: #ddd6fe; /* 消息气泡 */
+}
+```
+
+变量会继承，所以挂在任意祖先元素上就能做局部换肤 / 多主题共存，内联样式的优先级最高：
+
+```tsx
+<div style={{ "--color-jw-primary": "#7c3aed" } as React.CSSProperties}>
+  <Chat ... />
+</div>
+```
+
+完整变量清单（13 个，含深色模式示例）见 [主题定制文档](https://sirosong.github.io/react-jwchat/theme)。
+
 ## Development
 
 ```bash

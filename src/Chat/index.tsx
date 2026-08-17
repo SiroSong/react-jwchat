@@ -17,7 +17,7 @@ export default function Chat({
 }: IChatProps) {
   return (
     <div
-      className="flex flex-col overflow-hidden border border-solid border-[#f1f1f1] bg-white"
+      className="flex flex-col overflow-hidden border border-solid border-jw-border-light bg-jw-surface"
       style={style}>
       <ChatHeader data={contact} />
       <ChatRecordList data={chatList} me={me} onEarlier={onEarlier} />

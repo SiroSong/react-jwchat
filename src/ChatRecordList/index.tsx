@@ -18,10 +18,10 @@ export default function ChatRecordList({
   return (
     <div
       ref={scrollView}
-      className="jw-scroll min-h-0 flex-1 overflow-y-auto border-x-0 border-y border-solid border-[rgb(226,226,226)] p-2.5">
+      className="jw-scroll min-h-0 flex-1 overflow-y-auto border-x-0 border-y border-solid border-jw-border p-2.5">
       <button
         type="button"
-        className="mx-auto flex h-5 w-25 cursor-pointer items-center justify-center rounded-[10px] border-none bg-[#f1f1f1] text-center text-xs text-[#999] outline-none"
+        className="mx-auto flex h-5 w-25 cursor-pointer items-center justify-center rounded-[10px] border-none bg-jw-surface-muted text-center text-xs text-jw-text-tertiary outline-none"
         onClick={onEarlier}>
         加载更多···
       </button>

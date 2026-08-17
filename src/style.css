@@ -5,17 +5,35 @@
 
 @source "./";
 
+/* 主题色 token：使用方覆盖同名 CSS 变量即可换肤，不需要安装 tailwindcss。
+   注意用普通 @theme 而非 @theme inline，inline 会把值内联进 utility 导致无法覆盖。 */
+@theme {
+  --color-jw-primary: #2ba245;
+  --color-jw-primary-active: #1aad19;
+  --color-jw-primary-foreground: #fff;
+  --color-jw-bubble: #91ed61;
+  --color-jw-surface: #fff;
+  --color-jw-surface-muted: #f1f1f1;
+  --color-jw-disabled: #ddd;
+  --color-jw-border: rgb(228 228 228);
+  --color-jw-border-light: #f1f1f1;
+  --color-jw-border-strong: #aaa;
+  --color-jw-text: #333;
+  --color-jw-text-secondary: #666;
+  --color-jw-text-tertiary: #999;
+}
+
 /* 细滚动条，替代此前自绘的 ScrollWrapper */
 @utility jw-scroll {
   scrollbar-width: thin;
-  scrollbar-color: #aaa transparent;
+  scrollbar-color: var(--color-jw-border-strong) transparent;
 
   &::-webkit-scrollbar {
     width: 8px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #aaa;
+    background: var(--color-jw-border-strong);
     border-radius: 4px;
   }
 

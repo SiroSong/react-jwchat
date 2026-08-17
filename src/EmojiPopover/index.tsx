@@ -27,14 +27,14 @@ export default function EmojiPopover({ onSelect }: IEmojiPopover) {
         if (e.key === "Escape") setVisible(false)
       }}>
       {visible && (
-        <div className="absolute -bottom-22.5 left-7.5 flex w-72 flex-wrap rounded-[5px] border border-solid border-[#aaa] bg-white p-0.75 before:absolute before:top-1/2 before:-left-4 before:border-8 before:border-solid before:border-transparent before:border-r-[#aaa] before:content-[''] after:absolute after:top-1/2 after:-left-[14.5px] after:border-8 after:border-solid after:border-transparent after:border-r-white after:content-['']">
+        <div className="absolute -bottom-22.5 left-7.5 flex w-72 flex-wrap rounded-[5px] border border-solid border-jw-border-strong bg-jw-surface p-0.75 before:absolute before:top-1/2 before:-left-4 before:border-8 before:border-solid before:border-transparent before:border-r-jw-border-strong before:content-[''] after:absolute after:top-1/2 after:-left-[14.5px] after:border-8 after:border-solid after:border-transparent after:border-r-jw-surface after:content-['']">
           {emojiList.map((emoji) => (
             <button
               type="button"
               key={emoji}
               aria-label={emoji}
               onClick={() => onSelect(emoji)}
-              className="box-border cursor-pointer border-none bg-transparent px-0.75 hover:rounded-full hover:bg-[#f1f1f1]">
+              className="box-border cursor-pointer border-none bg-transparent px-0.75 hover:rounded-full hover:bg-jw-surface-muted">
               {emoji}
             </button>
           ))}
@@ -45,7 +45,7 @@ export default function EmojiPopover({ onSelect }: IEmojiPopover) {
         aria-label="表情"
         aria-expanded={visible}
         onClick={() => setVisible((v) => !v)}
-        className="cursor-pointer border-none bg-transparent p-0 text-[#666] hover:text-[#2ba245]">
+        className="cursor-pointer border-none bg-transparent p-0 text-jw-text-secondary hover:text-jw-primary">
         <svg
           className="size-5"
           viewBox="0 0 24 24"

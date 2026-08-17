@@ -20,7 +20,7 @@ export default function ContactList({
 
   return (
     <div
-      className="jw-scroll box-border bg-white"
+      className="jw-scroll box-border bg-jw-surface"
       style={{ ...style, overflowY: "auto" }}
       onScroll={onScroll}>
       {data?.map((contact, index) => (
