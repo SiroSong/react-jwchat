@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_jwchat=self.webpackChunkreact_jwchat||[]).push([[606],{40523:function(_,a,t){t.r(a),t.d(a,{default:function(){return s}});var M=t(67294),E=t(51837),c=t(70971),D=t(99912),n=t(85893);function s(){return(0,n.jsx)(D.default,{children:(0,n.jsx)(E.Z,{contact:c.contact})})}}}]);
