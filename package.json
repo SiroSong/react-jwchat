@@ -40,8 +40,8 @@
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
     "lint:es": "oxlint",
     "prepare": "husky install && dumi setup",
-    "prepublishOnly": "father doctor && npm run build",
-    "start": "npm run dev",
+    "prepublishOnly": "father doctor && yarn run build",
+    "start": "yarn run dev",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -85,14 +85,14 @@
       "@commitlint/config-conventional"
     ]
   },
-  "packageManager": "pnpm@11.21.0",
   "devEngines": {
     "packageManager": {
-      "name": "pnpm",
-      "version": "11.21.0",
+      "name": "yarn",
+      "version": "1.22.22",
       "onFail": "download"
     }
   },
+  "packageManager": "yarn@1.22.22",
   "authors": [
     "sirosong"
   ]

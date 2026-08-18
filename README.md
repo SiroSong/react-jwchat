@@ -26,7 +26,7 @@ npm install react-jwchat
 # or
 yarn add react-jwchat
 # or
-pnpm install react-jwchat
+pnpm add react-jwchat
 ```
 
 ```tsx
@@ -76,22 +76,22 @@ export default function App() {
 
 ```bash
 # install dependencies
-$ pnpm install
+$ yarn install
 
 # develop library by docs demo
-$ pnpm start
+$ yarn start
 
 # build library source code
-$ pnpm run build
+$ yarn build
 
 # build library source code in watch mode
-$ pnpm run build:watch
+$ yarn build:watch
 
 # build docs
-$ pnpm run docs:build
+$ yarn docs:build
 
 # check your project for potential problems
-$ pnpm run doctor
+$ yarn doctor
 ```
 
 ## LICENSE
