@@ -20,3 +20,41 @@ jobs:
       - run: yarn format:check
       - run: yarn typecheck
       - run: yarn build
+
+  publish:
+    needs: check
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # npm Trusted Publisher (OIDC)
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: yarn
+          registry-url: https://registry.npmjs.org
+      - run: corepack enable
+      # Trusted Publishing 需要 npm >= 11.5.1，node 22 自带的是 10.x
+      - run: npm install -g npm@latest
+
+      - name: Check if version already published
+        id: check
+        run: |
+          NAME=$(node -p "require('./package.json').name")
+          VERSION=$(node -p "require('./package.json').version")
+          if npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
+            echo "$NAME@$VERSION 已发布，跳过"
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - if: steps.check.outputs.publish == 'true'
+        run: yarn install --frozen-lockfile
+
+      # prepublishOnly 会跑 father doctor && yarn run build
+      # Trusted Publisher 免 token，provenance 自动生成
+      - if: steps.check.outputs.publish == 'true'
+        run: npm publish

@@ -1,6 +1,6 @@
 {
   "name": "react-jwchat",
-  "version": "0.0.1",
+  "version": "1.5.2",
   "description": "react-jwchat 是一个简单的 web 聊天组件。react-jwchat is a simple web chat component.",
   "homepage": "https://sirosong.github.io/react-jwchat",
   "license": "MIT",
@@ -89,7 +89,7 @@
     "packageManager": {
       "name": "yarn",
       "version": "1.22.22",
-      "onFail": "download"
+      "onFail": "warn"
     }
   },
   "packageManager": "yarn@1.22.22",
